@@ -1,65 +1,18 @@
 import { Link } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
 
-function ImagePlaceholder({ filename, caption }: { filename: string; caption: string }) {
-  return (
-    <figure className="my-10">
-      <div className="w-full rounded-lg bg-cream-dark dark:bg-dark-surface border border-warm-gray/20 dark:border-dark-warm-gray/20 flex flex-col items-center justify-center py-16 px-6 text-center">
-        <p className="text-sm font-mono text-warm-gray dark:text-dark-warm-gray mb-1">
-          Drop image at:
-        </p>
-        <p className="text-sm font-mono text-terracotta dark:text-dark-terracotta">
-          public/{filename}
-        </p>
-      </div>
-      {caption && (
-        <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
-          {caption}
-        </figcaption>
-      )}
-    </figure>
-  );
-}
-
-function Quote({ text, attribution }: { text: string; attribution?: string }) {
-  return (
-    <figure className="my-3">
-      <div className="rounded-2xl bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-4">
-        <div className="flex gap-3 items-start">
-          <svg
-            className="text-terracotta dark:text-dark-terracotta shrink-0 mt-0.5"
-            width="15" height="15" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" strokeWidth="1.75"
-            strokeLinecap="round" strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg>
-          <blockquote className="text-sm text-warm-gray dark:text-dark-warm-gray italic leading-relaxed">
-            "{text}"
-          </blockquote>
-        </div>
-        {attribution && (
-          <figcaption className="mt-2 pl-6 text-xs text-warm-gray/50 dark:text-dark-warm-gray/50">
-            {attribution}
-          </figcaption>
-        )}
-      </div>
-    </figure>
-  );
-}
 
 export default function MonsterWalk() {
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
-      <div className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">
+      <main className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">
 
         <div className="flex justify-between items-center mb-12">
           <Link
             to="/"
             className="text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
           >
-            ← Back
+            <span aria-hidden="true">←</span> Back
           </Link>
           <ThemeToggle />
         </div>
@@ -73,21 +26,24 @@ export default function MonsterWalk() {
             Turning Daily Walks into Daily Wins
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray mb-8">
-            A cohort externship — researching and testing a single-screen redesign for Monster Walk's daily return experience.
+            A cohort externship: researching and testing a redesign of Monster Walk's Welcome Back flow.
           </p>
 
-          <ImagePlaceholder
-            filename="monster-walk/hero.png"
-            caption="Monster Walk — Welcome Back screen redesign"
-          />
+          <figure className="my-10">
+            <img
+              src="/monster-walk/monster-walk-hero.gif"
+              alt="Monster Walk: Welcome Back screen redesign"
+              className="max-h-96 w-auto mx-auto block rounded-lg"
+            />
+          </figure>
 
           <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 text-sm mt-8 mx-auto">
             {[
               { label: "Role", value: "UX Researcher & User Testing Lead" },
               { label: "Client", value: "Talofa Games (cohort externship)" },
-              { label: "Scope", value: "Welcome Back screen — one focused redesign" },
+              { label: "Scope", value: "Welcome Back flow: research, testing, and redesign" },
               { label: "Stack", value: "Figma, Maze, moderated interviews" },
-              { label: "Impact", value: '100% clarity in moderated testing — "fun, supportive, motivating"' },
+              { label: "Impact", value: '100% clarity in moderated testing: "fun, supportive, motivating"' },
             ].map(({ label, value }) => (
               <div key={label}>
                 <dt className="text-warm-gray dark:text-dark-warm-gray mb-1">{label}</dt>
@@ -107,8 +63,8 @@ export default function MonsterWalk() {
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             Monster Walk by Talofa Games motivates players to walk in real life to earn in-game stamina
             and save monsters from the "evil fog." During a cohort externship, my team was scoped to one
-            specific touchpoint: the "Welcome Back" screen — the first thing players see when they return
-            each day — felt flat, confusing, and unrewarding. My role was to lead all user research and
+            specific touchpoint: the "Welcome Back" screen, the first thing players see when they return
+            each day, felt flat, confusing, and unrewarding. My role was to lead all user research and
             testing, synthesize findings into design decisions, and deliver a validated prototype direction
             to the client.
           </p>
@@ -120,10 +76,16 @@ export default function MonsterWalk() {
             The Problem
           </h2>
 
-          <ImagePlaceholder
-            filename="monster-walk/welcome-back-original.png"
-            caption="The original Welcome Back screen — the starting point for this engagement"
-          />
+          <figure className="my-10">
+            <img
+              src="/monster-walk/old-welcome-back-flow.png"
+              alt="The original Welcome Back screen"
+              className="max-w-[220px] mx-auto block rounded-lg"
+            />
+            <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
+              The original Welcome Back screen, the starting point for this engagement
+            </figcaption>
+          </figure>
 
           <div className="space-y-6">
             <div>
@@ -132,7 +94,7 @@ export default function MonsterWalk() {
               </h3>
               <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
                 Players understood step-to-stamina conversion, but many didn't realize stamina is initially
-                capped at 500. Steps beyond the cap disappeared without explanation — leaving players feeling
+                capped at 500. Steps beyond the cap disappeared without explanation, leaving players feeling
                 like they were losing progress they'd already earned.
               </p>
             </div>
@@ -141,7 +103,7 @@ export default function MonsterWalk() {
                 No emotional payoff
               </h3>
               <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-                The Welcome Back panel felt static and transactional — no animation, no celebration. The
+                The Welcome Back panel felt static and transactional: no animation, no celebration. The
                 "Welcome Back!" text didn't meet WCAG contrast standards. Without personalization or
                 narrative framing, the intended habit loop (cue → routine → reward) broke down at every step.
               </p>
@@ -166,7 +128,7 @@ export default function MonsterWalk() {
                   </svg>
                 ),
                 title: "No social mechanics",
-                body: "Designs had to motivate players solo — social features hadn't been built yet.",
+                body: "Designs had to motivate players solo; social features hadn't been built yet.",
               },
               {
                 icon: (
@@ -179,7 +141,7 @@ export default function MonsterWalk() {
                   </svg>
                 ),
                 title: "Existing rewards only",
-                body: "No new items or art — rewards were limited to existing in-game resources.",
+                body: "No new items or art; rewards were limited to existing in-game resources.",
               },
               {
                 icon: (
@@ -190,7 +152,7 @@ export default function MonsterWalk() {
                   </svg>
                 ),
                 title: "Existing design system",
-                body: "All flows had to reuse existing patterns and assets — no new components.",
+                body: "All flows had to reuse existing patterns and assets; no new components.",
               },
             ].map(({ icon, title, body }) => (
               <div key={title} className="rounded-lg border border-warm-gray/15 dark:border-dark-warm-gray/15 bg-cream-dark/40 dark:bg-dark-surface/40 p-5">
@@ -203,7 +165,7 @@ export default function MonsterWalk() {
             ))}
           </div>
           <p className="mt-5 text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed italic">
-            These limits forced focus onto emotional payoff, clarity, and sequencing — rather than entirely new systems.
+            These limits forced focus onto emotional payoff, clarity, and sequencing, rather than entirely new systems.
           </p>
         </section>
 
@@ -214,21 +176,22 @@ export default function MonsterWalk() {
           </h2>
           <div className="space-y-4">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-              I started with a competitive review — looking at Zwift and SelfQuest for strong progress
-              visualization patterns — and an audit of the existing app to flag clarity and pacing issues.
-              Unmoderated tests via Maze then surfaced the stamina cap confusion and exposed gaps in how
-              players understood core game mechanics.
+              I started with a competitive review, looking at Zwift and SelfQuest for strong progress
+              visualization patterns, and an audit of the existing app to flag clarity and pacing issues.
+              Unmoderated tests via Maze that I designed and ran surfaced the stamina cap confusion and
+              exposed gaps in how players understood core game mechanics.
             </p>
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
               Once the clarity issues were mapped, I proposed a pivot: rather than continuing to document
-              what confused players, I wanted to understand what motivated them to return. Moderated 1:1
-              interviews with both new and experienced players gave a much richer picture — one centered on
-              monster personality, daily streaks, milestones, and the pull of hidden rewards.
+              what confused players, I wanted to understand what motivated them to return. I planned and
+              led moderated 1:1 interviews with both new and experienced players, which gave the team a
+              much richer picture, one centered on monster personality, daily streaks, milestones, and
+              the pull of hidden rewards.
             </p>
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-              From those interviews I developed mid-fidelity designs emphasizing a one-week streak milestone
-              as the core motivational anchor, then ran a second round of moderated testing to validate the
-              direction before handing off to the client.
+              Based on those findings, we developed mid-fidelity designs as a team, emphasizing a one-week
+              streak milestone as the core motivational anchor. I then ran a second round of moderated
+              testing to validate the direction before we handed off to the client.
             </p>
           </div>
         </section>
@@ -248,7 +211,7 @@ export default function MonsterWalk() {
               {
                 n: "02",
                 heading: "Mystery sustains anticipation",
-                body: "Hiding upcoming rewards created a pull to return. Players wanted to know what they'd get next — and that uncertainty was motivating, not frustrating.",
+                body: "Hiding upcoming rewards created a pull to return. Players wanted to know what they'd get next, and that uncertainty was motivating, not frustrating.",
               },
               {
                 n: "03",
@@ -258,7 +221,7 @@ export default function MonsterWalk() {
               {
                 n: "04",
                 heading: "Celebration pacing matters",
-                body: "The milestone moment needed to feel earned. Slowing the animation created emotional resonance — rushing it made it feel like a loading screen rather than a reward.",
+                body: "The milestone moment needed to feel earned. Slowing the animation created emotional resonance; rushing it made it feel like a loading screen rather than a reward.",
               },
             ].map(({ n, heading, body }) => (
               <div key={n}>
@@ -276,14 +239,14 @@ export default function MonsterWalk() {
           </div>
         </section>
 
-        {/* What I Designed */}
+        {/* What We Designed */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            What I Designed
+            What We Designed
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
-            Working entirely within the existing Monster Walk design system and in-game assets, I delivered
-            a prototype direction to the client built around four changes:
+            Working as a team of five UX designers, entirely within the existing Monster Walk design system
+            and in-game assets, we delivered a prototype direction to the client built around four changes:
           </p>
           <ul className="space-y-2 mb-8">
             {[
@@ -299,10 +262,28 @@ export default function MonsterWalk() {
             ))}
           </ul>
 
-          <ImagePlaceholder
-            filename="monster-walk/prototype-screens.png"
-            caption="Prototype screens — redesigned Welcome Back flow with streak milestone and monster greeting"
-          />
+          <div className="grid grid-cols-2 gap-4 my-8">
+            <figure>
+              <img
+                src="/monster-walk/monster-greeting.png"
+                alt="Redesigned Welcome Back flow with monster greeting"
+                className="w-full rounded-lg"
+              />
+              <figcaption className="mt-2 text-xs text-warm-gray dark:text-dark-warm-gray text-center italic">
+                Personalized monster greeting
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/monster-walk/streak-milestone.png"
+                alt="Streak milestone screen"
+                className="w-full rounded-lg"
+              />
+              <figcaption className="mt-2 text-xs text-warm-gray dark:text-dark-warm-gray text-center italic">
+                Streak milestone moment
+              </figcaption>
+            </figure>
+          </div>
         </section>
 
         {/* Outcome */}
@@ -311,7 +292,7 @@ export default function MonsterWalk() {
             Outcome
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
-            The redesigned prototype was validated in moderated testing with real players — both new and
+            The redesigned prototype was validated in moderated testing with real players, both new and
             experienced. Results were clear:
           </p>
           <ul className="space-y-2 mb-8">
@@ -330,9 +311,17 @@ export default function MonsterWalk() {
             This was a scoped research and testing engagement. Whether these designs shipped is the client's decision.
           </p>
 
-          <div className="mt-8 space-y-1">
-            <Quote text="I do like how you don't know what you're gonna get tomorrow. So, you know, you better come back tomorrow to see." />
-            <Quote text="I love my little guys — it's nice they acknowledge I'm back on the grind to help them clear the fog — so having the monster there to greet you is really nice." />
+          <div className="mt-8 grid sm:grid-cols-2 gap-4">
+            <img
+              src="/monster-walk/Anticipation-Quote.png"
+              alt="I do like how you don't know what you're gonna get tomorrow. So, you know, you better come back tomorrow to see."
+              className="w-full rounded-lg"
+            />
+            <img
+              src="/monster-walk/Monster-Connection-Quote.png"
+              alt="I love my little guys. It's nice they acknowledge I'm back on the grind to help them clear the fog, so having the monster there to greet you is really nice."
+              className="w-full rounded-lg"
+            />
           </div>
         </section>
 
@@ -360,10 +349,10 @@ export default function MonsterWalk() {
           to="/"
           className="inline-block text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
         >
-          ← Back to work
+          <span aria-hidden="true">←</span> Back to work
         </Link>
 
-      </div>
+      </main>
     </div>
   );
 }

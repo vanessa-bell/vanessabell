@@ -20,7 +20,7 @@ export default function App() {
         </p>
 
         <p className="mt-5 text-base leading-relaxed text-warm-gray dark:text-dark-warm-gray">
-          I design and build experiences that reduce complexity & friction. Healthcare case study publishing soon — in the meantime, here's my recent work.
+          I design and build experiences that reduce complexity & friction. Healthcare case study publishing soon. In the meantime, here's my recent work.
         </p>
 
         <section className="mt-10" aria-label="Case studies">
@@ -59,6 +59,7 @@ export default function App() {
               className="text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6 cursor-pointer"
             >
               vanessabelldesign@gmail.com
+              <span className="sr-only"> (opens in new tab)</span>
             </a>
             <a
               href="https://www.linkedin.com/in/vanessajoanbell/"
@@ -67,6 +68,7 @@ export default function App() {
               className="text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6 cursor-pointer"
             >
               LinkedIn
+              <span className="sr-only"> (opens in new tab)</span>
             </a>
           </div>
         </section>

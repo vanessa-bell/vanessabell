@@ -94,14 +94,14 @@ function Carousel({ slides }: { slides: { filename: string; caption: string }[] 
 export default function SpendLight() {
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
-      <div className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">
+      <main className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">
 
         <div className="flex justify-between items-center mb-12">
           <Link
             to="/"
             className="text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
           >
-            ← Back
+            <span aria-hidden="true">←</span> Back
           </Link>
           <ThemeToggle />
         </div>
@@ -121,7 +121,7 @@ export default function SpendLight() {
         <figure className="my-10">
           <img
             src="/spendlight/hero.png"
-            alt="SpendLight hero"
+            alt="SpendLight app screens showing the home screen with a bonsai plant and the reflection journaling flow"
             className="max-w-md mx-auto rounded-lg"
           />
         </figure>
@@ -133,7 +133,7 @@ export default function SpendLight() {
               { label: "Timeline", value: "6 weeks · 2025" },
               { label: "Scope", value: "Discovery through MVP specification" },
               { label: "Stack", value: "Figma, Figma Make" },
-              { label: "Impact", value: "Validated product direction — concept desirable, MVP spec ready for engineering" },
+              { label: "Impact", value: "Validated product direction: concept desirable, MVP spec ready for engineering" },
             ].map(({ label, value }) => (
               <div key={label}>
                 <dt className="text-warm-gray dark:text-dark-warm-gray mb-1">{label}</dt>
@@ -175,6 +175,7 @@ export default function SpendLight() {
             loop
             muted
             playsInline
+            aria-label="SpendLight core flow: mood check-in, logging a purchase reflection, adding context, and receiving the bonsai growth reward"
             className="w-full -mt-px"
           >
             <source src="/spendlight/spendlight-core-flow.mp4" type="video/mp4" />
@@ -190,7 +191,7 @@ export default function SpendLight() {
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
             Traditional budgeting tools focus on categorization and control, which often triggers guilt and
-            avoidance. The people I interviewed were not looking for stricter budgets — they wanted emotional
+            avoidance. The people I interviewed were not looking for stricter budgets; they wanted emotional
             awareness around their discretionary spending.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
@@ -221,13 +222,13 @@ export default function SpendLight() {
               I opened the sprint by getting close to users quickly. A screener survey helped recruit the right
               participants, and four 1:1 interviews gave a direct window into real spending habits and emotional
               patterns. In parallel, I set up a landing page messaging test for SpendLight and built an early AI
-              prototype in Figma Make to explore what a fast, frictionless reflection flow could feel like —
+              prototype in Figma Make to explore what a fast, frictionless reflection flow could feel like,
               before we had validated the core concept.
             </p>
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
               With research in hand I shifted into shaping. I explored journal prompting approaches, settled on
               the information architecture, and defined the core habit loop. To pressure-test positioning I ran
-              an A/B test on two value propositions — "Find Your Calm" versus "Your Spending Is a Story" —
+              an A/B test on two value propositions: "Find Your Calm" versus "Your Spending Is a Story,"
               gathering signal on which framing resonated before committing to a direction.
             </p>
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
@@ -330,12 +331,12 @@ export default function SpendLight() {
               {
                 n: "02",
                 heading: "Encouragement, not judgment",
-                body: "People wanted context and interpretation — not budgeting alarms or scolding.",
+                body: "People wanted context and interpretation, not budgeting alarms or scolding.",
                 quotes: [
                   "I want an AI coach I can tell everything to, and it helps me understand what's essential.",
                   "Just show me what changed this month.",
                 ],
-                implication: "Inspired the bonsai growth reward — the emotional anchor of the app's home screen.",
+                implication: "Inspired the bonsai growth reward, the emotional anchor of the app's home screen.",
               },
               {
                 n: "03",
@@ -453,10 +454,10 @@ export default function SpendLight() {
           </div>
           <Carousel
             slides={[
-              { filename: "spendlight/sketch.png", caption: "Early concept sketch — mapping the core journaling loop" },
-              { filename: "spendlight/old-2-step-journal-flow.jpg", caption: "V1 — Original two-step journal flow before usability testing" },
-              { filename: "spendlight/final-reflection.jpg", caption: "Final reflection screen — simplified prompts, reduced cognitive load" },
-              { filename: "spendlight/bonsai-growth-celebration.jpg", caption: "Bonsai growth celebration — the emotional reward at the heart of the app" },
+              { filename: "spendlight/sketch.png", caption: "Early concept sketch: mapping the core journaling loop" },
+              { filename: "spendlight/old-2-step-journal-flow.jpg", caption: "V1: Original two-step journal flow before usability testing" },
+              { filename: "spendlight/final-reflection.jpg", caption: "Final reflection screen: simplified prompts, reduced cognitive load" },
+              { filename: "spendlight/bonsai-growth-celebration.jpg", caption: "Bonsai growth celebration: the emotional reward at the heart of the app" },
             ]}
           />
         </section>
@@ -510,9 +511,9 @@ export default function SpendLight() {
           to="/"
           className="inline-block text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
         >
-          ← Back to work
+          <span aria-hidden="true">←</span> Back to work
         </Link>
-      </div>
+      </main>
     </div>
   );
 }

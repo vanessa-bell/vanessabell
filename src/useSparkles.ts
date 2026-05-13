@@ -19,6 +19,7 @@ export function useSparkles() {
     const canvas = document.createElement("canvas");
     canvas.style.cssText =
       "position:fixed;inset:0;pointer-events:none;z-index:9999";
+    canvas.setAttribute("aria-hidden", "true");
     document.body.appendChild(canvas);
     canvasRef.current = canvas;
 

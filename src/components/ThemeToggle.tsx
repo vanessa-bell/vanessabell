@@ -22,7 +22,7 @@ export default function ThemeToggle() {
       onClick={toggle}
       role="switch"
       aria-checked={theme === "dark"}
-      aria-label="Dark mode"
+      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
       className="relative w-14 h-7 rounded-full bg-cream-dark dark:bg-dark-surface border border-warm-gray/20 dark:border-dark-warm-gray/20 transition-colors duration-200 cursor-pointer"
     >
       <span
@@ -30,7 +30,7 @@ export default function ThemeToggle() {
           theme === "dark" ? "translate-x-7" : "translate-x-0"
         }`}
       >
-        {theme === "dark" ? "☾" : "☀"}
+        <span aria-hidden="true">{theme === "dark" ? "☾" : "☀"}</span>
       </span>
     </button>
   );
