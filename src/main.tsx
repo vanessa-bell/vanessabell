@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
 import SpendLight from './pages/SpendLight.tsx'
+import MonsterWalk from './pages/MonsterWalk.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/spendlight" element={<SpendLight />} />
+        <Route path="/monster-walk" element={<MonsterWalk />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

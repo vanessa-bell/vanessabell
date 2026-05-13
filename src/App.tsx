@@ -37,14 +37,12 @@ export default function App() {
               </Link>
             </li>
             <li>
-              <a
-                href="/case-studies/monster_walk_case_study.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/monster-walk"
                 className="text-terracotta dark:text-dark-terracotta hover:text-terracotta-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6 cursor-pointer"
               >
                 Monster Walk: Turning Daily Walks into Daily Wins
-              </a>
+              </Link>
             </li>
           </ul>
         </section>
