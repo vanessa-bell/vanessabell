@@ -57,15 +57,12 @@ function Carousel({ slides }: { slides: { filename: string; caption: string }[] 
 
   return (
     <div className="my-10" role="region" aria-label="Journaling flow iterations">
-      <div className="relative rounded-lg bg-cream-dark dark:bg-dark-surface border border-warm-gray/20 dark:border-dark-warm-gray/20 overflow-hidden">
-        <div className="flex flex-col items-center justify-center py-20 px-6 text-center">
-          <p className="text-sm font-mono text-warm-gray dark:text-dark-warm-gray mb-1">
-            Drop image at:
-          </p>
-          <p className="text-sm font-mono text-terracotta dark:text-dark-terracotta">
-            public/{slide.filename}
-          </p>
-        </div>
+      <div className="relative rounded-lg overflow-hidden bg-cream-dark dark:bg-dark-surface">
+        <img
+          src={`/${slide.filename}`}
+          alt={slide.caption}
+          className="w-full max-h-96 object-contain block"
+        />
 
         <button
           onClick={prev}
@@ -434,10 +431,10 @@ export default function SpendLight() {
             ))}
           </div>
 
-          <ImagePlaceholder
+          {/* <ImagePlaceholder
             filename="spendlight/research-synthesis.png"
             caption="Research synthesis — themes and insights from four 45–60 min interviews"
-          />
+          /> */}
         </section>
 
         {/* IA & Screens */}
@@ -454,10 +451,10 @@ export default function SpendLight() {
             <span className="font-medium text-charcoal dark:text-dark-cream">Core Loop:</span>{" "}
             Add reflection → add emotional context → receive bonsai growth feedback → review patterns in Insights.
           </p>
-          <ImagePlaceholder
+          {/* <ImagePlaceholder
             filename="spendlight/screens-overview.png"
             caption="Primary screens — Home, Reflection Flow, History, Insights"
-          />
+          /> */}
         </section>
 
         {/* Testing */}
@@ -504,10 +501,10 @@ export default function SpendLight() {
           </div>
           <Carousel
             slides={[
-              { filename: "spendlight/iteration-1.png", caption: "V1 — Initial journaling flow concept" },
-              { filename: "spendlight/iteration-2.png", caption: "V2 — After first usability test: simplified entry and clearer prompts" },
-              { filename: "spendlight/iteration-3.png", caption: "V3 — Dedicated no-spend day flow and optional tags" },
-              { filename: "spendlight/iteration-4.png", caption: "V4 — Final: celebration pacing and insight cards in feed" },
+              { filename: "spendlight/sketch.png", caption: "Early concept sketch — mapping the core journaling loop" },
+              { filename: "spendlight/old-2-step-journal-flow.jpg", caption: "V1 — Original two-step journal flow before usability testing" },
+              { filename: "spendlight/final-reflection.jpg", caption: "Final reflection screen — simplified prompts, reduced cognitive load" },
+              { filename: "spendlight/bonsai-growth-celebration.jpg", caption: "Bonsai growth celebration — the emotional reward at the heart of the app" },
             ]}
           />
         </section>
