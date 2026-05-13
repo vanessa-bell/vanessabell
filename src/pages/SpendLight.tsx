@@ -216,27 +216,27 @@ export default function SpendLight() {
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
             My Approach
           </h2>
-          <div className=”space-y-4”>
-            <p className=”text-warm-gray dark:text-dark-warm-gray leading-relaxed”>
+          <div className="space-y-4">
+            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
               I opened the sprint by getting close to users quickly. A screener survey helped recruit the right
               participants, and four 1:1 interviews gave a direct window into real spending habits and emotional
               patterns. In parallel, I set up a landing page messaging test for SpendLight and built an early AI
               prototype in Figma Make to explore what a fast, frictionless reflection flow could feel like —
               before we had validated the core concept.
             </p>
-            <p className=”text-warm-gray dark:text-dark-warm-gray leading-relaxed”>
+            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
               With research in hand I shifted into shaping. I explored journal prompting approaches, settled on
               the information architecture, and defined the core habit loop. To pressure-test positioning I ran
-              an A/B test on two value propositions — “Find Your Calm” versus “Your Spending Is a Story” —
+              an A/B test on two value propositions — "Find Your Calm" versus "Your Spending Is a Story" —
               gathering signal on which framing resonated before committing to a direction.
             </p>
-            <p className=”text-warm-gray dark:text-dark-warm-gray leading-relaxed”>
+            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
               Week five was all about learning under real conditions. Two moderated usability tests with the AI
               prototype revealed friction around clarity, motivation, and the entry experience. I iterated
               between sessions rather than waiting until the end, so fixes could be tested while the insights
               were still fresh.
             </p>
-            <p className=”text-warm-gray dark:text-dark-warm-gray leading-relaxed”>
+            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
               The final week brought everything together. I synthesized research and testing into a validated
               product direction and translated it into a complete MVP specification: annotated designs, a
               component inventory, and an event schema ready for engineering handoff.
