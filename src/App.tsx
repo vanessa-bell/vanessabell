@@ -1,47 +1,14 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSparkles } from "./useSparkles";
-
-function getInitialTheme(): "light" | "dark" {
-  if (typeof window === "undefined") return "light";
-  const stored = localStorage.getItem("theme");
-  if (stored === "dark" || stored === "light") return stored;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-}
+import ThemeToggle from "./components/ThemeToggle";
 
 export default function App() {
-  const [theme, setTheme] = useState(getInitialTheme);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
   useSparkles();
-
-  const toggleTheme = () =>
-    setTheme((t) => (t === "dark" ? "light" : "dark"));
 
   return (
     <div className="min-h-screen bg-cream text-charcoal dark:bg-dark-bg dark:text-dark-cream transition-colors duration-300">
       <header className="flex justify-end p-6 sm:p-8">
-        <button
-          onClick={toggleTheme}
-          role="switch"
-          aria-checked={theme === "dark"}
-          aria-label="Dark mode"
-          className="relative w-14 h-7 rounded-full bg-cream-dark dark:bg-dark-surface border border-warm-gray/20 dark:border-dark-warm-gray/20 transition-colors duration-200 cursor-pointer"
-        >
-          <span
-            className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-terracotta dark:bg-dark-terracotta transition-transform duration-200 flex items-center justify-center text-cream dark:text-dark-bg text-xs ${
-              theme === "dark" ? "translate-x-7" : "translate-x-0"
-            }`}
-          >
-            {theme === "dark" ? "☾" : "☀"}
-          </span>
-        </button>
+        <ThemeToggle />
       </header>
 
       <main className="max-w-xl mx-auto px-6 sm:px-8 pt-8 sm:pt-12 pb-12">

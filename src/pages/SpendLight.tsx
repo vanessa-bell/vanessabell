@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ThemeToggle from "../components/ThemeToggle";
 
 function Quote({ text, attribution }: { text: string; attribution?: string }) {
   return (
@@ -95,12 +96,15 @@ export default function SpendLight() {
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
       <div className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">
 
-        <Link
-          to="/"
-          className="inline-block text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors mb-12"
-        >
-          ← Back
-        </Link>
+        <div className="flex justify-between items-center mb-12">
+          <Link
+            to="/"
+            className="text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
+          >
+            ← Back
+          </Link>
+          <ThemeToggle />
+        </div>
 
         {/* Hero */}
         <header className="mb-12">
@@ -129,7 +133,7 @@ export default function SpendLight() {
               { label: "Timeline", value: "6 weeks · 2025" },
               { label: "Scope", value: "Discovery through MVP specification" },
               { label: "Stack", value: "Figma, Figma Make" },
-              { label: "Impact", value: "Validated product strategy and a buildable MVP" },
+              { label: "Impact", value: "Validated product direction — concept desirable, MVP spec ready for engineering" },
             ].map(({ label, value }) => (
               <div key={label}>
                 <dt className="text-warm-gray dark:text-dark-warm-gray mb-1">{label}</dt>
@@ -212,63 +216,31 @@ export default function SpendLight() {
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
             My Approach
           </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-8">
-            I structured the sprint around rapid discovery and MVP definition, ensuring we were validating
-            while designing.
-          </p>
-          <div className="space-y-6">
-            {[
-              {
-                weeks: "Weeks 1–2",
-                label: "Understand & Explore",
-                items: [
-                  "Screener survey + four 1:1 interviews on spending habits",
-                  "SpendLight landing page messaging test setup",
-                  "First AI prototype (Figma Make) exploring a quick and easy reflection flow",
-                ],
-              },
-              {
-                weeks: "Weeks 3–4",
-                label: "Shape & Refine",
-                items: [
-                  "Explore journal prompting ideas",
-                  "IA + core habit loop definition",
-                  'A/B testing of “Find Your Calm” vs “Your Spending Is a Story” as value propositions',
-                ],
-              },
-              {
-                weeks: "Week 5",
-                label: "Test & Learn",
-                items: [
-                  "Two moderated usability tests with AI prototype",
-                  "Iterations on clarity, motivation, and journal entry flow",
-                ],
-              },
-              {
-                weeks: "Week 6",
-                label: "Synthesize & Deliver",
-                items: [
-                  "Synthesis into a validated product direction",
-                  "Full MVP spec, annotated design package, event schema for engineering",
-                ],
-              },
-            ].map(({ weeks, label, items }) => (
-              <div key={weeks} className="flex gap-6">
-                <div className="w-24 shrink-0 text-sm text-terracotta dark:text-dark-terracotta font-medium pt-0.5">
-                  {weeks}
-                </div>
-                <div>
-                  <p className="font-medium text-charcoal dark:text-dark-cream mb-2">{label}</p>
-                  <ul className="space-y-1">
-                    {items.map((item) => (
-                      <li key={item} className="text-sm text-warm-gray dark:text-dark-warm-gray">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
+          <div className=”space-y-4”>
+            <p className=”text-warm-gray dark:text-dark-warm-gray leading-relaxed”>
+              I opened the sprint by getting close to users quickly. A screener survey helped recruit the right
+              participants, and four 1:1 interviews gave a direct window into real spending habits and emotional
+              patterns. In parallel, I set up a landing page messaging test for SpendLight and built an early AI
+              prototype in Figma Make to explore what a fast, frictionless reflection flow could feel like —
+              before we had validated the core concept.
+            </p>
+            <p className=”text-warm-gray dark:text-dark-warm-gray leading-relaxed”>
+              With research in hand I shifted into shaping. I explored journal prompting approaches, settled on
+              the information architecture, and defined the core habit loop. To pressure-test positioning I ran
+              an A/B test on two value propositions — “Find Your Calm” versus “Your Spending Is a Story” —
+              gathering signal on which framing resonated before committing to a direction.
+            </p>
+            <p className=”text-warm-gray dark:text-dark-warm-gray leading-relaxed”>
+              Week five was all about learning under real conditions. Two moderated usability tests with the AI
+              prototype revealed friction around clarity, motivation, and the entry experience. I iterated
+              between sessions rather than waiting until the end, so fixes could be tested while the insights
+              were still fresh.
+            </p>
+            <p className=”text-warm-gray dark:text-dark-warm-gray leading-relaxed”>
+              The final week brought everything together. I synthesized research and testing into a validated
+              product direction and translated it into a complete MVP specification: annotated designs, a
+              component inventory, and an event schema ready for engineering handoff.
+            </p>
           </div>
         </section>
 
