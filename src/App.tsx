@@ -20,7 +20,7 @@ export default function App() {
         </p>
 
         <p className="mt-5 text-base leading-relaxed text-warm-gray dark:text-dark-warm-gray">
-          I design and build experiences that reduce complexity & friction. Healthcare case study publishing soon. In the meantime, here's my recent work.
+          I design and build experiences that reduce complexity & friction. Health tech case study publishing soon. In the meantime, here's my recent work.
         </p>
 
         <section className="mt-10" aria-label="Case studies">
