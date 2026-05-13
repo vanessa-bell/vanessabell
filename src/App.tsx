@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useSparkles } from "./useSparkles";
 
 function getInitialTheme(): "light" | "dark" {
@@ -48,7 +49,7 @@ export default function App() {
           Vanessa Bell
         </h1>
         <p className="mt-1 text-lg text-warm-gray dark:text-dark-warm-gray">
-          UX Designer & Frontend Engineer
+          Design Engineer
         </p>
 
         <p className="mt-5 text-base leading-relaxed text-warm-gray dark:text-dark-warm-gray">
@@ -61,14 +62,12 @@ export default function App() {
           </h2>
           <ul className="space-y-3">
             <li>
-              <a
-                href="/case-studies/spendlight_case_study_final.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/spendlight"
                 className="text-terracotta dark:text-dark-terracotta hover:text-terracotta-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6 cursor-pointer"
               >
                 SpendLight: Designing Mindful Money Habits
-              </a>
+              </Link>
             </li>
             <li>
               <a
