@@ -1,26 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function ImagePlaceholder({ filename, caption }: { filename: string; caption: string }) {
-  return (
-    <figure className="my-10">
-      <div className="w-full rounded-lg bg-cream-dark dark:bg-dark-surface border border-warm-gray/20 dark:border-dark-warm-gray/20 flex flex-col items-center justify-center py-16 px-6 text-center">
-        <p className="text-sm font-mono text-warm-gray dark:text-dark-warm-gray mb-1">
-          Drop image at:
-        </p>
-        <p className="text-sm font-mono text-terracotta dark:text-dark-terracotta">
-          public/{filename}
-        </p>
-      </div>
-      {caption && (
-        <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
-          {caption}
-        </figcaption>
-      )}
-    </figure>
-  );
-}
-
 function Quote({ text, attribution }: { text: string; attribution?: string }) {
   return (
     <figure className="my-3">
