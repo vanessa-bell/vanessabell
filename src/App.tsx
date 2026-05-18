@@ -81,7 +81,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-cream text-charcoal dark:bg-dark-bg dark:text-dark-cream transition-colors duration-300">
-      <header className="flex justify-end items-center gap-6 p-6 sm:p-8">
+      <header className="flex justify-between items-center p-6 sm:p-8">
         <a
           href="/vanessa-bell-design-engineer-resume-2026.pdf"
           download="Vanessa Bell Resume.pdf"
