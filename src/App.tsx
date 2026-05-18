@@ -20,7 +20,7 @@ export default function App() {
         </p>
 
         <p className="mt-5 text-base leading-relaxed text-warm-gray dark:text-dark-warm-gray">
-          I design and build experiences that reduce complexity & friction. Health tech case study publishing soon. In the meantime, here's my recent work.
+          I design and build experiences that reduce complexity & friction. Here's my recent work.
         </p>
 
         <section className="mt-10" aria-label="Case studies">
@@ -28,6 +28,14 @@ export default function App() {
             Selected Work
           </h2>
           <ul className="space-y-3">
+            <li>
+              <Link
+                to="/ai-research-workflow"
+                className="text-terracotta dark:text-dark-terracotta hover:text-terracotta-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6 cursor-pointer"
+              >
+                Letting AI Do the Work so Human Experts Can Focus on Review
+              </Link>
+            </li>
             <li>
               <Link
                 to="/spendlight"
@@ -53,13 +61,10 @@ export default function App() {
           </h2>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
             <a
-              href="https://mail.google.com/mail/?view=cm&to=vanessabelldesign@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:vanessabelldesign@gmail.com"
               className="text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6 cursor-pointer"
             >
               vanessabelldesign@gmail.com
-              <span className="sr-only"> (opens in new tab)</span>
             </a>
             <a
               href="https://www.linkedin.com/in/vanessajoanbell/"
