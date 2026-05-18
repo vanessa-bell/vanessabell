@@ -59,7 +59,7 @@ function CaseStudyCard({ cs, aspectClass, imgPadding = "p-4" }: { cs: CaseStudy;
         </div>
         {/* Overlay: solid band with blur so text is legible over any image */}
         <div
-          className="absolute bottom-0 left-0 right-0 px-5 py-4 bg-charcoal/85 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+          className="absolute bottom-0 left-0 right-0 px-5 py-4 bg-charcoal/85 backdrop-blur-sm opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
           aria-hidden="true"
         >
           <p className="text-xs text-cream/70 uppercase tracking-widest mb-1">{cs.company}</p>
@@ -85,7 +85,7 @@ export default function App() {
         <a
           href="/vanessa-bell-design-engineer-resume-2026.pdf"
           download="Vanessa Bell Resume.pdf"
-          className="text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
+          className="px-4 py-2 rounded-lg bg-terracotta dark:bg-dark-terracotta text-cream dark:text-dark-bg text-sm font-medium hover:opacity-90 transition-opacity"
         >
           Resume
         </a>
@@ -116,7 +116,7 @@ export default function App() {
                   className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                 />
                 <div
-                  className="absolute bottom-0 left-0 right-0 px-5 py-4 bg-charcoal/85 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  className="absolute bottom-0 left-0 right-0 px-5 py-4 bg-charcoal/85 backdrop-blur-sm opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   aria-hidden="true"
                 >
                   <p className="text-xs text-cream/70 uppercase tracking-widest mb-1">About</p>
