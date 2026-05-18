@@ -6,12 +6,16 @@ import App from './App.tsx'
 import SpendLight from './pages/SpendLight.tsx'
 import MonsterWalk from './pages/MonsterWalk.tsx'
 import HealthTech from './pages/HealthTech.tsx'
+import About from './pages/About.tsx'
+import Contact from './pages/Contact.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/spendlight" element={<SpendLight />} />
         <Route path="/monster-walk" element={<MonsterWalk />} />
         <Route path="/ai-research-workflow" element={<HealthTech />} />

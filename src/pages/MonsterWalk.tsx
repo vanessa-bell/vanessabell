@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
+import ContactForm from "../components/ContactForm";
 
 
 export default function MonsterWalk() {
@@ -343,6 +344,25 @@ export default function MonsterWalk() {
               Jenny Park, Coach
             </footer>
           </blockquote>
+        </section>
+
+        <section className="mb-16" aria-label="Contact">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
+            Get in Touch
+          </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
+            Open to staff roles and contract engagements.
+          </p>
+          <ContactForm />
+          <a
+            href="https://www.linkedin.com/in/vanessajoanbell/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-sm text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6"
+          >
+            LinkedIn
+            <span className="sr-only"> (opens in new tab)</span>
+          </a>
         </section>
 
         <Link
