@@ -78,7 +78,7 @@ function ContactForm() {
           Something went wrong. Try again or reach me on LinkedIn.
         </p>
       )}
-      <div className="flex items-center gap-5 pt-1">
+      <div className="pt-1">
         <button
           type="submit"
           disabled={status === "sending"}
@@ -86,15 +86,6 @@ function ContactForm() {
         >
           {status === "sending" ? "Sending..." : "Send"}
         </button>
-        <a
-          href="https://www.linkedin.com/in/vanessajoanbell/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6"
-        >
-          LinkedIn
-          <span className="sr-only"> (opens in new tab)</span>
-        </a>
       </div>
     </form>
   );
@@ -158,6 +149,15 @@ export default function App() {
             Get in Touch
           </h2>
           <ContactForm />
+          <a
+            href="https://www.linkedin.com/in/vanessajoanbell/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-sm text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6"
+          >
+            LinkedIn
+            <span className="sr-only"> (opens in new tab)</span>
+          </a>
         </section>
       </main>
 
