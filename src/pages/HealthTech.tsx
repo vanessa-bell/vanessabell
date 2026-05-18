@@ -109,12 +109,12 @@ export default function HealthTech() {
 
           <figure className="my-10">
             <img
-              src="/ai-research-workflow/Mobile%20hero%20diagram%20for%20public%20site.svg"
+              src="/ai-research-workflow/mobile-hero-diagram.svg"
               alt="A side-by-side comparison showing the redesigned researcher workflow. On the left, a long form labeled before with many fields and a Run LLM button at the bottom, captioned Specify every expected answer, then run AI. Time spent: 4.5 minutes. On the right, a compact card labeled after with four checkmarks and a Confirm Correct button, captioned AI proposes, researcher confirms or corrects. Time spent: under 30 seconds. Between them, an arrow containing the text 9x reduction."
               className="w-full rounded-lg sm:hidden"
             />
             <img
-              src="/ai-research-workflow/Hero%20diagram%20for%20public%20site.svg"
+              src="/ai-research-workflow/hero-diagram-public.svg"
               alt=""
               aria-hidden="true"
               className="w-full rounded-lg hidden sm:block"
@@ -124,7 +124,7 @@ export default function HealthTech() {
           <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 text-sm mt-8 mx-auto">
             {[
               { label: "Role", value: "Design Engineer" },
-              { label: "Industry", value: "Health tech, AI research platform" },
+              { label: "Company", value: "Early-stage health tech startup (NDA)" },
               { label: "Timeline", value: "March – May 2026" },
               { label: "Team", value: "Myself + software engineer + CEO" },
               { label: "Scope", value: "Research, design, and shipped Angular/TypeScript implementation with Claude Code" },
