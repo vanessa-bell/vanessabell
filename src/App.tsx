@@ -29,7 +29,7 @@ const caseStudies: CaseStudy[] = [
     tags: "Fintech · UX Research & Design",
     company: "SpendLight",
     impact: "Validated product direction in 6 weeks",
-    title: "SpendLight: Designing Mindful Money Habits",
+    title: "Designing Mindful Money Habits",
   },
   {
     to: "/monster-walk",
@@ -38,7 +38,7 @@ const caseStudies: CaseStudy[] = [
     tags: "Gaming · UX Research Lead",
     company: "Talofa Games",
     impact: "100% participant clarity in testing",
-    title: "Monster Walk: Turning Daily Walks into Daily Wins",
+    title: "Turning Daily Walks into Daily Wins",
   },
 ];
 
