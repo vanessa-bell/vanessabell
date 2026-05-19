@@ -95,7 +95,7 @@ export default function About() {
             I'm a Design Engineer based in San Francisco, interested in working at the intersection of healthcare, AI, and human-centered research.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I came to design from software engineering. After six years building production systems at startups like AllStripes (a rare disease research platform) and Thistle, I transitioned to UX design through a sabbatical I took after losing my mom in 2023. The years I spent helping my parents navigate serious illness made me want to build for the people most underserved by the tools they have to use.
+            I came to design from software engineering. After six years building production systems at startups like AllStripes (a rare disease research platform) and Thistle, I transitioned to UX design during a sabbatical I took in 2023. The years I spent helping my parents navigate serious illness made me want to build for the people most underserved by the tools they have to use.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             I work best embedded in small teams where I can run user research, design, and ship production code in the same week. Right now I'm open to staff roles and contract engagements.
