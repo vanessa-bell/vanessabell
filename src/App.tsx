@@ -186,9 +186,11 @@ export default function App() {
           </a>
         </section>
 
-        <section className="mt-16" aria-label="Contact">
+        <section className="mt-16 text-center" aria-label="Contact">
           <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            Open to staff roles and contract engagements.{" "}
+            Open to contract engagements or the right full-time role.{" "}
+          </p>
+          <p className="text-sm">
             <Link
               to="/contact"
               className="text-terracotta dark:text-dark-terracotta underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
