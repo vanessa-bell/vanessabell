@@ -184,7 +184,7 @@ export default function HealthTech() {
               of times. She excels at empathy, creativity, and the ability to ship.
             </p>
             <footer className="text-sm text-charcoal dark:text-dark-cream font-medium">
-              Germán Scipioni, CEO
+              CEO
             </footer>
           </blockquote>
         </section>
