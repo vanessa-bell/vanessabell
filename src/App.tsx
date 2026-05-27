@@ -133,6 +133,35 @@ export default function App() {
           </div>
         </section>
 
+        <section className="mt-14" aria-label="Side projects">
+          <p className="text-xs text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-5">
+            Side projects
+          </p>
+          <a
+            href="https://flamencura.live"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex gap-5 items-start"
+          >
+            <div className="w-24 sm:w-28 shrink-0 rounded-lg overflow-hidden aspect-[3/4]">
+              <img
+                src="/flamencura-live-screenshot.png"
+                alt="Flamencura.live: a filterable directory of SF Bay Area flamenco shows and workshops, listing upcoming events by date with venue, time, and type"
+                className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+              />
+            </div>
+            <div className="pt-1">
+              <p className="text-sm font-medium text-charcoal dark:text-dark-cream group-hover:text-terracotta dark:group-hover:text-dark-terracotta transition-colors duration-150 leading-snug mb-2">
+                Flamencura.live
+                <span className="sr-only"> (opens in new tab)</span>
+              </p>
+              <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+                A directory of SF Bay Area flamenco shows and workshops. Built in 6 hours one Friday because I wanted it to exist. Now used by the local flamenco community.
+              </p>
+            </div>
+          </a>
+        </section>
+
         <section className="mt-16" aria-label="Contact">
           <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             Open to staff roles and contract engagements.{" "}
