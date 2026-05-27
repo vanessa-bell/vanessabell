@@ -26,6 +26,66 @@ export default function Contact() {
           </p>
         </header>
 
+        <section className="mb-12" aria-label="How I work">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-3">
+            How I work
+          </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-8">
+            I take three kinds of engagements.
+          </p>
+
+          <div className="space-y-6 mb-10">
+            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+              <strong className="text-charcoal dark:text-dark-cream font-medium">Embedded design and build.</strong>{" "}
+              8 to 12 weeks, typically 20 to 30 hours per week. I run research, design, and ship production code alongside your engineering team. Best fit: you have a tool that needs structural rework and you do not have a full-time designer. Example: my{" "}
+              <Link
+                to="/ai-research-workflow"
+                className="text-terracotta dark:text-dark-terracotta underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
+              >
+                health tech engagement
+              </Link>.
+            </p>
+            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+              <strong className="text-charcoal dark:text-dark-cream font-medium">Heuristic audit and design roadmap.</strong>{" "}
+              2 to 4 weeks, project-based. I assess your current product against UX heuristics, surface the highest-leverage opportunities, and deliver a prioritized roadmap. Best fit: you know something is off but want an outside read before committing to a longer engagement.
+            </p>
+            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+              <strong className="text-charcoal dark:text-dark-cream font-medium">Focused design sprint.</strong>{" "}
+              1 to 2 weeks, project-based. We pick one workflow or feature and I move it from problem definition to design through working prototype. Best fit: you have a specific decision to make and want fast, well-researched answers.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            <div>
+              <p className="text-xs text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+                What I need from your team
+              </p>
+              <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+                One product contact who can answer questions and connect me to users for research. If relevant, an engineering contact who I can work closely with. Weekly check-in with whoever owns the product decision.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+                What I do not do
+              </p>
+              <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+                Pure visual design or brand work. Work that does not include user research.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+                Pricing
+              </p>
+              <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+                Rates depend on scope and engagement length. Reach out below or email me directly and I will send a proposal within a few days of our first call.
+              </p>
+              <p className="mt-2 text-sm text-charcoal dark:text-dark-cream font-medium">
+                Currently booking July 2026 starts.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <ContactForm />
 
         <a
