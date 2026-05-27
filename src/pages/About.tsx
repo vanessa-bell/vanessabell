@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
-import ContactForm from "../components/ContactForm";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 const photos = [
@@ -105,7 +104,7 @@ export default function About() {
             I came to design from software engineering. After six years building production systems at startups like AllStripes (a rare disease research platform) and Thistle, I transitioned to UX design during a sabbatical I took in 2023. The years I spent helping my parents navigate serious illness made me want to build for the people most underserved by the tools they have to use.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I work best embedded in small teams where I can run user research, design, and ship production code in the same week. Right now I'm open to staff roles and contract engagements.
+            I work best embedded in small teams where I can run user research, design, and ship production code in the same week. Currently available for contract work. Open to the right full-time role.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             I also teach hatha yoga and perform flamenco dance.
@@ -138,30 +137,38 @@ export default function About() {
           </p>
         </div>
 
-        <section className="mb-12" aria-label="Resume and contact">
-          <a
-            href="/vanessa-bell-design-engineer-resume-2026.pdf"
-            download="Vanessa Bell Resume.pdf"
-            className="inline-block mb-10 px-5 py-2.5 rounded-lg bg-terracotta dark:bg-dark-terracotta text-cream dark:text-dark-bg text-sm font-medium hover:opacity-90 transition-opacity"
-          >
-            Download resume
-          </a>
+        <section className="mb-12" aria-label="Contact">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
             Get in Touch
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
-            Open to staff roles and contract engagements.
+            Available for contract engagements. Open to the right full-time role.
           </p>
-          <ContactForm />
-          <a
-            href="https://www.linkedin.com/in/vanessajoanbell/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-4 text-sm text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6"
+          <Link
+            to="/contact"
+            className="inline-block px-5 py-2.5 rounded-lg bg-terracotta dark:bg-dark-terracotta text-cream dark:text-dark-bg text-sm font-medium hover:opacity-90 transition-opacity"
           >
-            LinkedIn
-            <span className="sr-only"> (opens in new tab)</span>
-          </a>
+            Work with me
+          </Link>
+          <div className="mt-4 flex gap-4 items-center">
+            <a
+              href="https://www.linkedin.com/in/vanessajoanbell/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6"
+            >
+              LinkedIn
+              <span className="sr-only"> (opens in new tab)</span>
+            </a>
+            <span className="text-warm-gray/30 dark:text-dark-warm-gray/30" aria-hidden="true">·</span>
+            <a
+              href="/vanessa-bell-design-engineer-resume-2026.pdf"
+              download="Vanessa Bell Resume.pdf"
+              className="text-sm text-terracotta dark:text-dark-terracotta underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
+            >
+              Download resume
+            </a>
+          </div>
         </section>
 
         <Link

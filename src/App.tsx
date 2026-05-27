@@ -112,14 +112,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-cream text-charcoal dark:bg-dark-bg dark:text-dark-cream transition-colors duration-300">
-      <header className="flex justify-between items-center p-6 sm:p-8">
-        <a
-          href="/vanessa-bell-design-engineer-resume-2026.pdf"
-          download="Vanessa Bell Resume.pdf"
-          className="px-4 py-2 rounded-lg bg-terracotta dark:bg-dark-terracotta text-cream dark:text-dark-bg text-sm font-medium hover:opacity-90 transition-opacity"
-        >
-          Resume
-        </a>
+      <header className="flex justify-end items-center p-6 sm:p-8">
         <ThemeToggle />
       </header>
 

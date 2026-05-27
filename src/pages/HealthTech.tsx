@@ -85,9 +85,7 @@ export default function HealthTech() {
   usePageMeta({
     title: "Letting AI Do the Work so Human Experts Can Focus on Review | Vanessa Bell",
     description: "A researcher-facing workflow redesign for an AI health tech platform. Flipped the interaction model from manual-first to AI-proposes, human-confirms — achieving a 9x reduction in time and steps.",
-    // Note: SVG images are not supported by all OG crawlers. Replace with a PNG
-    // export of the before/after diagram for reliable social sharing.
-    ogImage: "https://vanessabell.design/ai-research-workflow/mobile-hero-diagram.svg",
+    ogImage: "https://vanessabell.design/ai-research-workflow/hero-diagram-og.png",
     path: "/ai-research-workflow",
   });
 
