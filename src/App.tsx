@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSparkles } from "./useSparkles";
 import ThemeToggle from "./components/ThemeToggle";
+import { usePageMeta } from "./hooks/usePageMeta";
 
 interface CaseStudy {
   to: string;
@@ -78,6 +80,35 @@ function CaseStudyCard({ cs, aspectClass, imgPadding = "p-4" }: { cs: CaseStudy;
 
 export default function App() {
   useSparkles();
+  usePageMeta({
+    title: "Vanessa Bell — Design Engineer",
+    description: "Design engineer based in San Francisco. I design and build healthcare and AI experiences that reduce complexity and friction.",
+    path: "/",
+  });
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "person-schema";
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Vanessa Bell",
+      jobTitle: "Design Engineer",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "San Francisco",
+        addressRegion: "CA",
+        addressCountry: "US",
+      },
+      url: "https://vanessabell.design",
+      sameAs: ["https://www.linkedin.com/in/vanessajoanbell/"],
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.getElementById("person-schema")?.remove();
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-cream text-charcoal dark:bg-dark-bg dark:text-dark-cream transition-colors duration-300">
@@ -112,7 +143,7 @@ export default function App() {
               <div className="relative overflow-hidden rounded-xl aspect-[3/4]">
                 <img
                   src="/about/flamenco-3.jpg"
-                  alt="Vanessa Bell performing flamenco"
+                  alt="Vanessa Bell in a red and gold ruffled flamenco dress, arms raised in an expressive pose against a black background"
                   className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                 />
                 <div

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const FORMSPREE_URL = "https://formspree.io/f/mykvzyqv";
 
@@ -81,6 +82,15 @@ function RequestAccessForm() {
 }
 
 export default function HealthTech() {
+  usePageMeta({
+    title: "Letting AI Do the Work so Human Experts Can Focus on Review | Vanessa Bell",
+    description: "A researcher-facing workflow redesign for an AI health tech platform. Flipped the interaction model from manual-first to AI-proposes, human-confirms — achieving a 9x reduction in time and steps.",
+    // Note: SVG images are not supported by all OG crawlers. Replace with a PNG
+    // export of the before/after diagram for reliable social sharing.
+    ogImage: "https://vanessabell.design/ai-research-workflow/mobile-hero-diagram.svg",
+    path: "/ai-research-workflow",
+  });
+
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
       <main className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">

@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
 import ContactForm from "../components/ContactForm";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const photos = [
-  { src: "/about/flamenco-1.jpg", alt: "Vanessa Bell performing flamenco" },
-  { src: "/about/flamenco-2.jpg", alt: "Vanessa Bell performing flamenco" },
-  { src: "/about/flamenco-3.jpg", alt: "Vanessa Bell performing flamenco" },
+  { src: "/about/flamenco-1.jpg", alt: "Vanessa Bell in a red sleeveless dress with black fringe necklace performing flamenco, center stage with other dancers softly out of focus behind her" },
+  { src: "/about/flamenco-2.jpg", alt: "Vanessa Bell mid-spin in a red and orange ruffled flamenco dress, arms extended wide, performing on stage with musicians and dancers seated behind her" },
+  { src: "/about/flamenco-3.jpg", alt: "Vanessa Bell in a red and gold ruffled flamenco dress, arms raised in an expressive pose, photographed against a black background" },
 ];
 
 function PhotoCarousel() {
@@ -62,6 +63,12 @@ function PhotoCarousel() {
 }
 
 export default function About() {
+  usePageMeta({
+    title: "About | Vanessa Bell",
+    description: "Design engineer based in San Francisco, working at the intersection of healthcare, AI, and human-centered research. Former software engineer. Flamenco dancer. Yoga teacher.",
+    path: "/about",
+  });
+
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
       <main className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">

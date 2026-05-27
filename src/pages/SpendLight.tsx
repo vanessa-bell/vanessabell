@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
 import ContactForm from "../components/ContactForm";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function Quote({ text, attribution }: { text: string; attribution?: string }) {
   return (
@@ -93,6 +94,13 @@ function Carousel({ slides }: { slides: { filename: string; caption: string }[] 
 }
 
 export default function SpendLight() {
+  usePageMeta({
+    title: "Designing Mindful Money Habits | Vanessa Bell",
+    description: "A six-week lean UX sprint to validate SpendLight: a spending journal that builds mindful money habits through emotional reflection rather than budget control.",
+    ogImage: "https://vanessabell.design/spendlight/hero.png",
+    path: "/spendlight",
+  });
+
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
       <main className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">

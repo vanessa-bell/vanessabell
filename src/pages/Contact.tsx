@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
 import ContactForm from "../components/ContactForm";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 export default function Contact() {
+  usePageMeta({
+    title: "Get in Touch | Vanessa Bell",
+    description: "Available for contract engagements: embedded design and build, heuristic audits, and focused design sprints. Currently booking July 2026 starts.",
+    path: "/contact",
+  });
+
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
       <main className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">

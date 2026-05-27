@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
 import ContactForm from "../components/ContactForm";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 
 export default function MonsterWalk() {
+  usePageMeta({
+    title: "Turning Daily Walks into Daily Wins | Vanessa Bell",
+    description: "UX research and redesign of Monster Walk's Welcome Back flow: turning a flat, confusing screen into a motivating streak milestone moment. 100% participant clarity in testing.",
+    ogImage: "https://vanessabell.design/monster-walk/monster-walk-hero.gif",
+    path: "/monster-walk",
+  });
+
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
       <main className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">
@@ -33,7 +41,7 @@ export default function MonsterWalk() {
           <figure className="my-10">
             <img
               src="/monster-walk/monster-walk-hero.gif"
-              alt="Monster Walk: Welcome Back screen redesign"
+              alt="Animated gif of the Monster Walk app showing the redesigned Welcome Back flow: personalized monster greeting, animated stamina meter, streak counter, and milestone celebration"
               className="max-h-96 w-auto mx-auto block rounded-lg"
             />
           </figure>
@@ -80,7 +88,7 @@ export default function MonsterWalk() {
           <figure className="my-10">
             <img
               src="/monster-walk/old-welcome-back-flow.png"
-              alt="The original Welcome Back screen"
+              alt="The original Monster Walk Welcome Back screen: a static panel with minimal visual feedback, no celebration, and no streak or progress indicators"
               className="max-w-[220px] mx-auto block rounded-lg"
             />
             <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
@@ -267,7 +275,7 @@ export default function MonsterWalk() {
             <figure>
               <img
                 src="/monster-walk/monster-greeting.png"
-                alt="Redesigned Welcome Back flow with monster greeting"
+                alt="Monster Walk redesigned Welcome Back screen showing a personalized monster greeting with stamina meter and daily streak counter"
                 className="w-full rounded-lg"
               />
               <figcaption className="mt-2 text-xs text-warm-gray dark:text-dark-warm-gray text-center italic">
@@ -277,7 +285,7 @@ export default function MonsterWalk() {
             <figure>
               <img
                 src="/monster-walk/streak-milestone.png"
-                alt="Streak milestone screen"
+                alt="Monster Walk redesigned seven-day streak milestone screen with a celebratory moment and a teaser for the next upcoming reward"
                 className="w-full rounded-lg"
               />
               <figcaption className="mt-2 text-xs text-warm-gray dark:text-dark-warm-gray text-center italic">
