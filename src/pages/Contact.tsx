@@ -22,7 +22,7 @@ export default function Contact() {
             Get in Touch
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            Open to staff roles and contract engagements. I'll get back to you within a day or two.
+            Available for contract engagements. Open to the right full-time role.
           </p>
         </header>
 
@@ -97,6 +97,25 @@ export default function Contact() {
           LinkedIn
           <span className="sr-only"> (opens in new tab)</span>
         </a>
+
+        <div className="mt-4">
+          <a
+            href="/vanessa-bell-design-engineer-resume-2026.pdf"
+            download="Vanessa Bell Resume.pdf"
+            className="text-sm text-terracotta dark:text-dark-terracotta underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
+          >
+            Download resume
+          </a>
+        </div>
+
+        <div className="mt-10">
+          <Link
+            to="/"
+            className="text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
+          >
+            <span aria-hidden="true">←</span> Back to work
+          </Link>
+        </div>
 
       </main>
     </div>
