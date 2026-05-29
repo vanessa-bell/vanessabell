@@ -131,7 +131,7 @@ export default function HealthTech() {
 
           <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 text-sm mt-8 mx-auto">
             {[
-              { label: "Role", value: "Design Engineer" },
+              { label: "Role", value: "Product Designer" },
               { label: "Company", value: "Early-stage health tech startup (NDA)" },
               { label: "Timeline", value: "March – May 2026" },
               { label: "Team", value: "Myself + software engineer + CEO" },

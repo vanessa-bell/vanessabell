@@ -19,7 +19,7 @@ const caseStudies: CaseStudy[] = [
     to: "/ai-research-workflow",
     image: "/ai-research-workflow/mobile-hero-diagram.svg",
     alt: "Before-and-after: a long manual form reduced to a compact AI-proposed card, with a 9x reduction in time",
-    tags: "Health tech · Design Engineer",
+    tags: "Health tech · Product Designer",
     company: "Early-stage health tech startup",
     impact: "9x reduction in time and steps",
     title: "Letting AI Do the Work so Human Experts Can Focus on Review",
