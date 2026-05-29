@@ -81,8 +81,8 @@ function CaseStudyCard({ cs, aspectClass, imgPadding = "p-4" }: { cs: CaseStudy;
 export default function App() {
   useSparkles();
   usePageMeta({
-    title: "Vanessa Bell — Design Engineer",
-    description: "Design engineer based in San Francisco. I design and build healthcare and AI experiences that reduce complexity and friction.",
+    title: "Vanessa Bell — UX Designer",
+    description: "UX Designer based in San Francisco. I design and build healthcare and AI experiences that reduce complexity and friction.",
     path: "/",
   });
 
@@ -94,7 +94,7 @@ export default function App() {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Vanessa Bell",
-      jobTitle: "Design Engineer",
+      jobTitle: "UX Designer",
       address: {
         "@type": "PostalAddress",
         addressLocality: "San Francisco",
@@ -121,7 +121,7 @@ export default function App() {
           Vanessa Bell
         </h1>
         <p className="mt-1 text-lg text-warm-gray dark:text-dark-warm-gray">
-          Design Engineer
+          UX Designer
         </p>
         <p className="mt-5 text-base leading-relaxed text-warm-gray dark:text-dark-warm-gray">
           I design and build experiences that reduce complexity and friction.
@@ -144,7 +144,7 @@ export default function App() {
                   aria-hidden="true"
                 >
                   <p className="text-xs text-cream/70 uppercase tracking-widest mb-1">About</p>
-                  <p className="text-sm text-cream font-medium leading-snug">Design engineer. Flamenco dancer. Yoga teacher.</p>
+                  <p className="text-sm text-cream font-medium leading-snug">UX Designer. Flamenco dancer. Yoga teacher.</p>
                 </div>
               </div>
               <div className="mt-3">

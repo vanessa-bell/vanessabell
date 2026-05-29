@@ -64,7 +64,7 @@ function PhotoCarousel() {
 export default function About() {
   usePageMeta({
     title: "About | Vanessa Bell",
-    description: "Design engineer based in San Francisco, working at the intersection of healthcare, AI, and human-centered research. Former software engineer. Flamenco dancer. Yoga teacher.",
+    description: "UX Designer based in San Francisco, working at the intersection of healthcare, AI, and human-centered research. Former software engineer. Flamenco dancer. Yoga teacher.",
     path: "/about",
   });
 
@@ -90,7 +90,7 @@ export default function About() {
             Vanessa Bell
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray">
-            Design Engineer
+            UX Designer
           </p>
         </header>
 
@@ -98,7 +98,7 @@ export default function About() {
 
         <div className="space-y-5 mb-12">
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I'm a Design Engineer based in San Francisco, interested in working at the intersection of healthcare, AI, and human-centered research.
+            I'm a UX Designer based in San Francisco, interested in working at the intersection of healthcare, AI, and human-centered research.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             I came to design from software engineering. After six years building production systems at startups like AllStripes (a rare disease research platform) and Thistle, I transitioned to UX design during a sabbatical I took in 2023. The years I spent helping my parents navigate serious illness made me want to build for the people most underserved by the tools they have to use.
