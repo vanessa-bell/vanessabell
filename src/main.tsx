@@ -6,6 +6,7 @@ import App from './App.tsx'
 import SpendLight from './pages/SpendLight.tsx'
 import MonsterWalk from './pages/MonsterWalk.tsx'
 import HealthTech from './pages/HealthTech.tsx'
+import AllStripes from './pages/AllStripes.tsx'
 import About from './pages/About.tsx'
 import Contact from './pages/Contact.tsx'
 
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/spendlight" element={<SpendLight />} />
         <Route path="/monster-walk" element={<MonsterWalk />} />
         <Route path="/ai-research-workflow" element={<HealthTech />} />
+        <Route path="/allstripes" element={<AllStripes />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

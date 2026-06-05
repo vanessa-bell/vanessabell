@@ -521,7 +521,7 @@ export default function SpendLight() {
             Get in Touch
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
-            Open to staff roles and contract engagements.
+            Open to contract engagements.
           </p>
           <ContactForm />
           <a

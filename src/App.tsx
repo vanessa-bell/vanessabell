@@ -25,6 +25,15 @@ const caseStudies: CaseStudy[] = [
     title: "Letting AI Do the Work so Human Experts Can Focus on Review",
   },
   {
+    to: "/allstripes",
+    image: "/allstripes/allstripes-cover.jpg",
+    alt: "AllStripes medical records workflow redesign",
+    tags: "Health tech · UX & Internal Tooling",
+    company: "AllStripes",
+    impact: "95% reduction in processing time",
+    title: "Helping Patients Get Their Records Faster",
+  },
+  {
     to: "/spendlight",
     image: "/spendlight/hero.png",
     alt: "SpendLight app: home screen with a bonsai plant and the reflective journaling flow",
@@ -133,16 +142,8 @@ export default function App() {
         <section className="mt-12" aria-label="Case studies">
           <div className="grid sm:grid-cols-2 gap-4 items-start">
             <CaseStudyCard cs={caseStudies[0]} aspectClass="aspect-[3/4]" imgPadding="p-5" />
-            <div className="group block">
-              <div className="relative overflow-hidden rounded-xl bg-cream-dark dark:bg-dark-surface aspect-[3/4] flex items-center justify-center">
-                <p className="text-sm text-warm-gray dark:text-dark-warm-gray text-center px-6">Coming soon — AllStripes case study</p>
-              </div>
-              <div className="mt-3">
-                <p className="text-xs text-warm-gray dark:text-dark-warm-gray mb-1">Health tech · UX Research & Design</p>
-                <p className="text-sm font-medium text-charcoal dark:text-dark-cream leading-snug">AllStripes</p>
-              </div>
-            </div>
             <CaseStudyCard cs={caseStudies[1]} aspectClass="aspect-[3/4]" />
+            <CaseStudyCard cs={caseStudies[2]} aspectClass="aspect-[3/4]" />
             <Link to="/about" className="group block">
               <div className="relative overflow-hidden rounded-xl aspect-[3/4]">
                 <img
