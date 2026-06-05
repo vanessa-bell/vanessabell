@@ -29,7 +29,7 @@ export default function Contact() {
             Get in Touch
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            Available for contract engagements. Open to the right full-time role.
+            I work with health tech startups whose clinical users are frustrated with their tools. Currently booking July 2026 starts.
           </p>
         </header>
 
