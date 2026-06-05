@@ -121,17 +121,28 @@ export default function App() {
           Vanessa Bell
         </h1>
         <p className="mt-1 text-lg text-warm-gray dark:text-dark-warm-gray">
-          UX Designer
+          Clinical Workflow Researcher & Designer
         </p>
-        <p className="mt-5 text-base leading-relaxed text-warm-gray dark:text-dark-warm-gray">
-          I design and build experiences that reduce complexity and friction.
-        </p>
+        <div className="mt-5 text-base leading-relaxed text-warm-gray dark:text-dark-warm-gray space-y-4">
+          <p>I help health tech teams fix the workflows that are slowing their clinicians down.</p>
+          <p>I research directly with clinicians, design the solution, and ship it in production code alongside your engineering team — not just a Figma handoff.</p>
+          <p>Recent result: a physician-researcher went from calling a workflow "kind of a burden" to calling it "fun" after my changes shipped.</p>
+          <p>Currently booking July 2026 starts.</p>
+        </div>
 
         <section className="mt-12" aria-label="Case studies">
           <div className="grid sm:grid-cols-2 gap-4 items-start">
             <CaseStudyCard cs={caseStudies[0]} aspectClass="aspect-[3/4]" imgPadding="p-5" />
+            <div className="group block">
+              <div className="relative overflow-hidden rounded-xl bg-cream-dark dark:bg-dark-surface aspect-[3/4] flex items-center justify-center">
+                <p className="text-sm text-warm-gray dark:text-dark-warm-gray text-center px-6">Coming soon — AllStripes case study</p>
+              </div>
+              <div className="mt-3">
+                <p className="text-xs text-warm-gray dark:text-dark-warm-gray mb-1">Health tech · UX Research & Design</p>
+                <p className="text-sm font-medium text-charcoal dark:text-dark-cream leading-snug">AllStripes</p>
+              </div>
+            </div>
             <CaseStudyCard cs={caseStudies[1]} aspectClass="aspect-[3/4]" />
-            <CaseStudyCard cs={caseStudies[2]} aspectClass="aspect-[3/4]" />
             <Link to="/about" className="group block">
               <div className="relative overflow-hidden rounded-xl aspect-[3/4]">
                 <img
@@ -188,7 +199,7 @@ export default function App() {
 
         <section className="mt-16 text-center" aria-label="Contact">
           <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            Open to contract engagements or the right full-time role.{" "}
+            I work with health tech startups whose clinical users are frustrated with their tools. If that sounds familiar, I'd love to hear what you're building. Currently booking July 2026 starts.{" "}
           </p>
           <p className="text-sm">
             <Link
