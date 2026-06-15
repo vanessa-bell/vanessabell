@@ -100,19 +100,19 @@ export default function AllStripes() {
             Result
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            A 100-page file that previously took ~20 minutes of manual work now takes under 1 minute — a 95%+ reduction.
+            A 100-page file that previously took ~20 minutes of manual work took under 1 minute after my changes shipped — a 95%+ reduction.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
             Patients got faster access to their records. The ops team recovered hours per week. And sensitive patient data was no longer being downloaded to local machines.
           </p>
-          <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6">
+          {/* <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic mb-4">
               "Auto-chunking... valuable feature automating away toilsome Ops work. Delivered quickly, minimal issues or need to iterate, overcame organizational resistance to automating records gathering & processing, and finally demoed results to the company. End to end drivership."
             </p>
             <footer className="text-sm text-charcoal dark:text-dark-cream font-medium">
               Engineering Manager
             </footer>
-          </blockquote>
+          </blockquote> */}
         </section>
 
         {/* What This Project Taught Me */}
