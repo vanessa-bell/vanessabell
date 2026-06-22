@@ -105,17 +105,16 @@ export default function AllStripes() {
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
             Patients got faster access to their records. The ops team recovered hours per week. And sensitive patient data was no longer being downloaded to local machines.
           </p>
-          {/* <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6">
+          <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic mb-4">
-              "Auto-chunking... valuable feature automating away toilsome Ops work. Delivered quickly, minimal issues or need to iterate, overcame organizational resistance to automating records gathering & processing, and finally demoed results to the company. End to end drivership."
+              "Vanessa's technical and design work speaks for itself in the outcome. I was Senior Director of Engineering at the time; this was her project to drive. The hardest parts she navigated were the tradeoffs, the organizational friction, and earning trust for a change in how patient data was handled. Design sense, technical chops and product judgment rarely live in one person, and this project shows what happens when they do."
             </p>
             <footer className="text-sm text-charcoal dark:text-dark-cream font-medium">
-              Engineering Manager
+              Jon Oropeza
             </footer>
-          </blockquote> */}
+          </blockquote>
         </section>
 
-        {/* What This Project Taught Me */}
         <section className="mb-16">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
             What This Project Taught Me
