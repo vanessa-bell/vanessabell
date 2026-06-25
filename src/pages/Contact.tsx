@@ -107,7 +107,7 @@ export default function Contact() {
 
         <div className="mt-4">
           <a
-            href="/vanessa-bell-design-engineer-resume-2026.pdf"
+            href="/vanessa-bell-designer-resume-2026.pdf"
             download="Vanessa Bell Resume.pdf"
             className="text-sm text-terracotta dark:text-dark-terracotta underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
           >
