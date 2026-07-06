@@ -136,7 +136,6 @@ export default function App() {
           <p>I help health tech teams fix the workflows that are slowing their clinicians down.</p>
           <p>I research directly with clinicians, design the solution, and ship it in production code alongside your engineering team — not just a Figma handoff.</p>
           <p>Recent result: a physician-researcher went from calling a workflow "kind of a burden" to calling it "fun" after my changes shipped.</p>
-          <p>Currently booking July 2026 starts.</p>
         </div>
 
         <section className="mt-12" aria-label="Case studies">
@@ -200,7 +199,7 @@ export default function App() {
 
         <section className="mt-16 text-center" aria-label="Contact">
           <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I work with health tech startups whose clinical users are frustrated with their tools. If that sounds familiar, I'd love to hear what you're building. Currently booking July 2026 starts.{" "}
+            I work with health tech startups whose clinical users are frustrated with their tools. If that sounds familiar, I'd love to hear what you're building.{" "}
           </p>
           <p className="text-sm">
             <Link

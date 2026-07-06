@@ -104,7 +104,7 @@ export default function About() {
             I came to design from software engineering. After six years building production systems at startups like AllStripes (a rare disease research platform) and Thistle, I transitioned to UX design during a sabbatical I took in 2023. The years I spent helping my parents navigate serious illness made me want to build for the people most underserved by the tools they have to use.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-          I work with health tech startups whose clinical users are frustrated with their tools. If that sounds familiar, I'd love to hear what you're building. Currently booking July 2026 starts.
+          I work with health tech startups whose clinical users are frustrated with their tools. If that sounds familiar, I'd love to hear what you're building.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             I also teach hatha yoga and perform flamenco dance.

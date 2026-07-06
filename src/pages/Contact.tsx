@@ -6,7 +6,7 @@ import { usePageMeta } from "../hooks/usePageMeta";
 export default function Contact() {
   usePageMeta({
     title: "Get in Touch | Vanessa Bell",
-    description: "Available for contract engagements: embedded design and build, heuristic audits, and focused design sprints. Currently booking July 2026 starts.",
+    description: "Available for embedded design and build, heuristic audits, and focused design sprints.",
     path: "/contact",
   });
 
@@ -29,7 +29,7 @@ export default function Contact() {
             Get in Touch
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I work with health tech startups whose clinical users are frustrated with their tools. Currently booking July 2026 starts.
+            I work with health tech startups whose clinical users are frustrated with their tools.
           </p>
         </header>
 
@@ -85,9 +85,6 @@ export default function Contact() {
               </p>
               <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
                 Rates depend on scope and engagement length. Reach out below or email me directly and I will send a proposal within a few days of our first call.
-              </p>
-              <p className="mt-2 text-sm text-charcoal dark:text-dark-cream font-medium">
-                Currently booking July 2026 starts.
               </p>
             </div>
           </div>
