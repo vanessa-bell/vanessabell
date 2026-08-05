@@ -98,7 +98,7 @@ export default function About() {
 
         <div className="space-y-5 mb-12">
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I'm a UX researcher and designer based in San Francisco who specializes in clinical workflows — the tools and processes that sit between clinicians and the patients they're trying to help.
+            I'm a UX researcher and designer based in San Francisco who specializes in clinical workflows: the tools and processes that sit between clinicians and the patients they're trying to help.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             I came to design from software engineering. After six years building production systems at startups like AllStripes (a rare disease research platform) and Thistle, I transitioned to UX design during a sabbatical I took in 2023. The years I spent helping my parents navigate serious illness made me want to build for the people most underserved by the tools they have to use.
@@ -139,7 +139,7 @@ export default function About() {
 
         <section className="mb-12" aria-label="Contact">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Get in Touch
+            Get in touch
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
             Available for contract engagements. Open to the right full-time role.

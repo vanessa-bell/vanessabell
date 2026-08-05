@@ -124,8 +124,24 @@ export default function SpendLight() {
             Designing Mindful Money Habits
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray mb-8">
-            A six-week lean UX sprint to validate the concept of a spending journal called SpendLight.
+            A six-week lean UX sprint to validate the concept of a spending journal.
           </p>
+
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-10 rounded-xl border border-terracotta/20 dark:border-dark-terracotta/25 bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-6 sm:px-6">
+            {[
+              { value: "6 weeks", label: "concept → build-ready spec" },
+              { value: "4 insights", label: "research insights → design decisions" },
+            ].map(({ value, label }) => (
+              <div key={label}>
+                <p className="font-serif text-xl sm:text-2xl text-terracotta dark:text-dark-terracotta leading-tight mb-1.5">
+                  {value}
+                </p>
+                <p className="text-xs text-warm-gray dark:text-dark-warm-gray leading-snug">
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
 
         <figure className="my-10">
           <img
@@ -139,7 +155,7 @@ export default function SpendLight() {
             {[
               { label: "Role", value: "UX Researcher & Product Designer" },
               { label: "Client", value: "SpendLight (David Larsen, Founder)" },
-              { label: "Timeline", value: "6 weeks · 2025" },
+              { label: "Year", value: "2025" },
               { label: "Scope", value: "Discovery through MVP specification" },
               { label: "Stack", value: "Figma, Figma Make" },
               { label: "Impact", value: "Validated product direction: concept desirable, MVP spec ready for engineering" },
@@ -157,7 +173,7 @@ export default function SpendLight() {
         {/* Project Snapshot */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Project Snapshot
+            Project snapshot
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             A founder and former colleague approached me with an early idea for a "spending journal" to improve
@@ -170,7 +186,7 @@ export default function SpendLight() {
         {/* Core Experience */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            The Core Experience: SpendLight's Journaling Loop
+            The core experience: SpendLight's journaling loop
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             To make journaling about discretionary spending effortless, I designed a fast, calming flow built
@@ -196,7 +212,7 @@ export default function SpendLight() {
         {/* The Problem */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            The Problem
+            The problem
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
             Traditional budgeting tools focus on categorization and control, which often triggers guilt and
@@ -224,7 +240,7 @@ export default function SpendLight() {
         {/* My Approach */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
-            My Approach
+            My approach
           </h2>
           <div className="space-y-4">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
@@ -257,7 +273,7 @@ export default function SpendLight() {
         {/* Constraints */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
-            Constraints & Tradeoffs
+            Constraints & tradeoffs
           </h2>
           <div className="grid sm:grid-cols-2 gap-5">
             {[
@@ -322,7 +338,7 @@ export default function SpendLight() {
         {/* What Research Revealed */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
-            What Research Revealed
+            What research revealed
           </h2>
 
           <div className="space-y-10">
@@ -395,14 +411,14 @@ export default function SpendLight() {
 
           {/* <ImagePlaceholder
             filename="spendlight/research-synthesis.png"
-            caption="Research synthesis — themes and insights from four 45–60 min interviews"
+            caption="Research synthesis: themes and insights from four 45–60 min interviews"
           /> */}
         </section>
 
         {/* IA & Screens */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Information Architecture & Core Experience
+            Information architecture & core experience
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
             SpendLight needed to support a daily reflection habit without feeling like a budgeting tool.
@@ -410,26 +426,26 @@ export default function SpendLight() {
             no-spend day), History (feed + calendar), and Insights (pattern cards revealed after enough entries).
           </p>
           <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-2">
-            <span className="font-medium text-charcoal dark:text-dark-cream">Core Loop:</span>{" "}
+            <span className="font-medium text-charcoal dark:text-dark-cream">Core loop:</span>{" "}
             Add reflection → add emotional context → receive bonsai growth feedback → review patterns in Insights.
           </p>
           {/* <ImagePlaceholder
             filename="spendlight/screens-overview.png"
-            caption="Primary screens — Home, Reflection Flow, History, Insights"
+            caption="Primary screens: Home, Reflection Flow, History, Insights"
           /> */}
         </section>
 
         {/* Testing */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Testing & Iteration
+            Testing & iteration
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-8">
             I conducted two moderated usability tests using a high-fidelity prototype.
           </p>
           <div className="grid sm:grid-cols-2 gap-8">
             <div>
-              <p className="font-medium text-charcoal dark:text-dark-cream mb-3">What Worked</p>
+              <p className="font-medium text-charcoal dark:text-dark-cream mb-3">What worked</p>
               <ul className="space-y-2">
                 {[
                   "Reflection prompts felt meaningful and calming",
@@ -444,7 +460,7 @@ export default function SpendLight() {
               </ul>
             </div>
             <div>
-              <p className="font-medium text-charcoal dark:text-dark-cream mb-3">What We Improved</p>
+              <p className="font-medium text-charcoal dark:text-dark-cream mb-3">What we improved</p>
               <ul className="space-y-2">
                 {[
                   "Purpose clarity: Reworked onboarding to emphasize discretionary focus",
@@ -490,8 +506,8 @@ export default function SpendLight() {
               "Usability-tested prototype with two rounds of iteration",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta mt-1 shrink-0">–</span>
-                {item}
+                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
@@ -516,9 +532,51 @@ export default function SpendLight() {
           </blockquote>
         </section>
 
+        {/* How I Measured Success */}
+        <section className="mb-12">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
+            How I measured success
+          </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            Success here wasn't a usage metric. There was no live product yet. I measured it against
+            the sprint's actual goal: did we know, at the end of six weeks, whether this was worth
+            building.
+          </p>
+          <ul className="space-y-2">
+            {[
+              "Four 1:1 interviews and two moderated usability tests turned into four concrete research insights, each of which changed a specific design decision, from the onboarding framing to the pacing of the bonsai animation.",
+              "An A/B test on two value propositions gave the founder a clear, evidence-backed answer instead of a guess.",
+              "The sprint ended with a complete MVP specification ready to hand to engineering: annotated designs, a component inventory, and an event schema.",
+            ].map((item) => (
+              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
+                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* What This Says About How I Work */}
+        <section className="mb-16">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
+            What this says about how I work
+          </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            This project was about resisting the urge to design the whole product on day one. The
+            founder came in with a wide set of possible directions, and the temptation with six weeks
+            and no live users is to pick one and start pushing pixels. Instead I spent the first two
+            weeks getting close to real people's spending habits before committing to a direction,
+            then used the remaining time to test and narrow rather than build wider.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+            The output wasn't a finished app. It was confidence, backed by research, about which
+            narrower thing was worth building next.
+          </p>
+        </section>
+
         <section className="mb-16" aria-label="Contact">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Get in Touch
+            Get in touch
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
             Open to contract engagements.

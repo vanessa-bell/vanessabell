@@ -67,7 +67,7 @@ export default function MonsterWalk() {
         {/* Project Snapshot */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Project Snapshot
+            Project snapshot
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             Monster Walk by Talofa Games motivates players to walk in real life to earn in-game stamina
@@ -82,7 +82,7 @@ export default function MonsterWalk() {
         {/* The Problem */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
-            The Problem
+            The problem
           </h2>
 
           <figure className="my-10">
@@ -181,7 +181,7 @@ export default function MonsterWalk() {
         {/* My Approach */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
-            My Approach
+            My approach
           </h2>
           <div className="space-y-4">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
@@ -208,7 +208,7 @@ export default function MonsterWalk() {
         {/* What Research Revealed */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
-            What Research Revealed
+            What research revealed
           </h2>
           <div className="space-y-10">
             {[
@@ -251,7 +251,7 @@ export default function MonsterWalk() {
         {/* What We Designed */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            What We Designed
+            What we designed
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
             Working as a team of five UX designers, entirely within the existing Monster Walk design system
@@ -265,7 +265,7 @@ export default function MonsterWalk() {
               "Rotating hidden monster welcome screen to add novelty on repeat logins",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta mt-1 shrink-0">–</span>
+                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -311,7 +311,7 @@ export default function MonsterWalk() {
               "Design direction and annotated prototype delivered to Talofa Games",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta mt-1 shrink-0">–</span>
+                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -354,9 +354,51 @@ export default function MonsterWalk() {
           </blockquote>
         </section>
 
+        {/* How I Measured Success */}
+        <section className="mb-12">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
+            How I measured success
+          </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            This was a research and testing engagement, not a shipped feature, so success was measured
+            in clarity and validation rather than usage.
+          </p>
+          <ul className="space-y-2">
+            {[
+              "In moderated testing, 100% of participants understood the redesigned streaks and rewards without confusion, up from a version that had left players unsure whether they were losing progress they'd already earned.",
+              "Players independently described the new flow as \"fun,\" \"supportive,\" and \"motivating.\"",
+              "The team delivered an annotated prototype direction to Talofa Games; whether it shipped was the client's call, not mine to measure.",
+            ].map((item) => (
+              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
+                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* What This Says About How I Work */}
+        <section className="mb-16">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
+            What this says about how I work
+          </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            Partway through this engagement I pushed the team to change direction: instead of
+            continuing to catalog what confused players, I wanted to understand what actually made
+            them want to come back. That meant setting aside the unmoderated-testing findings we
+            already had and running moderated 1:1 interviews instead, even with the clock already
+            running on a fixed externship timeline.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+            It was the right call. The streak-milestone concept that tested at 100% clarity came
+            directly from those conversations, not from the original audit. I'd rather spend time
+            re-scoping toward the right question than efficiently answer the wrong one.
+          </p>
+        </section>
+
         <section className="mb-16" aria-label="Contact">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Get in Touch
+            Get in touch
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
             Open to contract engagements.

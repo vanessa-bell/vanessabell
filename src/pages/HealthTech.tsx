@@ -84,7 +84,7 @@ function RequestAccessForm() {
 export default function HealthTech() {
   usePageMeta({
     title: "Letting AI Do the Work so Human Experts Can Focus on Review | Vanessa Bell",
-    description: "A researcher-facing workflow redesign for an AI health tech platform. Flipped the interaction model from manual-first to AI-proposes, human-confirms — achieving a 9x reduction in time and steps.",
+    description: "A researcher-facing workflow redesign for an AI health tech platform. Flipped the interaction model from manual-first to AI-proposes, human-confirms, achieving a 9x reduction in time and steps.",
     ogImage: "https://vanessabell.design/ai-research-workflow/hero-diagram-og.png",
     path: "/ai-research-workflow",
   });
@@ -115,6 +115,24 @@ export default function HealthTech() {
             A redesigned researcher workflow for an AI health tech platform.
           </p>
 
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-6 mb-10 rounded-xl border border-terracotta/20 dark:border-dark-terracotta/25 bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-6 sm:px-6">
+            {[
+              { value: "4.5 min → 30 sec", label: "per utterance" },
+              { value: "9 steps → 4", label: "in the core flow" },
+              { value: "7 PRs merged", label: "into the client's Angular codebase" },
+              { value: "29", label: "components & services touched" },
+            ].map(({ value, label }) => (
+              <div key={label}>
+                <p className="font-serif text-xl sm:text-2xl text-terracotta dark:text-dark-terracotta leading-tight mb-1.5">
+                  {value}
+                </p>
+                <p className="text-xs text-warm-gray dark:text-dark-warm-gray leading-snug">
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
+
           <figure className="my-10">
             <img
               src="/ai-research-workflow/mobile-hero-diagram.svg"
@@ -132,11 +150,11 @@ export default function HealthTech() {
           <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 text-sm mt-8 mx-auto">
             {[
               { label: "Role", value: "Product Designer" },
-              { label: "Company", value: "Early-stage health tech startup (NDA)" },
-              { label: "Timeline", value: "March – May 2026" },
-              { label: "Team", value: "Myself + software engineer + CEO" },
+              { label: "Company", value: "Early-stage health tech startup" },
+              { label: "Year", value: "2026" },
+              { label: "Team", value: "Me, one software engineer, and the CEO" },
               { label: "Scope", value: "Research, design, and shipped Angular/TypeScript implementation with Claude Code" },
-              { label: "Impact", value: "9x reduction in time spent" },
+              { label: "Impact", value: "A workflow the lighthouse customer called \"kind of a burden\" became one she called \"fun\"" },
             ].map(({ label, value }) => (
               <div key={label}>
                 <dt className="text-warm-gray dark:text-dark-warm-gray mb-1">{label}</dt>
@@ -148,31 +166,186 @@ export default function HealthTech() {
 
         <hr className="border-warm-gray/20 dark:border-dark-warm-gray/20 mb-12" />
 
-        {/* The Problem */}
+        {/* The challenge */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            The Problem
+            The challenge
           </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            The client builds two connected products. Caregivers report symptoms in natural speech
+            in a patient app, something like "he had three wet diapers and seemed cranky." An AI
+            pipeline turns each spoken report into structured research data and sends it to a
+            researcher-facing portal, where clinicians study patterns across patients. The AI
+            doesn't diagnose. It turns unstructured speech into a research-ready database that can
+            inform new treatments.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            For the AI to do that reliably, researchers configure it first, then validate it. That
+            validation step, where trust in the AI is built or lost, was the focus of my work.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            The stakes are specific to rare disease. A given study might track symptoms for a few
+            hundred patients worldwide, so a misconfigured extraction pipeline doesn't just add
+            noise. It can make a condition look different from how it actually presents.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            And the people doing this work are clinicians, not full-time software users. One
+            physician-researcher I spoke with had one to two days of protected academic time every
+            four weeks. She was authoring test cases from memory of real clinical encounters,
+            picking the tool up after weeks between sessions.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-3">
+            For her, the tool had three jobs:
+          </p>
+          <ul className="space-y-2 mb-4">
+            {[
+              "Build confidence that the AI is extracting the right data from patient utterances.",
+              "Signal clearly when testing is complete, so researchers aren't left wondering whether they've done enough before launching a study.",
+              "Protect limited research time by not requiring more effort than the task actually requires.",
+            ].map((item) => (
+              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
+                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I redesigned the core workflow on a researcher-facing tool where clinicians validate
-            AI-extracted data. The original workflow asked researchers to manually specify expected
-            results before the AI ran, then check whether the AI agreed. They were doing cognitive
-            work upfront with no signal to react to.
+            The original workflow did the opposite. It asked her to author the entire expected
+            result by hand, field by field, before the AI ever ran. Estimated time per utterance:
+            four and a half minutes. A typical study has dozens of utterances.
           </p>
         </section>
 
-        {/* The Redesign */}
+        {/* Approach */}
         <section className="mb-12">
-          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            The Redesign
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
+            Approach
           </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-8">
+            Before touching a single screen, I mapped the existing codebase and found a structural
+            problem that shaped the entire engagement: the system had no opinion about whether a
+            study was correctly configured. A researcher could publish an incomplete study with no
+            warning. From there I narrowed scope to one workflow, ran heuristic evaluations at
+            multiple stages, aligned early with the CEO on the core vision (the AI should propose a
+            draft, the researcher should confirm or correct), and conducted user research with two
+            researchers running active studies on the platform.
+          </p>
+
+          <h3 className="font-medium text-charcoal dark:text-dark-cream mb-2">
+            Phase 1: reduce the manual work
+          </h3>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            I rebuilt the flow around the inverse model: the AI proposes a draft, and the researcher
-            confirms or corrects. The redesign cut time and steps by 9x for a workflow researchers
-            repeat dozens of times per study.
+            My first hypothesis was that the problem was friction. The heuristic audit supported it:
+            too many clicks for basic tasks, no way to sort, search, or filter, and no top-level
+            signal about whether the AI was configured well enough to start collecting real data.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-2">Shipped:</p>
+          <ul className="space-y-2 mb-8">
+            {[
+              "Run the AI first, not last, so the researcher's job becomes verification rather than authoring.",
+              "Editing in place instead of in a disconnected modal.",
+              "Sort, search and filter on the list, so researchers could find their way back to where they left off.",
+              "Per-item status and accuracy indicators.",
+              "A configurable accuracy target. This one came from research rather than the audit. A second researcher told me her trust threshold was 9 out of 10, but the tool showed a percentage with nothing to compare it against. A number without a target isn't feedback.",
+            ].map((item) => (
+              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
+                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="font-medium text-charcoal dark:text-dark-cream mb-2">
+            The pivot
+          </h3>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            After Phase 1 shipped, I ran a session with a physician-researcher who had already tried
+            the redesign on her own and struggled. Mid-task, she paused and said:
+          </p>
+          <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6 mb-4">
+            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic">
+              "Do I hit Mark as Reviewed? Do I hit Run? Do I hit Rerun? I don't know what I do.
+              Actually, I don't know what I do."
+            </p>
+          </blockquote>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            Phase 1 had made individual tasks easier but hadn't given researchers a clear path
+            through the tool. The old author-first option was still there, so she had never
+            discovered the AI-first flow on her own. When I walked her through it in the same
+            session, same data, opposite sequencing:
+          </p>
+          <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6 mb-4">
+            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic">
+              "That is huge. That is amazing, actually. That's so wonderful, because before, I was
+              like, this is painful."
+            </p>
+          </blockquote>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-8">
+            My hypothesis had been half right. Friction was real, but removing it wasn't sufficient,
+            because the interface still offered two paths and defaulted to the worse one. That
+            session became the brief for Phase 2.
+          </p>
+
+          <h3 className="font-medium text-charcoal dark:text-dark-cream mb-2">
+            Phase 2: review-first
+          </h3>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            I reframed the design question from "how do we make editing easier?" to "what does the
+            interface look like if editing is the exception, not the default?"
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-2">Shipped:</p>
+          <ul className="space-y-2 mb-8">
+            {[
+              "Read-only by default, so the interface itself communicates that editing is the exception rather than the expected action.",
+              "Renamed the core actions to describe what the researcher is actually doing: agreeing with the AI's output, or correcting it and saving that correction as the new ground truth.",
+              "Removed uninformative comparisons, so only meaningful differences surface and attention goes where a decision is genuinely needed.",
+              "Made progress and next action always visible, so a researcher returning after weeks away never has to work out where they are or what to do next.",
+            ].map((item) => (
+              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
+                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="font-medium text-charcoal dark:text-dark-cream mb-2">
+            The decision I'd defend
+          </h3>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            Making review faster created a risk I had to design against: if confirming takes one
+            click, people confirm without looking.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            So the flow keeps friction exactly where scrutiny matters. Agreeing with the AI stays
+            cheap. Anything the AI got wrong, or anything the researcher flagged as uncertain, has to
+            be dealt with deliberately and cannot be cleared by a bulk action. Discrepancies stay
+            visible even as matching fields recede.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I was the sole designer embedded in their engineering team and shipped the changes in code.
+            The goal was to remove busywork, not oversight.
+          </p>
+        </section>
+
+        {/* Flow: before and after */}
+        <section className="mb-12">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
+            Flow: before and after
+          </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            <strong className="text-charcoal dark:text-dark-cream font-medium">Before, nine steps.</strong>{" "}
+            The researcher authored the entire expected result by hand, field by field, before the AI
+            ever ran. Only then could they trigger it and compare. Reconciling a mismatch meant
+            leaving the workflow and moving between separate areas of the product with no guidance of the next step in the workflow. There was
+            no search, no filtering and no review state, so returning to the queue meant re-deriving
+            what you had already handled.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+            <strong className="text-charcoal dark:text-dark-cream font-medium">After, four steps.</strong>{" "}
+            Enter the utterances and save; the AI runs on each automatically. Review only what needs
+            a decision. For each observation, agree with the AI, correct it and save that as the new
+            expected value, or set it aside with a note so it's flagged for follow-up without
+            blocking the rest of the review. When everything is reviewed, the next item is one action
+            away.
           </p>
         </section>
 
@@ -197,13 +370,50 @@ export default function HealthTech() {
           </blockquote>
         </section>
 
+        {/* How I measured success */}
+        <section className="mb-12">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
+            How I measured success
+          </h2>
+          <ul className="space-y-2">
+            {[
+              "Time per utterance: an estimated 4.5 minutes to under 30 seconds, a 9x reduction on a workflow researchers repeat dozens of times per study.",
+              "Steps in the core flow: nine to four.",
+              "Shipped: 7 pull requests merged, 29 distinct components and services touched, designed and implemented by me in the client's Angular codebase.",
+              "Qualitative: the researcher who called the workflow painful, in the same session, called the corrected flow \"huge.\"",
+            ].map((item) => (
+              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
+                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* What this says about how I work */}
+        <section className="mb-16">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
+            What this says about how I work
+          </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
+            This project required treating "confusing" and "wrong" as two different kinds of design
+            problems. A confusing interface costs someone time, which is real but recoverable. A
+            wrong one, in this context, risks distorting how a rare disease actually presents. So I
+            built friction back in deliberately instead of optimizing it away everywhere for the sake of speed.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+            It also shows how I hold a hypothesis. I believed the problem was friction, shipped
+            against that belief, and then watched a user prove it was only half the story. The result was a stronger redesign that made the end user's life easier.
+          </p>
+        </section>
+
         {/* Request Access */}
         <section className="mb-16">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Full Case Study
+            Full case study
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
-            Process detail, design decisions, and screens are available on request.
+            Screens and additional implementation detail are available on request.
           </p>
           <RequestAccessForm />
         </section>

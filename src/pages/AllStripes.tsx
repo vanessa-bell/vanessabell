@@ -5,7 +5,7 @@ import { usePageMeta } from "../hooks/usePageMeta";
 
 export default function AllStripes() {
   usePageMeta({
-    title: "Helping Patients Get Their Records Faster — Vanessa Bell",
+    title: "Helping Patients Get Their Records Faster | Vanessa Bell",
     description: "A workflow redesign that cut medical records processing time by 95% and directly sped up patient access to their own health data.",
     path: "/allstripes",
   });
@@ -36,6 +36,23 @@ export default function AllStripes() {
             A workflow redesign that cut medical records processing time by 95% and directly sped up patient access to their own health data.
           </p>
 
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-6 mb-10 rounded-xl border border-terracotta/20 dark:border-dark-terracotta/25 bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-6 sm:px-6">
+            {[
+              { value: "95%+", label: "reduction in processing time" },
+              { value: "100 pages", label: "typical file size processed" },
+              { value: "20 min → <1 min", label: "per file, before → after" },
+            ].map(({ value, label }) => (
+              <div key={label}>
+                <p className="font-serif text-xl sm:text-2xl text-terracotta dark:text-dark-terracotta leading-tight mb-1.5">
+                  {value}
+                </p>
+                <p className="text-xs text-warm-gray dark:text-dark-warm-gray leading-snug">
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
+
           <figure className="my-10">
             <img
               src="/allstripes/allstripes-cover.jpg"
@@ -48,7 +65,7 @@ export default function AllStripes() {
             {[
               { label: "Role", value: "Senior Software Engineer · UX & Internal Tooling Focus" },
               { label: "Company", value: "AllStripes, now part of PicnicHealth (rare disease research platform)" },
-              { label: "Timeline", value: "2022" },
+              { label: "Year", value: "2022" },
               { label: "Scope", value: "Research, UX design, React/TypeScript implementation" },
               { label: "Impact", value: "95% reduction in medical records processing time" },
             ].map(({ label, value }) => (
@@ -65,13 +82,13 @@ export default function AllStripes() {
         {/* The Problem */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            The Problem
+            The problem
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            AllStripes helps patients with rare diseases connect with researchers and access their own medical records. But processing those records was slow.
+            AllStripes helped patients with rare diseases connect with researchers and access their own medical records. But processing those records was slow.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            When a patient submitted a 100-page medical document, the operations team had to work through it manually — each file had to be downloaded to a local machine, then split by hand into smaller chunks the system could handle. A seasoned ops associate averaged 20 minutes per 100-page file. Every delay had a human cost: patients with rare diseases waiting longer to understand their own health history.
+            When a patient submitted a 100-page medical document, the operations team had to work through it manually: each file had to be downloaded to a local machine, then split by hand into smaller chunks the system could handle. A seasoned operations associate averaged 20 minutes per 100-page file. Every delay had a human cost: patients with rare diseases waiting longer to understand their own health history.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             Beyond the time problem, there was a security risk: downloading sensitive patient records to personal machines created unnecessary exposure for protected health information.
@@ -81,16 +98,16 @@ export default function AllStripes() {
         {/* My Approach */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            My Approach
+            My approach
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            I started by working closely with the operations team to understand exactly where time was being lost and why. Then I designed and built a file chunking process that broke large medical records into structured segments automatically, triggered as soon as a file was uploaded — no manual steps, no local downloads.
+            I started by working closely with the operations team to understand exactly where time was being lost and why. Then I designed and built a file chunking process that broke large medical records into structured segments automatically, triggered as soon as a file was uploaded. No manual steps, no local downloads.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            One of the real challenges wasn't technical. Automating records processing required overcoming organizational resistance — a sensitive area given the nature of patient data. I navigated this by keeping stakeholders closely informed, communicating tradeoffs clearly, and demoing results to the full company once the system was live.
+            One of the real challenges wasn't technical. Automating records processing required overcoming organizational resistance, a sensitive area given the nature of patient data. I navigated this by keeping stakeholders closely informed, communicating tradeoffs clearly, and demoing results to the full company once the system was live.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            The interface the ops team used to interact with the system was designed in close collaboration with them — I asked for feedback throughout development, not just at the end.
+            The interface the ops team used to interact with the system was designed in close collaboration with them. I asked for feedback throughout development, not just at the end.
           </p>
         </section>
 
@@ -100,7 +117,7 @@ export default function AllStripes() {
             Result
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            A 100-page file that previously took ~20 minutes of manual work took under 1 minute after my changes shipped — a 95%+ reduction.
+            A 100-page file that previously took ~20 minutes of manual work took under 1 minute after my changes shipped, a 95%+ reduction.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
             Patients got faster access to their records. The ops team recovered hours per week. And sensitive patient data was no longer being downloaded to local machines.
@@ -115,24 +132,50 @@ export default function AllStripes() {
           </blockquote>
         </section>
 
+        {/* How I Measured Success */}
+        <section className="mb-12">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
+            How I measured success
+          </h2>
+          <ul className="space-y-2">
+            {[
+              "Processing time: a 100-page medical record that took a seasoned ops associate ~20 minutes to process by hand took under a minute after the redesign shipped, a 95%+ reduction, holding across the range of file sizes the team processed.",
+              "Ops team hours recovered per week, previously spent on manual downloading and splitting.",
+              "Security: sensitive patient records stopped being downloaded to personal machines altogether, closing a real PHI exposure risk.",
+            ].map((item) => (
+              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
+                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* What This Says About How I Work */}
         <section className="mb-16">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            What This Project Taught Me
+            What this says about how I work
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            This was one of the first times I experienced the full arc of a workflow problem in healthcare: talking to the people doing the work, understanding why the friction existed, designing the system change, building it, and presenting the outcome to the people it affected.
+            The technical build here was the easier half. The harder part was organizational:
+            automating how patient records got processed touched a process people had built trust
+            around, even though it was slow. I could have shipped the change quietly and let the
+            results speak for themselves, but that risked the ops team feeling like a system had been
+            imposed on them rather than built with them.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            That arc — from the ops team's frustration to the patient's faster access — is the thread that runs through everything I do now.
+            So I treated their trust as part of the deliverable, not a side effect of it. I kept
+            stakeholders informed throughout, communicated the tradeoffs honestly instead of
+            overselling the win, and designed the interface itself in collaboration with the team
+            that would use it, asking for feedback during development instead of just presenting a
+            finished tool at the end. Demoing results to the full company once it shipped was the
+            last step in that same approach, not a victory lap tacked onto it.
           </p>
         </section>
         <section className="mb-16" aria-label="Contact">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Get in Touch
+            Get in touch
           </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
-            Open to contract engagements.
-          </p>
           <ContactForm />
           <a
             href="https://www.linkedin.com/in/vanessajoanbell/"

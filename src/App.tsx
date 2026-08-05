@@ -90,7 +90,7 @@ function CaseStudyCard({ cs, aspectClass, imgPadding = "p-4" }: { cs: CaseStudy;
 export default function App() {
   useSparkles();
   usePageMeta({
-    title: "Vanessa Bell — UX Designer",
+    title: "Vanessa Bell | UX Designer",
     description: "UX Designer based in San Francisco. I design and build healthcare and AI experiences that reduce complexity and friction.",
     path: "/",
   });
@@ -134,7 +134,7 @@ export default function App() {
         </p>
         <div className="mt-5 text-base leading-relaxed text-warm-gray dark:text-dark-warm-gray space-y-4">
           <p>I help health tech teams fix the workflows that are slowing their clinicians down.</p>
-          <p>I research directly with clinicians, design the solution, and ship it in production code alongside your engineering team — not just a Figma handoff.</p>
+          <p>I research directly with clinicians, design the solution, and ship it in production code alongside your engineering team, not just a Figma handoff.</p>
           <p>Recent result: a physician-researcher went from calling a workflow "kind of a burden" to calling it "fun" after my changes shipped.</p>
         </div>
 
