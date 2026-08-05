@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
+import SiteHeader from "../components/SiteHeader";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 const photos = [
@@ -64,33 +63,26 @@ function PhotoCarousel() {
 export default function About() {
   usePageMeta({
     title: "About | Vanessa Bell",
-    description: "UX Designer based in San Francisco, working at the intersection of healthcare, AI, and human-centered research. Former software engineer. Flamenco dancer. Yoga teacher.",
+    description: "Product Designer based in San Francisco, working at the intersection of healthcare, AI, and human-centered research. Former software engineer. Flamenco dancer. Yoga teacher.",
     path: "/about",
   });
 
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
-      <main className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">
-
-        <div className="flex justify-between items-center mb-12">
-          <Link
-            to="/"
-            className="text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
-          >
-            <span aria-hidden="true">←</span> Back
-          </Link>
-          <ThemeToggle />
-        </div>
+      <SiteHeader />
+      <main id="main-content" className="max-w-2xl mx-auto px-6 sm:px-8 pt-6 sm:pt-8 pb-12 sm:pb-16">
 
         <header className="mb-12">
           <p className="text-sm text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
             About
           </p>
-          <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-1">
-            Vanessa Bell
-          </h1>
+          <div className="flex items-center gap-3 mb-1">
+            <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight">
+              Vanessa Bell
+            </h1>
+          </div>
           <p className="text-warm-gray dark:text-dark-warm-gray">
-            Clinical Workflow Researcher & Designer
+            Product Designer
           </p>
         </header>
 
@@ -102,6 +94,9 @@ export default function About() {
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             I came to design from software engineering. After six years building production systems at startups like AllStripes (a rare disease research platform) and Thistle, I transitioned to UX design during a sabbatical I took in 2023. The years I spent helping my parents navigate serious illness made me want to build for the people most underserved by the tools they have to use.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+            I research directly with clinicians, design the solution, and ship it in production code alongside your engineering team, not just a Figma handoff. Recent result: a physician-researcher went from calling a workflow "kind of a burden" to calling it "fun" after my changes shipped.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
           I work with health tech startups whose clinical users are frustrated with their tools. If that sounds familiar, I'd love to hear what you're building.
@@ -132,51 +127,10 @@ export default function About() {
               </figure>
             ))}
           </div>
-          <p className="mt-1 px-8 text-xs text-warm-gray/50 dark:text-dark-warm-gray/50">
+          <p className="justify-self-center mt-1 px-8 text-xs text-warm-gray/50 dark:text-dark-warm-gray/50">
             Photos: <a href="https://www.aubefred.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-warm-gray dark:hover:text-dark-warm-gray transition-colors">Fred Aube</a>
           </p>
         </div>
-
-        <section className="mb-12" aria-label="Contact">
-          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Get in touch
-          </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
-            Available for contract engagements. Open to the right full-time role.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block px-5 py-2.5 rounded-lg bg-terracotta dark:bg-dark-terracotta text-cream dark:text-dark-bg text-sm font-medium hover:opacity-90 transition-opacity"
-          >
-            Work with me
-          </Link>
-          <div className="mt-4 flex gap-4 items-center">
-            <a
-              href="https://www.linkedin.com/in/vanessajoanbell/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6"
-            >
-              LinkedIn
-              <span className="sr-only"> (opens in new tab)</span>
-            </a>
-            <span className="text-warm-gray/30 dark:text-dark-warm-gray/30" aria-hidden="true">·</span>
-            <a
-              href="/vanessa-bell-designer-resume-2026.pdf"
-              download="Vanessa Bell Resume.pdf"
-              className="text-sm text-terracotta dark:text-dark-terracotta underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
-            >
-              Download resume
-            </a>
-          </div>
-        </section>
-
-        <Link
-          to="/"
-          className="inline-block text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
-        >
-          <span aria-hidden="true">←</span> Back to work
-        </Link>
 
       </main>
     </div>

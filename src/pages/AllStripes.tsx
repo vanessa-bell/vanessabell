@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
+import SiteHeader from "../components/SiteHeader";
 import ContactForm from "../components/ContactForm";
 import { usePageMeta } from "../hooks/usePageMeta";
 
@@ -12,17 +12,8 @@ export default function AllStripes() {
 
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
-      <main className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">
-
-        <div className="flex justify-between items-center mb-12">
-          <Link
-            to="/"
-            className="text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
-          >
-            <span aria-hidden="true">←</span> Back
-          </Link>
-          <ThemeToggle />
-        </div>
+      <SiteHeader />
+      <main id="main-content" className="max-w-2xl mx-auto px-6 sm:px-8 pt-6 sm:pt-8 pb-12 sm:pb-16">
 
         {/* Hero */}
         <header className="mb-12">
@@ -66,6 +57,7 @@ export default function AllStripes() {
               { label: "Role", value: "Senior Software Engineer · UX & Internal Tooling Focus" },
               { label: "Company", value: "AllStripes, now part of PicnicHealth (rare disease research platform)" },
               { label: "Year", value: "2022" },
+              { label: "Team", value: "Me, on the engineering team" },
               { label: "Scope", value: "Research, UX design, React/TypeScript implementation" },
               { label: "Impact", value: "95% reduction in medical records processing time" },
             ].map(({ label, value }) => (

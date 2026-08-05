@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
+import SiteHeader from "../components/SiteHeader";
 import ContactForm from "../components/ContactForm";
 import { usePageMeta } from "../hooks/usePageMeta";
 
@@ -11,27 +11,28 @@ export default function Contact() {
   });
 
   return (
-    <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
-      <main className="max-w-2xl mx-auto px-6 sm:px-8 py-12 sm:py-16">
-
-        <div className="flex justify-between items-center mb-12">
-          <Link
-            to="/"
-            className="text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
-          >
-            <span aria-hidden="true">←</span> Back
-          </Link>
-          <ThemeToggle />
-        </div>
+    <div className="relative min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
+      <img
+        src="/Olive-Branch.svg"
+        alt=""
+        aria-hidden="true"
+        className="hidden sm:block absolute bottom-4 right-2 w-32 h-32 sm:w-40 sm:h-40 opacity-90 pointer-events-none"
+      />
+      <SiteHeader />
+      <main id="main-content" className="max-w-2xl mx-auto px-6 sm:px-8 pt-6 sm:pt-8 pb-12 sm:pb-16">
 
         <header className="mb-10">
           <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-3">
             Get in Touch
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I work with health tech startups whose clinical users are frustrated with their tools.
-          </p>
+          Looking forward to hearing from you!
+           </p>
         </header>
+
+        {/* "How I work" — engagement types, what I need, what I don't do, pricing.
+            Set aside for now per request; kept here verbatim so it's easy to bring back
+            or move to another page later.
 
         <section className="mb-12" aria-label="How I work">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-3">
@@ -89,6 +90,7 @@ export default function Contact() {
             </div>
           </div>
         </section>
+        */}
 
         <ContactForm />
 
