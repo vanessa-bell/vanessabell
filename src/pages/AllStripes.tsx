@@ -57,7 +57,7 @@ export default function AllStripes() {
               { label: "Role", value: "Senior Software Engineer · UX & Internal Tooling Focus" },
               { label: "Company", value: "AllStripes, now part of PicnicHealth (rare disease research platform)" },
               { label: "Year", value: "2022" },
-              { label: "Team", value: "Me, on the engineering team" },
+              { label: "Team", value: "Operations, myself on engineering team" },
               { label: "Scope", value: "Research, UX design, React/TypeScript implementation" },
               { label: "Impact", value: "95% reduction in medical records processing time" },
             ].map(({ label, value }) => (
