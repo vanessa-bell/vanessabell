@@ -102,9 +102,26 @@ export default function HealthTech() {
           <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-4">
             Letting AI Do the Work so Human Experts Can Focus on Review
           </h1>
-          <p className="text-warm-gray dark:text-dark-warm-gray mb-8">
+          <p className="text-warm-gray dark:text-dark-warm-gray mb-6">
             A redesigned researcher workflow for an AI health tech platform.
           </p>
+
+          <div className="flex items-start gap-3 mb-8 rounded-lg bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-4 py-3">
+            <svg
+              className="text-terracotta dark:text-dark-terracotta shrink-0 mt-0.5"
+              width="16" height="16" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" strokeWidth="1.75"
+              strokeLinecap="round" strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+              This project is under an NDA, so screens and detailed flows are described here rather
+              than shown. I'm happy to walk through the real thing on a call.
+            </p>
+          </div>
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-6 mb-10 rounded-xl border border-terracotta/20 dark:border-dark-terracotta/25 bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-6 sm:px-6">
             {[
@@ -136,6 +153,9 @@ export default function HealthTech() {
               aria-hidden="true"
               className="w-full rounded-lg hidden sm:block"
             />
+            <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
+              Abstracted for confidentiality. I can walk through the real screens on a call.
+            </figcaption>
           </figure>
 
           <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 text-sm mt-8 mx-auto">
@@ -403,9 +423,23 @@ export default function HealthTech() {
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
             Full case study
           </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
-            Screens and additional implementation detail are available on request.
-          </p>
+          <div className="flex items-start gap-3 mb-6 rounded-lg border border-terracotta/20 dark:border-dark-terracotta/25 bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-4">
+            <svg
+              className="text-terracotta dark:text-dark-terracotta shrink-0 mt-0.5"
+              width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" strokeWidth="1.75"
+              strokeLinecap="round" strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+              This project is under an NDA, so the public write-up leaves out screens and some
+              implementation detail. I'm glad to walk through the real product on a call. Leave your
+              info below and I'll follow up.
+            </p>
+          </div>
           <RequestAccessForm />
         </section>
 
