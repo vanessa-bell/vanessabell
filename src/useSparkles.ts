@@ -23,7 +23,11 @@ export function useSparkles() {
     document.body.appendChild(canvas);
     canvasRef.current = canvas;
 
-    const ctx = canvas.getContext("2d")!;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      canvas.remove();
+      return;
+    }
     const sparks: Spark[] = [];
     let mouse = { x: 0, y: 0 };
     let animId = 0;
