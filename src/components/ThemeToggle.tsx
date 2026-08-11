@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 function getInitialTheme(): "light" | "dark" {
-  if (typeof window === "undefined") return "dark";
+  if (typeof window === "undefined") return "light";
   const stored = localStorage.getItem("theme");
   if (stored === "dark" || stored === "light") return stored;
-  return "dark";
+  return "light";
 }
 
 export default function ThemeToggle() {
