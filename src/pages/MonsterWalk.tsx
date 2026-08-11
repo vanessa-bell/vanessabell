@@ -41,7 +41,8 @@ export default function MonsterWalk() {
             {[
               { label: "Role", value: "UX Researcher & User Testing Lead" },
               { label: "Client", value: "Talofa Games (cohort externship)" },
-              { label: "Scope", value: "Welcome Back flow: research, testing, and redesign" },
+              { label: "Year", value: '2025'},
+              { label: "Team", value: "5 designers, each owning a different portion of design process" },
               { label: "Stack", value: "Figma, Maze, moderated interviews" },
               { label: "Impact", value: '100% clarity in moderated testing: "fun, supportive, motivating"' },
             ].map(({ label, value }) => (
@@ -385,25 +386,6 @@ export default function MonsterWalk() {
             directly from those conversations, not from the original audit. I'd rather spend time
             re-scoping toward the right question than efficiently answer the wrong one.
           </p>
-        </section>
-
-        <section className="mb-16" aria-label="Contact">
-          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Get in touch
-          </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
-            Open to contract engagements.
-          </p>
-          <ContactForm />
-          <a
-            href="https://www.linkedin.com/in/vanessajoanbell/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-4 text-sm text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6"
-          >
-            LinkedIn
-            <span className="sr-only"> (opens in new tab)</span>
-          </a>
         </section>
 
         <Link

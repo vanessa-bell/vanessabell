@@ -218,6 +218,9 @@ export default function App() {
             <div className="shrink-0 w-60 sm:w-72 snap-start">
               <CaseStudyCard cs={caseStudies[2]} aspectClass="aspect-[3/4]" />
             </div>
+              <div className="shrink-0 w-60 sm:w-72 snap-start">
+              <CaseStudyCard cs={caseStudies[3]} aspectClass="aspect-[3/4]" />
+            </div>
             {/* <Link to="/about" className="group block shrink-0 w-60 sm:w-72 snap-start">
               <div className="relative overflow-hidden rounded-xl aspect-[3/4]">
                 <img
