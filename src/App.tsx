@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { useSparkles } from "./useSparkles";
 import SiteHeader from "./components/SiteHeader";
 import { usePageMeta } from "./hooks/usePageMeta";
 
@@ -155,10 +154,9 @@ function CaseStudyCard({ cs, aspectClass, imgPadding = "p-4" }: { cs: CaseStudy;
 }
 
 export default function App() {
-  useSparkles();
   usePageMeta({
     title: "Vanessa Bell | Product Designer & Builder",
-    description: "Product designer who ships production code. Research, design, and the pull request. Complex clinical workflows in health tech. React, TypeScript, Claude Code.",
+    description: "Product designer who ships production code.",
     path: "/",
   });
 
@@ -202,9 +200,9 @@ export default function App() {
             User research to design to shipped code in no time at all.
           </p>
 
-          <p className="mt-5 text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+          {/* <p className="mt-5 text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             end to end · ships production code · complex clinical workflows · AI-native, human-in-the-loop · 0 to 1 · design systems · React and TypeScript
-          </p>
+          </p> */}
         </div>
 
         <section className="mt-8 sm:mt-10" aria-label="Case studies">
@@ -274,38 +272,6 @@ export default function App() {
                 </p>
               </div>
             </a>
-          </section>
-
-          <div className="mt-6 text-center">
-            <a
-              href="/vanessa-bell-designer-resume-2026.pdf"
-              download="Vanessa Bell Resume.pdf"
-              className="inline-block px-5 py-2.5 rounded-lg bg-terracotta dark:bg-dark-terracotta text-cream dark:text-dark-bg text-sm font-medium hover:opacity-90 transition-opacity"
-            >
-              Download my resume
-            </a>
-          </div>
-
-          <section className="mt-16 text-center" aria-label="Contact">
-            <p className="text-sm">
-              <Link
-                to="/contact"
-                className="text-terracotta dark:text-dark-terracotta underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
-              >
-                Get in touch
-              </Link>
-              {" or connect on "}
-              <a
-                href="https://www.linkedin.com/in/vanessajoanbell/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-terracotta dark:text-dark-terracotta underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
-              >
-                LinkedIn
-                <span className="sr-only"> (opens in new tab)</span>
-              </a>
-              .
-            </p>
           </section>
         </div>
       </main>
