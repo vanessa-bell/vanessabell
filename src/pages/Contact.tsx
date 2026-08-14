@@ -94,15 +94,6 @@ export default function Contact() {
 
         <ContactForm />
 
-        <div className="mt-10">
-          <Link
-            to="/"
-            className="text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
-          >
-            <span aria-hidden="true">←</span> Back to work
-          </Link>
-        </div>
-
       </main>
     </div>
   );
