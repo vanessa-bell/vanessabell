@@ -133,13 +133,19 @@ export default function SpendLight() {
             ))}
           </div>
 
-        <figure className="my-10">
-          <img
-            src="/spendlight/hero.png"
-            alt="SpendLight app screens showing the home screen with a bonsai plant and the reflection journaling flow"
-            className="max-w-md mx-auto rounded-lg"
-          />
-        </figure>
+        <div className="overflow-hidden rounded-lg my-10 max-w-md mx-auto">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label="SpendLight core flow: mood check-in, logging a purchase reflection, adding context, and receiving the bonsai growth reward"
+            className="w-full -mt-px"
+          >
+            <source src="/spendlight/spendlight-core-flow.mp4" type="video/mp4" />
+            <source src="/spendlight/spendlight-core-flow.mov" type="video/quicktime" />
+          </video>
+        </div>
 
           <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 text-sm mt-8 mx-auto">
             {[
@@ -185,19 +191,6 @@ export default function SpendLight() {
             goes from onboarding to a mood check-in, logging a purchase reflection, capturing context, and
             receiving encouragement through the bonsai micro-animation.
           </p>
-          <div className="overflow-hidden rounded-lg my-10 max-w-md mx-auto">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-label="SpendLight core flow: mood check-in, logging a purchase reflection, adding context, and receiving the bonsai growth reward"
-            className="w-full -mt-px"
-          >
-            <source src="/spendlight/spendlight-core-flow.mp4" type="video/mp4" />
-            <source src="/spendlight/spendlight-core-flow.mov" type="video/quicktime" />
-          </video>
-          </div>
         </section>
 
         {/* The Problem */}
