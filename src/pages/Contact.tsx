@@ -48,7 +48,7 @@ export default function Contact() {
               8 to 12 weeks, typically 20 to 30 hours per week. I run research, design, and ship production code alongside your engineering team. Best fit: you have a tool that needs structural rework and you do not have a full-time designer. Example: my{" "}
               <Link
                 to="/ai-research-workflow"
-                className="text-terracotta dark:text-dark-terracotta underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
+                className="text-clay dark:text-dark-clay underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
               >
                 health tech engagement
               </Link>.
@@ -65,7 +65,7 @@ export default function Contact() {
 
           <div className="space-y-8">
             <div>
-              <p className="text-xs text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+              <p className="text-xs text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
                 What I need from your team
               </p>
               <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
@@ -73,7 +73,7 @@ export default function Contact() {
               </p>
             </div>
             <div>
-              <p className="text-xs text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+              <p className="text-xs text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
                 What I do not do
               </p>
               <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
@@ -81,7 +81,7 @@ export default function Contact() {
               </p>
             </div>
             <div>
-              <p className="text-xs text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+              <p className="text-xs text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
                 Pricing
               </p>
               <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
@@ -93,26 +93,6 @@ export default function Contact() {
         */}
 
         <ContactForm />
-
-        <a
-          href="https://www.linkedin.com/in/vanessajoanbell/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mt-5 text-sm text-olive dark:text-dark-olive hover:text-olive-dark dark:hover:text-dark-cream transition-all duration-150 underline underline-offset-4 hover:underline-offset-6"
-        >
-          LinkedIn
-          <span className="sr-only"> (opens in new tab)</span>
-        </a>
-
-        <div className="mt-4">
-          <a
-            href="/vanessa-bell-designer-resume-2026.pdf"
-            download="Vanessa Bell Resume.pdf"
-            className="text-sm text-terracotta dark:text-dark-terracotta underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
-          >
-            Download resume
-          </a>
-        </div>
 
         <div className="mt-10">
           <Link

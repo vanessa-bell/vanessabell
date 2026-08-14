@@ -46,7 +46,7 @@ function RequestAccessForm() {
           type="text"
           required
           autoComplete="name"
-          className="w-full px-3.5 py-2.5 rounded-lg border border-warm-gray/25 dark:border-dark-warm-gray/25 bg-cream dark:bg-dark-surface text-charcoal dark:text-dark-cream placeholder:text-warm-gray/50 dark:placeholder:text-dark-warm-gray/50 text-sm focus:outline-none focus:ring-2 focus:ring-terracotta/40 dark:focus:ring-dark-terracotta/40 transition-shadow"
+          className="w-full px-3.5 py-2.5 rounded-lg border border-warm-gray/25 dark:border-dark-warm-gray/25 bg-cream dark:bg-dark-surface text-charcoal dark:text-dark-cream placeholder:text-warm-gray/50 dark:placeholder:text-dark-warm-gray/50 text-sm focus:outline-none focus:ring-2 focus:ring-clay/40 dark:focus:ring-dark-clay/40 transition-shadow"
         />
       </div>
       <div>
@@ -62,18 +62,18 @@ function RequestAccessForm() {
           type="email"
           required
           autoComplete="email"
-          className="w-full px-3.5 py-2.5 rounded-lg border border-warm-gray/25 dark:border-dark-warm-gray/25 bg-cream dark:bg-dark-surface text-charcoal dark:text-dark-cream placeholder:text-warm-gray/50 dark:placeholder:text-dark-warm-gray/50 text-sm focus:outline-none focus:ring-2 focus:ring-terracotta/40 dark:focus:ring-dark-terracotta/40 transition-shadow"
+          className="w-full px-3.5 py-2.5 rounded-lg border border-warm-gray/25 dark:border-dark-warm-gray/25 bg-cream dark:bg-dark-surface text-charcoal dark:text-dark-cream placeholder:text-warm-gray/50 dark:placeholder:text-dark-warm-gray/50 text-sm focus:outline-none focus:ring-2 focus:ring-clay/40 dark:focus:ring-dark-clay/40 transition-shadow"
         />
       </div>
       {status === "error" && (
-        <p role="alert" className="text-sm text-terracotta dark:text-dark-terracotta">
+        <p role="alert" className="text-sm text-clay dark:text-dark-clay">
           Something went wrong. Try again or email me directly at vanessa.bell14@gmail.com.
         </p>
       )}
       <button
         type="submit"
         disabled={status === "sending"}
-        className="px-5 py-2.5 rounded-lg bg-terracotta dark:bg-dark-terracotta text-cream dark:text-dark-bg text-sm font-medium hover:opacity-90 disabled:opacity-60 transition-opacity cursor-pointer disabled:cursor-not-allowed"
+        className="px-5 py-2.5 rounded-lg bg-clay dark:bg-dark-clay text-cream dark:text-dark-bg text-sm font-medium hover:opacity-90 disabled:opacity-60 transition-opacity cursor-pointer disabled:cursor-not-allowed"
       >
         {status === "sending" ? "Sending..." : "Request access"}
       </button>
@@ -96,7 +96,7 @@ export default function HealthTech() {
 
         {/* Hero */}
         <header className="mb-12">
-          <p className="text-sm text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+          <p className="text-sm text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
             Case Study
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-4">
@@ -106,9 +106,9 @@ export default function HealthTech() {
             A redesigned researcher workflow for an AI health tech platform.
           </p>
 
-          <div className="flex items-start gap-3 mb-8 rounded-lg bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-4 py-3">
+          <div className="flex items-start gap-3 mb-8 rounded-lg bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-4 py-3">
             <svg
-              className="text-terracotta dark:text-dark-terracotta shrink-0 mt-0.5"
+              className="text-clay dark:text-dark-clay shrink-0 mt-0.5"
               width="16" height="16" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" strokeWidth="1.75"
               strokeLinecap="round" strokeLinejoin="round"
@@ -123,7 +123,7 @@ export default function HealthTech() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-6 mb-10 rounded-xl border border-terracotta/20 dark:border-dark-terracotta/25 bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-6 sm:px-6">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-6 mb-10 rounded-xl border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-6 sm:px-6">
             {[
               { value: "4.5 min → 30 sec", label: "per utterance" },
               { value: "9 steps → 4", label: "in the core flow" },
@@ -131,7 +131,7 @@ export default function HealthTech() {
               { value: "29", label: "components & services touched" },
             ].map(({ value, label }) => (
               <div key={label}>
-                <p className="font-serif text-xl sm:text-2xl text-terracotta dark:text-dark-terracotta leading-tight mb-1.5">
+                <p className="font-serif text-xl sm:text-2xl text-clay dark:text-dark-clay leading-tight mb-1.5">
                   {value}
                 </p>
                 <p className="text-xs text-warm-gray dark:text-dark-warm-gray leading-snug">
@@ -215,7 +215,7 @@ export default function HealthTech() {
               "Protect limited research time by not requiring more effort than the task actually requires.",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -254,13 +254,13 @@ export default function HealthTech() {
           <ul className="space-y-2 mb-8">
             {[
               "Run the AI first, not last, so the researcher's job becomes verification rather than authoring.",
-              "Editing in place instead of in a disconnected modal.",
-              "Sort, search and filter on the list, so researchers could find their way back to where they left off.",
-              "Per-item status and accuracy indicators.",
-              "A configurable accuracy target. This one came from research rather than the audit. A second researcher told me her trust threshold was 9 out of 10, but the tool showed a percentage with nothing to compare it against. A number without a target isn't feedback.",
+              "Removed a jarring context switch between reviewing a result and correcting it.",
+              "Made it possible to find your way back to where you left off, instead of re-deriving it every time.",
+              "Surfaced per-item signal on what still needed attention.",
+              "Gave the researcher a way to see her own bar for 'good enough,' not just a raw number with nothing to compare it against. This came directly from research: a second researcher told me her trust threshold was 9 out of 10, and the tool wasn't showing her that.",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -273,10 +273,10 @@ export default function HealthTech() {
             After Phase 1 shipped, I ran a session with a physician-researcher who had already tried
             the redesign on her own and struggled. Mid-task, she paused and said:
           </p>
-          <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6 mb-4">
+          <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6 mb-4">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic">
-              "Do I hit Mark as Reviewed? Do I hit Run? Do I hit Rerun? I don't know what I do.
-              Actually, I don't know what I do."
+              "Do I mark this done? Do I run it? Do I run it again? I don't know what I'm supposed
+              to do. Actually, I don't know what I do."
             </p>
           </blockquote>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
@@ -285,7 +285,7 @@ export default function HealthTech() {
             discovered the AI-first flow on her own. When I walked her through it in the same
             session, same data, opposite sequencing:
           </p>
-          <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6 mb-4">
+          <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6 mb-4">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic">
               "That is huge. That is amazing, actually. That's so wonderful, because before, I was
               like, this is painful."
@@ -308,12 +308,12 @@ export default function HealthTech() {
           <ul className="space-y-2 mb-8">
             {[
               "Read-only by default, so the interface itself communicates that editing is the exception rather than the expected action.",
-              "Renamed the core actions to describe what the researcher is actually doing: agreeing with the AI's output, or correcting it and saving that correction as the new ground truth.",
+              "Renamed the core actions to describe what the researcher was actually doing, instead of generic accept/reject language borrowed from other review tools.",
               "Removed uninformative comparisons, so only meaningful differences surface and attention goes where a decision is genuinely needed.",
               "Made progress and next action always visible, so a researcher returning after weeks away never has to work out where they are or what to do next.",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -344,19 +344,17 @@ export default function HealthTech() {
           </h2>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
             <strong className="text-charcoal dark:text-dark-cream font-medium">Before, nine steps.</strong>{" "}
-            The researcher authored the entire expected result by hand, field by field, before the AI
-            ever ran. Only then could they trigger it and compare. Reconciling a mismatch meant
-            leaving the workflow and moving between separate areas of the product with no guidance of the next step in the workflow. There was
-            no search, no filtering and no review state, so returning to the queue meant re-deriving
-            what you had already handled.
+            The old flow put the researcher first: author every expected answer from memory, then
+            run the AI to check it, then reconcile any mismatch by hand. There was no way to search
+            or filter what had already been reviewed, so every return trip meant re-figuring out
+            where you'd left off.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             <strong className="text-charcoal dark:text-dark-cream font-medium">After, four steps.</strong>{" "}
-            Enter the utterances and save; the AI runs on each automatically. Review only what needs
-            a decision. For each observation, agree with the AI, correct it and save that as the new
-            expected value, or set it aside with a note so it's flagged for follow-up without
-            blocking the rest of the review. When everything is reviewed, the next item is one action
-            away.
+            The new flow flips the order. The AI runs first, automatically, on everything entered.
+            The researcher's job becomes reviewing what needs a decision, not authoring from scratch:
+            confirm what the AI got right, correct what it didn't, or flag anything uncertain to
+            revisit later. Once everything's been looked at, moving on is immediate.
           </p>
         </section>
 
@@ -365,7 +363,7 @@ export default function HealthTech() {
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
             Testimonial
           </h2>
-          <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6">
+          <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic mb-4">
               "Wow. This new flow is fun now as opposed to being kind of a burden." When a lighthouse
               customer tells you that, you know your team nailed the UX. Vanessa did this within her
@@ -394,7 +392,7 @@ export default function HealthTech() {
               "Qualitative: the researcher who called the workflow painful, in the same session, called the corrected flow \"huge.\"",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -423,9 +421,9 @@ export default function HealthTech() {
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
             Full case study
           </h2>
-          <div className="flex items-start gap-3 mb-6 rounded-lg border border-terracotta/20 dark:border-dark-terracotta/25 bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-4">
+          <div className="flex items-start gap-3 mb-6 rounded-lg border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-4">
             <svg
-              className="text-terracotta dark:text-dark-terracotta shrink-0 mt-0.5"
+              className="text-clay dark:text-dark-clay shrink-0 mt-0.5"
               width="18" height="18" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" strokeWidth="1.75"
               strokeLinecap="round" strokeLinejoin="round"

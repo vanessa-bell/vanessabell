@@ -16,7 +16,7 @@ export default function AllStripes() {
 
         {/* Hero */}
         <header className="mb-12">
-          <p className="text-sm text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+          <p className="text-sm text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
             Case Study
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-4">
@@ -26,14 +26,14 @@ export default function AllStripes() {
             A workflow redesign that cut medical records processing time by 95% and directly sped up patient access to their own health data.
           </p>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-6 mb-10 rounded-xl border border-terracotta/20 dark:border-dark-terracotta/25 bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-6 sm:px-6">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-6 mb-10 rounded-xl border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-6 sm:px-6">
             {[
               { value: "95%+", label: "reduction in processing time" },
               { value: "100 pages", label: "typical file size processed" },
               { value: "20 min → <1 min", label: "per file, before → after" },
             ].map(({ value, label }) => (
               <div key={label}>
-                <p className="font-serif text-xl sm:text-2xl text-terracotta dark:text-dark-terracotta leading-tight mb-1.5">
+                <p className="font-serif text-xl sm:text-2xl text-clay dark:text-dark-clay leading-tight mb-1.5">
                   {value}
                 </p>
                 <p className="text-xs text-warm-gray dark:text-dark-warm-gray leading-snug">
@@ -113,7 +113,7 @@ export default function AllStripes() {
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
             Patients got faster access to their records. The ops team recovered hours per week. And sensitive patient data was no longer being downloaded to local machines.
           </p>
-          <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6">
+          <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic mb-4">
               "Vanessa's technical and design work speaks for itself in the outcome. I was Senior Director of Engineering at the time; this was her project to drive. The hardest parts she navigated were the tradeoffs, the organizational friction, and earning trust for a change in how patient data was handled. Design sense, technical chops and product judgment rarely live in one person, and this project shows what happens when they do."
             </p>
@@ -135,7 +135,7 @@ export default function AllStripes() {
               "Security: sensitive patient records stopped being downloaded to personal machines altogether, closing a real PHI exposure risk.",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}

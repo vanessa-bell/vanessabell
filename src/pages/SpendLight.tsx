@@ -6,10 +6,10 @@ import { usePageMeta } from "../hooks/usePageMeta";
 function Quote({ text, attribution }: { text: string; attribution?: string }) {
   return (
     <figure className="my-3">
-      <div className="rounded-2xl bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-4">
+      <div className="rounded-2xl bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-4">
         <div className="flex gap-3 items-start">
           <svg
-            className="text-terracotta dark:text-dark-terracotta shrink-0 mt-0.5"
+            className="text-clay dark:text-dark-clay shrink-0 mt-0.5"
             width="15" height="15" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" strokeWidth="1.75"
             strokeLinecap="round" strokeLinejoin="round"
@@ -82,7 +82,7 @@ function Carousel({ slides }: { slides: { filename: string; caption: string }[] 
             onClick={() => setCurrent(i)}
             className={`w-1.5 h-1.5 rounded-full transition-colors ${
               i === current
-                ? "bg-terracotta dark:bg-dark-terracotta"
+                ? "bg-clay dark:bg-dark-clay"
                 : "bg-warm-gray/30 dark:bg-dark-warm-gray/30 hover:bg-warm-gray/50"
             }`}
           />
@@ -107,7 +107,7 @@ export default function SpendLight() {
 
         {/* Hero */}
         <header className="mb-12">
-          <p className="text-sm text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+          <p className="text-sm text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
             Case Study
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-4">
@@ -117,13 +117,13 @@ export default function SpendLight() {
             A six-week lean UX sprint to validate the concept of a spending journal.
           </p>
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-10 rounded-xl border border-terracotta/20 dark:border-dark-terracotta/25 bg-terracotta/[0.06] dark:bg-dark-terracotta/[0.08] px-5 py-6 sm:px-6">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-10 rounded-xl border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-6 sm:px-6">
             {[
               { value: "6 weeks", label: "concept → build-ready spec" },
               { value: "4 insights", label: "research insights → design decisions" },
             ].map(({ value, label }) => (
               <div key={label}>
-                <p className="font-serif text-xl sm:text-2xl text-terracotta dark:text-dark-terracotta leading-tight mb-1.5">
+                <p className="font-serif text-xl sm:text-2xl text-clay dark:text-dark-clay leading-tight mb-1.5">
                   {value}
                 </p>
                 <p className="text-xs text-warm-gray dark:text-dark-warm-gray leading-snug">
@@ -221,7 +221,7 @@ export default function SpendLight() {
               "What is the simplest possible version worth building?",
             ].map((q) => (
               <li key={q} className="flex gap-3">
-                <span className="text-terracotta dark:text-dark-terracotta mt-1">–</span>
+                <span className="text-clay dark:text-dark-clay mt-1">–</span>
                 <span>{q}</span>
               </li>
             ))}
@@ -316,7 +316,7 @@ export default function SpendLight() {
               },
             ].map(({ icon, title, body }) => (
               <div key={title} className="rounded-lg border border-warm-gray/15 dark:border-dark-warm-gray/15 bg-cream-dark/40 dark:bg-dark-surface/40 p-5">
-                <span className="inline-flex text-terracotta dark:text-dark-terracotta mb-3">
+                <span className="inline-flex text-clay dark:text-dark-clay mb-3">
                   {icon}
                 </span>
                 <p className="font-medium text-charcoal dark:text-dark-cream mb-1">{title}</p>
@@ -377,7 +377,7 @@ export default function SpendLight() {
             ].map(({ n, heading, body, quotes, implication }) => (
               <div key={n}>
                 <div className="flex items-baseline gap-3 mb-2">
-                  <span className="font-mono text-xs text-terracotta dark:text-dark-terracotta tracking-widest shrink-0">
+                  <span className="font-mono text-xs text-clay dark:text-dark-clay tracking-widest shrink-0">
                     {n}
                   </span>
                   <h3 className="font-medium text-charcoal dark:text-dark-cream">{heading}</h3>
@@ -387,11 +387,11 @@ export default function SpendLight() {
                 </p>
                 <div className="pl-8">
                   {quotes.map((q) => <Quote key={q} text={q} />)}
-                  <div className="border-l-2 border-olive/40 dark:border-dark-olive/40 pl-5 mt-2">
-                    <p className="text-xs font-mono text-olive dark:text-dark-olive uppercase tracking-wider mb-0.5">
+                  <div className="border-l-2 border-sage/40 dark:border-dark-sage/40 pl-5 mt-2">
+                    <p className="text-xs font-mono text-sage dark:text-dark-sage uppercase tracking-wider mb-0.5">
                       Design implication
                     </p>
-                    <p className="text-sm text-olive dark:text-dark-olive leading-relaxed">
+                    <p className="text-sm text-sage dark:text-dark-sage leading-relaxed">
                       {implication}
                     </p>
                   </div>
@@ -444,7 +444,7 @@ export default function SpendLight() {
                   "Bonsai animation provided gentle motivation and a delight factor",
                 ].map((item) => (
                   <li key={item} className="flex gap-2 text-sm text-warm-gray dark:text-dark-warm-gray">
-                    <span className="text-olive dark:text-dark-olive mt-0.5">✓</span>
+                    <span className="text-sage dark:text-dark-sage mt-0.5">✓</span>
                     {item}
                   </li>
                 ))}
@@ -461,7 +461,7 @@ export default function SpendLight() {
                   "Insights visibility: Added insight cards directly to the feed",
                 ].map((item) => (
                   <li key={item} className="flex gap-2 text-sm text-warm-gray dark:text-dark-warm-gray">
-                    <span className="text-terracotta dark:text-dark-terracotta mt-0.5">→</span>
+                    <span className="text-clay dark:text-dark-clay mt-0.5">→</span>
                     {item}
                   </li>
                 ))}
@@ -497,7 +497,7 @@ export default function SpendLight() {
               "Usability-tested prototype with two rounds of iteration",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -509,7 +509,7 @@ export default function SpendLight() {
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
             Testimonial
           </h2>
-          <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6">
+          <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic mb-4">
               "Vanessa functioned as an invaluable partner to help take a lot of scattered concepts and really
               develop a cohesive product concept for SpendLight. While I came to the table with a ton of possible
@@ -540,7 +540,7 @@ export default function SpendLight() {
               "The sprint ended with a complete MVP specification ready to hand to engineering: annotated designs, a component inventory, and an event schema.",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}

@@ -26,7 +26,7 @@ export default function ThemeToggle() {
       className="relative w-14 h-7 rounded-full bg-cream-dark dark:bg-dark-surface border border-warm-gray/20 dark:border-dark-warm-gray/20 transition-colors duration-200 cursor-pointer"
     >
       <span
-        className={`absolute top-px left-px w-6 h-6 rounded-full bg-terracotta dark:bg-dark-terracotta transition-transform duration-200 flex items-center justify-center text-cream dark:text-dark-bg text-xs ${
+        className={`absolute top-px left-px w-6 h-6 rounded-full bg-clay dark:bg-dark-clay transition-transform duration-200 flex items-center justify-center text-cream dark:text-dark-bg text-xs ${
           theme === "dark" ? "translate-x-7" : "translate-x-0"
         }`}
       >

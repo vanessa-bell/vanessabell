@@ -18,7 +18,7 @@ export default function MonsterWalk() {
 
         {/* Hero */}
         <header className="mb-12">
-          <p className="text-sm text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+          <p className="text-sm text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
             Case Study
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-4">
@@ -156,7 +156,7 @@ export default function MonsterWalk() {
               },
             ].map(({ icon, title, body }) => (
               <div key={title} className="rounded-lg border border-warm-gray/15 dark:border-dark-warm-gray/15 bg-cream-dark/40 dark:bg-dark-surface/40 p-5">
-                <span className="inline-flex text-terracotta dark:text-dark-terracotta mb-3">
+                <span className="inline-flex text-clay dark:text-dark-clay mb-3">
                   {icon}
                 </span>
                 <p className="font-medium text-charcoal dark:text-dark-cream mb-1">{title}</p>
@@ -226,7 +226,7 @@ export default function MonsterWalk() {
             ].map(({ n, heading, body }) => (
               <div key={n}>
                 <div className="flex items-baseline gap-3 mb-2">
-                  <span className="font-mono text-xs text-terracotta dark:text-dark-terracotta tracking-widest shrink-0">
+                  <span className="font-mono text-xs text-clay dark:text-dark-clay tracking-widest shrink-0">
                     {n}
                   </span>
                   <h3 className="font-medium text-charcoal dark:text-dark-cream">{heading}</h3>
@@ -256,7 +256,7 @@ export default function MonsterWalk() {
               "Rotating hidden monster welcome screen to add novelty on repeat logins",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -302,7 +302,7 @@ export default function MonsterWalk() {
               "Design direction and annotated prototype delivered to Talofa Games",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -330,7 +330,7 @@ export default function MonsterWalk() {
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
             Testimonial
           </h2>
-          <blockquote className="border-l-2 border-terracotta dark:border-dark-terracotta pl-6">
+          <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6">
             <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic mb-4">
               "Vanessa confidently led both unmoderated and moderated user studies, turned insights into
               actionable next steps, and iterated effectively based on client and user feedback. She's
@@ -361,7 +361,7 @@ export default function MonsterWalk() {
               "The team delivered an annotated prototype direction to Talofa Games; whether it shipped was the client's call, not mine to measure.",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-terracotta dark:text-dark-terracotta text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}

@@ -3,16 +3,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-serif: "DM Serif Display", serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Newsreader", serif;
+  --font-sans: "Work Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   /* Light palette */
   --color-cream: #FAF6F1;
   --color-cream-dark: #F0E8DE;
-  --color-terracotta: #C2714F;
-  --color-terracotta-dark: #A85D3F;
-  --color-olive: #4A5A3C;
-  --color-olive-dark: #3B4830;
+  --color-clay: #C2714F;
+  --color-clay-dark: #A85D3F;
+  --color-sage: #5C6B50;
+  --color-sage-dark: #4A5641;
   --color-charcoal: #2C2926;
   --color-warm-gray: #6B6560;
 
@@ -20,8 +21,8 @@
   --color-dark-bg: #1C1917;
   --color-dark-surface: #292524;
   --color-dark-cream: #E7DDD3;
-  --color-dark-terracotta: #D4896A;
-  --color-dark-olive: #8FA678;
+  --color-dark-clay: #92A683;
+  --color-dark-sage: #92A683;
   --color-dark-warm-gray: #A8A29E;
 }
 

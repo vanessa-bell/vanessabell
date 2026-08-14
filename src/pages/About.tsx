@@ -50,7 +50,7 @@ function PhotoCarousel() {
             onClick={() => setCurrent(i)}
             className={`w-1.5 h-1.5 rounded-full transition-colors ${
               i === current
-                ? "bg-terracotta dark:bg-dark-terracotta"
+                ? "bg-clay dark:bg-dark-clay"
                 : "bg-warm-gray/30 dark:bg-dark-warm-gray/30 hover:bg-warm-gray/50"
             }`}
           />
@@ -73,7 +73,7 @@ export default function About() {
       <main id="main-content" className="max-w-2xl mx-auto px-6 sm:px-8 pt-6 sm:pt-8 pb-12 sm:pb-16">
 
         <header className="mb-12">
-          <p className="text-sm text-warm-gray dark:text-dark-warm-gray uppercase tracking-widest mb-3">
+          <p className="text-sm text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
             About
           </p>
           <div className="flex items-center gap-3 mb-1">
@@ -90,16 +90,10 @@ export default function About() {
 
         <div className="space-y-5 mb-12">
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I'm a UX researcher and designer based in San Francisco who specializes in clinical workflows: the tools and processes that sit between clinicians and the patients they're trying to help.
+            I'm a UX researcher and designer based in San Francisco. I design products and then I build them.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I came to design from software engineering. After six years building production systems at startups like AllStripes (a rare disease research platform) and Thistle, I transitioned to UX design during a sabbatical I took in 2023. The years I spent helping my parents navigate serious illness made me want to build for the people most underserved by the tools they have to use.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            I research directly with clinicians, design the solution, and ship it in production code alongside your engineering team, not just a Figma handoff. Recent result: a physician-researcher went from calling a workflow "kind of a burden" to calling it "fun" after my changes shipped.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-          I work with health tech startups whose clinical users are frustrated with their tools. If that sounds familiar, I'd love to hear what you're building.
+            I came to design from software engineering. After six years building production systems at startups like AllStripes (a rare disease research platform) and Thistle, I transitioned to UX design during a sabbatical I took in 2023.
           </p>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
             I also teach hatha yoga and perform flamenco dance.
