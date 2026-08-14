@@ -33,10 +33,12 @@ body {
   overflow-x: hidden;
 }
 
-img,
-video {
-  max-width: 100%;
-  height: auto;
+@layer base {
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .no-scrollbar {

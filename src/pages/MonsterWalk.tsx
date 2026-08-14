@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import { usePageMeta } from "../hooks/usePageMeta";
 
@@ -76,13 +75,13 @@ export default function MonsterWalk() {
             The problem
           </h2>
 
-          <figure className="my-10">
+          <figure className="my-10 w-screen max-w-none ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
             <img
               src="/monster-walk/old-welcome-back-flow.png"
               alt="The original Monster Walk Welcome Back screen: a static panel with minimal visual feedback, no celebration, and no streak or progress indicators"
-              className="max-w-[220px] mx-auto block rounded-lg"
+              className="w-full max-w-[1320px] mx-auto h-auto block"
             />
-            <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
+            <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic px-6">
               The original Welcome Back screen, the starting point for this engagement
             </figcaption>
           </figure>
@@ -386,13 +385,6 @@ export default function MonsterWalk() {
             re-scoping toward the right question than efficiently answer the wrong one.
           </p>
         </section>
-
-        <Link
-          to="/"
-          className="inline-block text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
-        >
-          <span aria-hidden="true">←</span> Back to work
-        </Link>
 
       </main>
     </div>

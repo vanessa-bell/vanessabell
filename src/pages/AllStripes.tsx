@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import { usePageMeta } from "../hooks/usePageMeta";
 
@@ -163,13 +162,6 @@ export default function AllStripes() {
             last step in that same approach, not a victory lap tacked onto it.
           </p>
         </section>
-
-        <Link
-          to="/"
-          className="inline-block text-sm text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
-        >
-          <span aria-hidden="true">←</span> Back to work
-        </Link>
 
       </main>
     </div>

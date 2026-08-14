@@ -1,76 +1,73 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import SiteHeader from "./components/SiteHeader";
 import { usePageMeta } from "./hooks/usePageMeta";
+import { usePrefersReducedMotion } from "./hooks/usePrefersReducedMotion";
 
-interface WorkItem {
+function HeroFlipCard({
+  to,
+  ariaLabel,
+  front,
+  frontLabel,
+  tag,
+  company,
+  title,
+  impact,
+}: {
   to: string;
-  image: string;
-  alt: string;
+  ariaLabel: string;
+  front: ReactNode;
+  frontLabel: string;
   tag: string;
   company: string;
-  companyLogo?: string;
-  companyLogoAlt?: string;
   title: string;
   impact: string;
-}
+}) {
+  const [revealed, setRevealed] = useState(false);
 
-const workItems: WorkItem[] = [
-  {
-    to: "/ai-research-workflow",
-    image: "/ai-research-workflow/mobile-hero-diagram.svg",
-    alt: "Before-and-after: a long manual form reduced to a compact AI-proposed card, with a 9x reduction in time",
-    tag: "Health tech",
-    company: "Early-stage health tech startup",
-    title: "Letting AI Do the Work so Human Experts Can Focus on Review",
-    impact: "9x reduction in time and steps",
-  },
-  {
-    to: "/monster-walk",
-    image: "/monster-walk/monster-walk-hero.gif",
-    alt: "Monster Walk Welcome Back screen redesign showing the streak milestone moment",
-    tag: "Gaming",
-    company: "Talofa Games",
-    companyLogo: "/monster-walk/talofa-games.png",
-    companyLogoAlt: "Talofa Games logo",
-    title: "Turning Daily Walks into Daily Wins",
-    impact: "100% participant clarity in testing",
-  },
-];
+  const handleClick = (e: React.MouseEvent) => {
+    // Touch devices have no :hover, so the back face (case study name,
+    // company, impact) would otherwise be unreachable — require a first
+    // tap to reveal it before the second tap navigates.
+    if (window.matchMedia("(hover: hover)").matches) return;
+    if (!revealed) {
+      e.preventDefault();
+      setRevealed(true);
+    }
+  };
 
-function FlipCard({ item }: { item: WorkItem }) {
   return (
-    <Link to={item.to} className="group block aspect-[4/5] [perspective:1200px]">
-      <div className="relative w-full h-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
-        {/* Front — image only */}
-        <div className="absolute inset-0 rounded-xl overflow-hidden [backface-visibility:hidden] bg-cream-dark dark:bg-dark-surface">
-          <img
-            src={item.image}
-            alt={item.alt}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        {/* Back — info */}
-        <div className="absolute inset-0 rounded-xl overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] bg-charcoal dark:bg-dark-surface px-5 py-5 flex flex-col justify-end">
-          <span className="inline-block text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full mb-3 bg-sage/90 text-cream w-fit">
-            {item.tag}
+    <Link
+      to={to}
+      aria-label={ariaLabel}
+      onClick={handleClick}
+      className="group block w-full [perspective:1200px]"
+    >
+      <div
+        className={`relative w-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)] ${
+          revealed ? "[transform:rotateY(180deg)]" : ""
+        }`}
+      >
+        {/* Front — media plus a simple label pill, sizes the card to the media's natural height */}
+        <div className="relative overflow-hidden [backface-visibility:hidden] bg-charcoal dark:bg-dark-surface">
+          {front}
+          <span className="absolute top-3 left-3 sm:top-4 sm:left-4 inline-block text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full bg-sage/90 text-cream">
+            {frontLabel}
           </span>
-          {item.companyLogo ? (
-            <img
-              src={item.companyLogo}
-              alt={item.companyLogoAlt ?? item.company}
-              className="h-6 sm:h-7 w-auto mb-2 object-contain object-left"
-            />
-          ) : (
-            <p className="text-xs font-mono uppercase tracking-widest text-cream/60 mb-1.5">
-              {item.company}
-            </p>
-          )}
-          <p className="font-serif text-lg text-cream leading-snug mb-2">
-            {item.title}
+        </div>
+        {/* Back — overlays the front at whatever height it established */}
+        <div className="absolute inset-0 overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] bg-charcoal dark:bg-dark-surface px-4 py-4 sm:px-5 sm:py-5 flex flex-col justify-center items-center text-center gap-2">
+          <span className="inline-block text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full bg-sage/90 text-cream w-fit">
+            {tag}
+          </span>
+          <p className="text-xs font-mono uppercase tracking-widest text-cream/60">
+            {company}
           </p>
-          <p className="text-sm text-cream/70 leading-snug">
-            {item.impact}
+          <p className="font-serif text-base sm:text-lg text-cream leading-snug">
+            {title}
+          </p>
+          <p className="text-xs sm:text-sm text-cream/70 leading-snug">
+            {impact}
           </p>
         </div>
       </div>
@@ -85,22 +82,7 @@ export default function App() {
     path: "/",
   });
 
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-
-  const togglePlayback = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      video.play();
-      setIsPlaying(true);
-    } else {
-      video.pause();
-      setIsPlaying(false);
-    }
-  };
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -131,64 +113,96 @@ export default function App() {
       <SiteHeader />
 
       <main id="main-content" className="pb-16">
-        {/* Full-bleed hero: SpendLight video with overlaid headline */}
-        <section className="relative w-full" aria-label="Introduction">
-          <Link to="/spendlight" className="group block">
-            <div className="relative h-[52vh] sm:h-[80vh] min-h-[360px] sm:min-h-[500px] max-h-[560px] sm:max-h-[760px] overflow-hidden bg-charcoal dark:bg-dark-bg flex items-center justify-center">
-              <video
-                ref={videoRef}
-                autoPlay
-                loop
-                muted
-                playsInline
-                aria-label="SpendLight core flow: mood check-in, logging a purchase reflection, adding context, and receiving the bonsai growth reward"
-                className="h-[90%] w-auto max-w-[50%] sm:h-[26%] sm:max-w-[13%] object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-              >
-                <source src="/spendlight/spendlight-core-flow.mp4" type="video/mp4" />
-                <source src="/spendlight/spendlight-core-flow.mov" type="video/quicktime" />
-              </video>
-              <div
-                className="absolute inset-0 bg-gradient-to-b from-transparent via-charcoal/40 to-charcoal pointer-events-none"
-                aria-hidden="true"
-              />
-              <button
-                type="button"
-                onClick={togglePlayback}
-                aria-label={isPlaying ? "Pause video" : "Play video"}
-                className="absolute top-4 right-4 sm:top-6 sm:right-6 w-9 h-9 rounded-full bg-charcoal/60 dark:bg-dark-bg/70 backdrop-blur-sm text-cream flex items-center justify-center hover:bg-charcoal/80 dark:hover:bg-dark-bg/90 transition-colors"
-              >
-                {isPlaying ? (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <rect x="6" y="5" width="4" height="14" rx="1" />
-                    <rect x="14" y="5" width="4" height="14" rx="1" />
-                  </svg>
-                ) : (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M7 5v14l12-7z" />
-                  </svg>
-                )}
-              </button>
-              <div className="absolute left-6 right-6 sm:left-10 sm:right-10 bottom-6 sm:bottom-8 pointer-events-none">
-                <h1 className="font-serif text-2xl sm:text-3xl text-cream leading-tight max-w-md">
-                  Are you looking for a product-minded designer who can code?
-                </h1>
-                 <p className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-cream/80 mb-2">
-                  Read case study →
-                </p>
-              </div>
-            </div>
-          </Link>
-        </section>
+        {/* Hero: bento grid of the three case studies */}
+        <section className="px-6 sm:px-4 pt-3 sm:pt-4" aria-label="Featured work">
+          <h1 className="max-w-[810px] mx-auto font-serif text-xl sm:text-2xl text-charcoal dark:text-dark-cream leading-snug mb-4 sm:mb-6">
+            Product-minded designer who can code
+          </h1>
 
-        {/* Additional work */}
-        <section className="mt-10 sm:mt-12 max-w-2xl mx-auto px-6 sm:px-8" aria-label="Additional work">
-          <p className="text-xs text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-5">
-            Additional work
-          </p>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {workItems.map((item) => (
-              <FlipCard key={item.to} item={item} />
-            ))}
+          <div className="max-w-[810px] mx-auto flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
+            {/* SpendLight + AllStripes — left column */}
+            <div className="w-full sm:flex-[1.2] flex flex-col gap-3 sm:gap-4">
+              <HeroFlipCard
+                to="/spendlight"
+                ariaLabel="View SpendLight case study"
+                frontLabel="0 to 1"
+                tag="Personal finance"
+                company="SpendLight"
+                title="A Spending Journal Built on Reflection, Not Budgets"
+                impact="Concept validated, MVP spec ready for engineering"
+                front={
+                  <video
+                    autoPlay={!prefersReducedMotion}
+                    loop={!prefersReducedMotion}
+                    muted
+                    playsInline
+                    aria-label="SpendLight core flow: mood check-in, logging a purchase reflection, adding context, and receiving the bonsai growth reward"
+                    className="block w-full h-auto scale-105"
+                  >
+                    <source src="/spendlight/spendlight-core-flow.mp4" type="video/mp4" />
+                    <source src="/spendlight/spendlight-core-flow.mov" type="video/quicktime" />
+                  </video>
+                }
+              />
+
+              <HeroFlipCard
+                to="/allstripes"
+                ariaLabel="View AllStripes case study"
+                frontLabel="Workflow redesign"
+                tag="Healthcare ops"
+                company="AllStripes"
+                title="Cutting Medical Records Processing by 95%"
+                impact="20 min → under 1 min per file"
+                front={
+                  <img
+                    src="/allstripes/allstripes-cover.jpg"
+                    alt="AllStripes medical records workflow redesign"
+                    className="block w-full h-auto"
+                  />
+                }
+              />
+            </div>
+
+            {/* Forma + Monster Walk — stacked right column */}
+            <div className="w-full sm:flex-1 flex flex-col gap-3 sm:gap-4">
+              <HeroFlipCard
+                to="/ai-research-workflow"
+                ariaLabel="View health tech case study"
+                frontLabel="Internal tool redesign"
+                tag="Health tech"
+                company="Early-stage health tech startup"
+                title="Letting AI Do the Work so Human Experts Can Focus on Review"
+                impact="9x reduction in time and steps"
+                front={
+                  <img
+                    src="/ai-research-workflow/mobile-hero-diagram.svg"
+                    alt="Before-and-after: a long manual form reduced to a compact AI-proposed card, with a 9x reduction in time"
+                    className="block w-full h-auto"
+                  />
+                }
+              />
+
+              <HeroFlipCard
+                to="/monster-walk"
+                ariaLabel="View Monster Walk case study"
+                frontLabel="User research"
+                tag="Gaming"
+                company="Talofa Games"
+                title="Turning Daily Walks into Daily Wins"
+                impact="100% participant clarity in testing"
+                front={
+                  <img
+                    src={
+                      prefersReducedMotion
+                        ? "/monster-walk/monster-walk-static.png"
+                        : "/monster-walk/monster-walk-hero.gif"
+                    }
+                    alt="Monster Walk Welcome Back screen redesign showing the streak milestone moment"
+                    className="block w-full h-auto"
+                  />
+                }
+              />
+            </div>
           </div>
         </section>
       </main>
