@@ -1,6 +1,6 @@
-import { useState } from "react";
 import SiteHeader from "../components/SiteHeader";
 import { usePageMeta } from "../hooks/usePageMeta";
+import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 function Quote({ text, attribution }: { text: string; attribution?: string }) {
   return (
@@ -8,7 +8,7 @@ function Quote({ text, attribution }: { text: string; attribution?: string }) {
       <div className="rounded-2xl bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-4">
         <div className="flex gap-3 items-start">
           <svg
-            className="text-clay dark:text-dark-clay shrink-0 mt-0.5"
+            className="text-clay-dark dark:text-dark-clay shrink-0 mt-0.5"
             width="15" height="15" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" strokeWidth="1.75"
             strokeLinecap="round" strokeLinejoin="round"
@@ -30,63 +30,36 @@ function Quote({ text, attribution }: { text: string; attribution?: string }) {
   );
 }
 
-function Carousel({ slides }: { slides: { filename: string; caption: string }[] }) {
-  const [current, setCurrent] = useState(0);
-  const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length);
-  const next = () => setCurrent((c) => (c + 1) % slides.length);
-  const slide = slides[current];
-
+function IterationGrid({
+  slides,
+}: {
+  slides: { filename: string; width: number; height: number; caption: string }[];
+}) {
   return (
-    <div className="my-10" role="region" aria-label="Journaling flow iterations">
-      <div className="relative rounded-lg overflow-hidden bg-cream-dark dark:bg-dark-surface">
-        <img
-          src={`/${slide.filename}`}
-          alt={slide.caption}
-          className="w-full max-h-96 object-contain block"
-        />
-
-        <button
-          onClick={prev}
-          aria-label="Previous slide"
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-cream dark:bg-dark-bg border border-warm-gray/20 dark:border-dark-warm-gray/20 flex items-center justify-center text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-        <button
-          onClick={next}
-          aria-label="Next slide"
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-cream dark:bg-dark-bg border border-warm-gray/20 dark:border-dark-warm-gray/20 flex items-center justify-center text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors"
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-      </div>
-
-      {slide.caption && (
-        <p className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
-          {slide.caption}
-        </p>
-      )}
-
-      <div className="flex justify-center gap-2 mt-4" role="tablist" aria-label="Slides">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            role="tab"
-            aria-selected={i === current}
-            aria-label={`Slide ${i + 1}`}
-            onClick={() => setCurrent(i)}
-            className={`w-1.5 h-1.5 rounded-full transition-colors ${
-              i === current
-                ? "bg-clay dark:bg-dark-clay"
-                : "bg-warm-gray/30 dark:bg-dark-warm-gray/30 hover:bg-warm-gray/50"
-            }`}
-          />
-        ))}
-      </div>
+    <div
+      className="my-10 grid sm:grid-cols-2 gap-5"
+      role="region"
+      aria-label="Journaling flow iterations"
+    >
+      {slides.map((slide) => (
+        <figure key={slide.filename}>
+          <div className="rounded-lg overflow-hidden bg-cream-dark dark:bg-dark-surface">
+            <img
+              src={`/${slide.filename}`}
+              width={slide.width}
+              height={slide.height}
+              loading="lazy"
+              alt={slide.caption}
+              className="w-full max-h-96 object-contain block mx-auto"
+            />
+          </div>
+          {slide.caption && (
+            <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
+              {slide.caption}
+            </figcaption>
+          )}
+        </figure>
+      ))}
     </div>
   );
 }
@@ -98,6 +71,8 @@ export default function SpendLight() {
     ogImage: "https://vanessabell.design/spendlight/hero.png",
     path: "/spendlight",
   });
+
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
@@ -116,13 +91,38 @@ export default function SpendLight() {
             A six-week lean UX sprint to validate the concept of a spending journal.
           </p>
 
+          <div className="overflow-hidden rounded-lg my-10 max-w-md mx-auto">
+            {prefersReducedMotion ? (
+              <img
+                src="/spendlight/hero-static.jpg"
+                width={893}
+                height={900}
+                alt="SpendLight core flow: mood check-in, logging a purchase reflection, adding context, and receiving the bonsai growth reward"
+                className="w-full -mt-px"
+              />
+            ) : (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                width={1294}
+                height={1540}
+                aria-label="SpendLight core flow: mood check-in, logging a purchase reflection, adding context, and receiving the bonsai growth reward"
+                className="w-full -mt-px"
+              >
+                <source src="/spendlight/spendlight-core-flow.mp4" type="video/mp4" />
+              </video>
+            )}
+          </div>
+
           <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-10 rounded-xl border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-6 sm:px-6">
             {[
               { value: "6 weeks", label: "concept → build-ready spec" },
               { value: "4 insights", label: "research insights → design decisions" },
             ].map(({ value, label }) => (
               <div key={label}>
-                <p className="font-serif text-xl sm:text-2xl text-clay dark:text-dark-clay leading-tight mb-1.5">
+                <p className="font-serif text-xl sm:text-2xl text-clay-dark dark:text-dark-clay leading-tight mb-1.5">
                   {value}
                 </p>
                 <p className="text-xs text-warm-gray dark:text-dark-warm-gray leading-snug">
@@ -131,20 +131,6 @@ export default function SpendLight() {
               </div>
             ))}
           </div>
-
-        <div className="overflow-hidden rounded-lg my-10 max-w-md mx-auto">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-label="SpendLight core flow: mood check-in, logging a purchase reflection, adding context, and receiving the bonsai growth reward"
-            className="w-full -mt-px"
-          >
-            <source src="/spendlight/spendlight-core-flow.mp4" type="video/mp4" />
-            <source src="/spendlight/spendlight-core-flow.mov" type="video/quicktime" />
-          </video>
-        </div>
 
           <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 text-sm mt-8 mx-auto">
             {[
@@ -213,7 +199,7 @@ export default function SpendLight() {
               "What is the simplest possible version worth building?",
             ].map((q) => (
               <li key={q} className="flex gap-3">
-                <span className="text-clay dark:text-dark-clay mt-1">–</span>
+                <span className="text-clay-dark dark:text-dark-clay mt-1">–</span>
                 <span>{q}</span>
               </li>
             ))}
@@ -308,7 +294,7 @@ export default function SpendLight() {
               },
             ].map(({ icon, title, body }) => (
               <div key={title} className="rounded-lg border border-warm-gray/15 dark:border-dark-warm-gray/15 bg-cream-dark/40 dark:bg-dark-surface/40 p-5">
-                <span className="inline-flex text-clay dark:text-dark-clay mb-3">
+                <span className="inline-flex text-clay-dark dark:text-dark-clay mb-3">
                   {icon}
                 </span>
                 <p className="font-medium text-charcoal dark:text-dark-cream mb-1">{title}</p>
@@ -369,7 +355,7 @@ export default function SpendLight() {
             ].map(({ n, heading, body, quotes, implication }) => (
               <div key={n}>
                 <div className="flex items-baseline gap-3 mb-2">
-                  <span className="font-mono text-xs text-clay dark:text-dark-clay tracking-widest shrink-0">
+                  <span className="font-mono text-xs text-clay-dark dark:text-dark-clay tracking-widest shrink-0">
                     {n}
                   </span>
                   <h3 className="font-medium text-charcoal dark:text-dark-cream">{heading}</h3>
@@ -453,19 +439,19 @@ export default function SpendLight() {
                   "Insights visibility: Added insight cards directly to the feed",
                 ].map((item) => (
                   <li key={item} className="flex gap-2 text-sm text-warm-gray dark:text-dark-warm-gray">
-                    <span className="text-clay dark:text-dark-clay mt-0.5">→</span>
+                    <span className="text-clay-dark dark:text-dark-clay mt-0.5">→</span>
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          <Carousel
+          <IterationGrid
             slides={[
-              { filename: "spendlight/sketch.png", caption: "Early concept sketch: mapping the core journaling loop" },
-              { filename: "spendlight/old-2-step-journal-flow.jpg", caption: "V1: Original two-step journal flow before usability testing" },
-              { filename: "spendlight/final-reflection.jpg", caption: "Final reflection screen: simplified prompts, reduced cognitive load" },
-              { filename: "spendlight/bonsai-growth-celebration.jpg", caption: "Bonsai growth celebration: the emotional reward at the heart of the app" },
+              { filename: "spendlight/sketch.jpg", width: 445, height: 640, caption: "Early concept sketch: mapping the core journaling loop" },
+              { filename: "spendlight/old-2-step-journal-flow.jpg", width: 393, height: 850, caption: "V1: Original two-step journal flow before usability testing" },
+              { filename: "spendlight/final-reflection.jpg", width: 469, height: 1443, caption: "Final reflection screen: simplified prompts, reduced cognitive load" },
+              { filename: "spendlight/bonsai-growth-celebration.jpg", width: 786, height: 1630, caption: "Bonsai growth celebration: the emotional reward at the heart of the app" },
             ]}
           />
         </section>
@@ -489,7 +475,7 @@ export default function SpendLight() {
               "Usability-tested prototype with two rounds of iteration",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay-dark dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -532,7 +518,7 @@ export default function SpendLight() {
               "The sprint ended with a complete MVP specification ready to hand to engineering: annotated designs, a component inventory, and an event schema.",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay-dark dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}

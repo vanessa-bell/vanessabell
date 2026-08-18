@@ -115,9 +115,12 @@ export default function App() {
       <main id="main-content" className="pb-16">
         {/* Hero: bento grid of the three case studies */}
         <section className="px-6 sm:px-4 pt-3 sm:pt-4" aria-label="Featured work">
-          <h1 className="max-w-[810px] mx-auto font-serif text-xl sm:text-2xl text-charcoal dark:text-dark-cream leading-snug mb-4 sm:mb-6">
+          <h1 className="max-w-[810px] mx-auto font-serif text-xl sm:text-2xl text-charcoal dark:text-dark-cream leading-snug mb-1.5">
             Product-minded designer who can code
           </h1>
+          <p className="max-w-[810px] mx-auto text-sm text-warm-gray dark:text-dark-warm-gray leading-snug mb-4 sm:mb-6">
+            I run the research, design the fix, and ship the code myself — no handoffs in between.
+          </p>
 
           <div className="max-w-[810px] mx-auto flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
             {/* SpendLight + AllStripes — left column */}
@@ -136,11 +139,12 @@ export default function App() {
                     loop={!prefersReducedMotion}
                     muted
                     playsInline
+                    width={1294}
+                    height={1540}
                     aria-label="SpendLight core flow: mood check-in, logging a purchase reflection, adding context, and receiving the bonsai growth reward"
                     className="block w-full h-auto scale-105"
                   >
                     <source src="/spendlight/spendlight-core-flow.mp4" type="video/mp4" />
-                    <source src="/spendlight/spendlight-core-flow.mov" type="video/quicktime" />
                   </video>
                 }
               />
@@ -156,6 +160,8 @@ export default function App() {
                 front={
                   <img
                     src="/allstripes/allstripes-cover.jpg"
+                    width={474}
+                    height={426}
                     alt="AllStripes medical records workflow redesign"
                     className="block w-full h-auto"
                   />
@@ -175,8 +181,10 @@ export default function App() {
                 impact="9x reduction in time and steps"
                 front={
                   <img
-                    src="/ai-research-workflow/mobile-hero-diagram.svg"
-                    alt="Before-and-after: a long manual form reduced to a compact AI-proposed card, with a 9x reduction in time"
+                    src="/ai-research-workflow/hero-diagram-public.png"
+                    width={1440}
+                    height={1024}
+                    alt="a long manual form reduced to a compact AI-proposed card, with a 9x reduction in time"
                     className="block w-full h-auto"
                   />
                 }
@@ -194,9 +202,11 @@ export default function App() {
                   <img
                     src={
                       prefersReducedMotion
-                        ? "/monster-walk/monster-walk-static.png"
+                        ? "/monster-walk/monster-walk-static.jpg"
                         : "/monster-walk/monster-walk-hero.gif"
                     }
+                    width={prefersReducedMotion ? 278 : 1082}
+                    height={prefersReducedMotion ? 462 : 1795}
                     alt="Monster Walk Welcome Back screen redesign showing the streak milestone moment"
                     className="block w-full h-auto"
                   />

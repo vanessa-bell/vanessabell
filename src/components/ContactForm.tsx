@@ -1,24 +1,9 @@
-import { useState } from "react";
+import { useFormspreeForm } from "../hooks/useFormspreeForm";
 
 const FORMSPREE_URL = "https://formspree.io/f/mykvzyqv";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: "POST",
-        body: new FormData(e.currentTarget),
-        headers: { Accept: "application/json" },
-      });
-      setStatus(res.ok ? "sent" : "error");
-    } catch {
-      setStatus("error");
-    }
-  };
+  const { status, handleSubmit } = useFormspreeForm(FORMSPREE_URL);
 
   if (status === "sent") {
     return (
@@ -71,7 +56,7 @@ export default function ContactForm() {
         />
       </div>
       {status === "error" && (
-        <p role="alert" className="text-sm text-clay dark:text-dark-clay">
+        <p role="alert" className="text-sm text-clay-dark dark:text-dark-clay">
           Something went wrong. Try again or connect on LinkedIn.
         </p>
       )}

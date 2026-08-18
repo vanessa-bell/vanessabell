@@ -1,26 +1,31 @@
-import { useState } from "react";
 import SiteHeader from "../components/SiteHeader";
 import { usePageMeta } from "../hooks/usePageMeta";
+import { useFormspreeForm } from "../hooks/useFormspreeForm";
 
 const FORMSPREE_URL = "https://formspree.io/f/mykvzyqv";
 
-function RequestAccessForm() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+function NdaNotice({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-start gap-3 rounded-lg border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-4 py-3">
+      <svg
+        className="text-clay-dark dark:text-dark-clay shrink-0 mt-0.5"
+        width="16" height="16" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" strokeWidth="1.75"
+        strokeLinecap="round" strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="3" y="11" width="18" height="11" rx="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      </svg>
+      <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+        {children}
+      </p>
+    </div>
+  );
+}
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: "POST",
-        body: new FormData(e.currentTarget),
-        headers: { Accept: "application/json" },
-      });
-      setStatus(res.ok ? "sent" : "error");
-    } catch {
-      setStatus("error");
-    }
-  };
+function RequestAccessForm() {
+  const { status, handleSubmit } = useFormspreeForm(FORMSPREE_URL);
 
   if (status === "sent") {
     return (
@@ -65,8 +70,8 @@ function RequestAccessForm() {
         />
       </div>
       {status === "error" && (
-        <p role="alert" className="text-sm text-clay dark:text-dark-clay">
-          Something went wrong. Try again or email me directly at vanessa.bell14@gmail.com.
+        <p role="alert" className="text-sm text-clay-dark dark:text-dark-clay">
+          Something went wrong. Try again or reach out to me on LinkedIn.
         </p>
       )}
       <button
@@ -84,7 +89,7 @@ export default function HealthTech() {
   usePageMeta({
     title: "Letting AI Do the Work so Human Experts Can Focus on Review | Vanessa Bell",
     description: "A researcher-facing workflow redesign for an AI health tech platform. Flipped the interaction model from manual-first to AI-proposes, human-confirms, achieving a 9x reduction in time and steps.",
-    ogImage: "https://vanessabell.design/ai-research-workflow/hero-diagram-og.png",
+    ogImage: "https://vanessabell.design/ai-research-workflow/hero-diagram-public.png",
     path: "/ai-research-workflow",
   });
 
@@ -105,22 +110,24 @@ export default function HealthTech() {
             A redesigned researcher workflow for an AI health tech platform.
           </p>
 
-          <div className="flex items-start gap-3 mb-8 rounded-lg bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-4 py-3">
-            <svg
-              className="text-clay dark:text-dark-clay shrink-0 mt-0.5"
-              width="16" height="16" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" strokeWidth="1.75"
-              strokeLinecap="round" strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <rect x="3" y="11" width="18" height="11" rx="2" />
-              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-            </svg>
-            <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-              This project is under an NDA, so screens and detailed flows are described here rather
-              than shown. I'm happy to walk through the real thing on a call.
-            </p>
+          <div className="mb-8">
+            <NdaNotice>
+              This project is under an NDA, so the mockup here is for illustrative purposes only. I'm happy to walk through the real thing on a call.
+            </NdaNotice>
           </div>
+
+          <figure className="my-10">
+            <img
+              src="/ai-research-workflow/hero-diagram-public.png"
+              width={1440}
+              height={1024}
+              alt="concept mockup of the interaction model I designed"
+              className="w-full rounded-lg"
+            />
+            <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
+              Real interface under NDA — image above is a concept mockup of the interaction model I designed.
+            </figcaption>
+          </figure>
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-6 mb-10 rounded-xl border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-6 sm:px-6">
             {[
@@ -130,7 +137,7 @@ export default function HealthTech() {
               { value: "29", label: "components & services touched" },
             ].map(({ value, label }) => (
               <div key={label}>
-                <p className="font-serif text-xl sm:text-2xl text-clay dark:text-dark-clay leading-tight mb-1.5">
+                <p className="font-serif text-xl sm:text-2xl text-clay-dark dark:text-dark-clay leading-tight mb-1.5">
                   {value}
                 </p>
                 <p className="text-xs text-warm-gray dark:text-dark-warm-gray leading-snug">
@@ -139,23 +146,6 @@ export default function HealthTech() {
               </div>
             ))}
           </div>
-
-          <figure className="my-10">
-            <img
-              src="/ai-research-workflow/mobile-hero-diagram.svg"
-              alt="A side-by-side comparison showing the redesigned researcher workflow. On the left, a long form labeled before with many fields and a Run LLM button at the bottom, captioned Specify every expected answer, then run AI. Time spent: 4.5 minutes. On the right, a compact card labeled after with four checkmarks and a Confirm Correct button, captioned AI proposes, researcher confirms or corrects. Time spent: under 30 seconds. Between them, an arrow containing the text 9x reduction."
-              className="w-full rounded-lg sm:hidden"
-            />
-            <img
-              src="/ai-research-workflow/hero-diagram-public.svg"
-              alt=""
-              aria-hidden="true"
-              className="w-full rounded-lg hidden sm:block"
-            />
-            <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
-              Abstracted for confidentiality. I can walk through the real screens on a call.
-            </figcaption>
-          </figure>
 
           <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 text-sm mt-8 mx-auto">
             {[
@@ -174,187 +164,17 @@ export default function HealthTech() {
           </dl>
         </header>
 
-        <hr className="border-warm-gray/20 dark:border-dark-warm-gray/20 mb-12" />
-
-        {/* The challenge */}
-        <section className="mb-12">
+        {/* Request Access */}
+        <section className="mb-16">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            The challenge
+            Full case study
           </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            The client builds two connected products. Caregivers report symptoms in natural speech
-            in a patient app, something like "he had three wet diapers and seemed cranky." An AI
-            pipeline turns each spoken report into structured research data and sends it to a
-            researcher-facing portal, where clinicians study patterns across patients. The AI
-            doesn't diagnose. It turns unstructured speech into a research-ready database that can
-            inform new treatments.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            For the AI to do that reliably, researchers configure it first, then validate it. That
-            validation step, where trust in the AI is built or lost, was the focus of my work.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            The stakes are specific to rare disease. A given study might track symptoms for a few
-            hundred patients worldwide, so a misconfigured extraction pipeline doesn't just add
-            noise. It can make a condition look different from how it actually presents.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            And the people doing this work are clinicians, not full-time software users. One
-            physician-researcher I spoke with had one to two days of protected academic time every
-            four weeks. She was authoring test cases from memory of real clinical encounters,
-            picking the tool up after weeks between sessions.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-3">
-            For her, the tool had three jobs:
-          </p>
-          <ul className="space-y-2 mb-4">
-            {[
-              "Build confidence that the AI is extracting the right data from patient utterances.",
-              "Signal clearly when testing is complete, so researchers aren't left wondering whether they've done enough before launching a study.",
-              "Protect limited research time by not requiring more effort than the task actually requires.",
-            ].map((item) => (
-              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
-                <span className="text-sm leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            The original workflow did the opposite. It asked her to author the entire expected
-            result by hand, field by field, before the AI ever ran. Estimated time per utterance:
-            four and a half minutes. A typical study has dozens of utterances.
-          </p>
-        </section>
-
-        {/* Approach */}
-        <section className="mb-12">
-          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
-            Approach
-          </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-8">
-            Before touching a single screen, I mapped the existing codebase and found a structural
-            problem that shaped the entire engagement: the system had no opinion about whether a
-            study was correctly configured. A researcher could publish an incomplete study with no
-            warning. From there I narrowed scope to one workflow, ran heuristic evaluations at
-            multiple stages, aligned early with the CEO on the core vision (the AI should propose a
-            draft, the researcher should confirm or correct), and conducted user research with two
-            researchers running active studies on the platform.
-          </p>
-
-          <h3 className="font-medium text-charcoal dark:text-dark-cream mb-2">
-            Phase 1: reduce the manual work
-          </h3>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            My first hypothesis was that the problem was friction. The heuristic audit supported it:
-            too many clicks for basic tasks, no way to sort, search, or filter, and no top-level
-            signal about whether the AI was configured well enough to start collecting real data.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-2">Shipped:</p>
-          <ul className="space-y-2 mb-8">
-            {[
-              "Run the AI first, not last, so the researcher's job becomes verification rather than authoring.",
-              "Removed a jarring context switch between reviewing a result and correcting it.",
-              "Made it possible to find your way back to where you left off, instead of re-deriving it every time.",
-              "Surfaced per-item signal on what still needed attention.",
-              "Gave the researcher a way to see her own bar for 'good enough,' not just a raw number with nothing to compare it against. This came directly from research: a second researcher told me her trust threshold was 9 out of 10, and the tool wasn't showing her that.",
-            ].map((item) => (
-              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
-                <span className="text-sm leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <h3 className="font-medium text-charcoal dark:text-dark-cream mb-2">
-            The pivot
-          </h3>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            After Phase 1 shipped, I ran a session with a physician-researcher who had already tried
-            the redesign on her own and struggled. Mid-task, she paused and said:
-          </p>
-          <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6 mb-4">
-            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic">
-              "Do I mark this done? Do I run it? Do I run it again? I don't know what I'm supposed
-              to do. Actually, I don't know what I do."
-            </p>
-          </blockquote>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            Phase 1 had made individual tasks easier but hadn't given researchers a clear path
-            through the tool. The old author-first option was still there, so she had never
-            discovered the AI-first flow on her own. When I walked her through it in the same
-            session, same data, opposite sequencing:
-          </p>
-          <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6 mb-4">
-            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic">
-              "That is huge. That is amazing, actually. That's so wonderful, because before, I was
-              like, this is painful."
-            </p>
-          </blockquote>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-8">
-            My hypothesis had been half right. Friction was real, but removing it wasn't sufficient,
-            because the interface still offered two paths and defaulted to the worse one. That
-            session became the brief for Phase 2.
-          </p>
-
-          <h3 className="font-medium text-charcoal dark:text-dark-cream mb-2">
-            Phase 2: review-first
-          </h3>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            I reframed the design question from "how do we make editing easier?" to "what does the
-            interface look like if editing is the exception, not the default?"
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-2">Shipped:</p>
-          <ul className="space-y-2 mb-8">
-            {[
-              "Read-only by default, so the interface itself communicates that editing is the exception rather than the expected action.",
-              "Renamed the core actions to describe what the researcher was actually doing, instead of generic accept/reject language borrowed from other review tools.",
-              "Removed uninformative comparisons, so only meaningful differences surface and attention goes where a decision is genuinely needed.",
-              "Made progress and next action always visible, so a researcher returning after weeks away never has to work out where they are or what to do next.",
-            ].map((item) => (
-              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
-                <span className="text-sm leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <h3 className="font-medium text-charcoal dark:text-dark-cream mb-2">
-            The decision I'd defend
-          </h3>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            Making review faster created a risk I had to design against: if confirming takes one
-            click, people confirm without looking.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            So the flow keeps friction exactly where scrutiny matters. Agreeing with the AI stays
-            cheap. Anything the AI got wrong, or anything the researcher flagged as uncertain, has to
-            be dealt with deliberately and cannot be cleared by a bulk action. Discrepancies stay
-            visible even as matching fields recede.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            The goal was to remove busywork, not oversight.
-          </p>
-        </section>
-
-        {/* Flow: before and after */}
-        <section className="mb-12">
-          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Flow: before and after
-          </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            <strong className="text-charcoal dark:text-dark-cream font-medium">Before, nine steps.</strong>{" "}
-            The old flow put the researcher first: author every expected answer from memory, then
-            run the AI to check it, then reconcile any mismatch by hand. There was no way to search
-            or filter what had already been reviewed, so every return trip meant re-figuring out
-            where you'd left off.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            <strong className="text-charcoal dark:text-dark-cream font-medium">After, four steps.</strong>{" "}
-            The new flow flips the order. The AI runs first, automatically, on everything entered.
-            The researcher's job becomes reviewing what needs a decision, not authoring from scratch:
-            confirm what the AI got right, correct what it didn't, or flag anything uncertain to
-            revisit later. Once everything's been looked at, moving on is immediate.
-          </p>
+          <div className="mb-6">
+            <NdaNotice>
+              The full case study is under NDA — request access below and I'll follow up directly.
+            </NdaNotice>
+          </div>
+          <RequestAccessForm />
         </section>
 
         {/* Testimonial */}
@@ -376,68 +196,6 @@ export default function HealthTech() {
               CEO
             </footer>
           </blockquote>
-        </section>
-
-        {/* How I measured success */}
-        <section className="mb-12">
-          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            How I measured success
-          </h2>
-          <ul className="space-y-2">
-            {[
-              "Time per utterance: an estimated 4.5 minutes to under 30 seconds, a 9x reduction on a workflow researchers repeat dozens of times per study.",
-              "Steps in the core flow: nine to four.",
-              "Shipped: 7 pull requests merged, 29 distinct components and services touched, designed and implemented by me in the client's Angular codebase.",
-              "Qualitative: the researcher who called the workflow painful, in the same session, called the corrected flow \"huge.\"",
-            ].map((item) => (
-              <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
-                <span className="text-sm leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* What this says about how I work */}
-        <section className="mb-16">
-          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            What this says about how I work
-          </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            This project required treating "confusing" and "wrong" as two different kinds of design
-            problems. A confusing interface costs someone time, which is real but recoverable. A
-            wrong one, in this context, risks distorting how a rare disease actually presents. So I
-            built friction back in deliberately instead of optimizing it away everywhere for the sake of speed.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            It also shows how I hold a hypothesis. I believed the problem was friction, shipped
-            against that belief, and then watched a user prove it was only half the story. The result was a stronger redesign that made the end user's life easier.
-          </p>
-        </section>
-
-        {/* Request Access */}
-        <section className="mb-16">
-          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Full case study
-          </h2>
-          <div className="flex items-start gap-3 mb-6 rounded-lg border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-4">
-            <svg
-              className="text-clay dark:text-dark-clay shrink-0 mt-0.5"
-              width="18" height="18" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" strokeWidth="1.75"
-              strokeLinecap="round" strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <rect x="3" y="11" width="18" height="11" rx="2" />
-              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-            </svg>
-            <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-              This project is under an NDA, so the public write-up leaves out screens and some
-              implementation detail. I'm glad to walk through the real product on a call. Leave your
-              info below and I'll follow up.
-            </p>
-          </div>
-          <RequestAccessForm />
         </section>
 
       </main>

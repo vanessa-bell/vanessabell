@@ -47,7 +47,7 @@ export default function Contact() {
               8 to 12 weeks, typically 20 to 30 hours per week. I run research, design, and ship production code alongside your engineering team. Best fit: you have a tool that needs structural rework and you do not have a full-time designer. Example: my{" "}
               <Link
                 to="/ai-research-workflow"
-                className="text-clay dark:text-dark-clay underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
+                className="text-clay-dark dark:text-dark-clay underline underline-offset-4 hover:underline-offset-6 transition-all duration-150"
               >
                 health tech engagement
               </Link>.

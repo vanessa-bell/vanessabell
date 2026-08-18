@@ -28,7 +28,7 @@ export default function SiteHeader() {
 
   const linkClass = (active: boolean) =>
     active
-      ? "text-clay dark:text-dark-clay font-medium transition-colors"
+      ? "text-clay-dark dark:text-dark-clay font-medium transition-colors"
       : "text-warm-gray dark:text-dark-warm-gray hover:text-charcoal dark:hover:text-dark-cream transition-colors";
 
   const navLinks = (
@@ -107,8 +107,8 @@ export default function SiteHeader() {
             aria-current={isHome ? "page" : undefined}
             className={`font-serif text-lg transition-colors ${
               isHome
-                ? "text-clay dark:text-dark-clay"
-                : "text-charcoal dark:text-dark-cream hover:text-clay dark:hover:text-dark-clay"
+                ? "text-clay-dark dark:text-dark-clay"
+                : "text-charcoal dark:text-dark-cream hover:text-clay-dark dark:hover:text-dark-clay"
             }`}
           >
             Vanessa Bell
@@ -129,7 +129,7 @@ export default function SiteHeader() {
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav"
               onClick={() => setMobileOpen((open) => !open)}
-              className="w-9 h-9 -mr-1.5 flex items-center justify-center rounded-lg text-charcoal dark:text-dark-cream hover:text-clay dark:hover:text-dark-clay transition-colors"
+              className="w-9 h-9 -mr-1.5 flex items-center justify-center rounded-lg text-charcoal dark:text-dark-cream hover:text-clay-dark dark:hover:text-dark-clay transition-colors"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 {mobileOpen ? (

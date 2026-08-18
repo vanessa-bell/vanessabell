@@ -25,6 +25,16 @@ export default function AllStripes() {
             A workflow redesign that cut medical records processing time by 95% and directly sped up patient access to their own health data.
           </p>
 
+          <figure className="my-10">
+            <img
+              src="/allstripes/allstripes-cover.jpg"
+              width={474}
+              height={426}
+              alt="AllStripes medical records workflow redesign"
+              className="w-full rounded-lg"
+            />
+          </figure>
+
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-6 mb-10 rounded-xl border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-6 sm:px-6">
             {[
               { value: "95%+", label: "reduction in processing time" },
@@ -32,7 +42,7 @@ export default function AllStripes() {
               { value: "20 min → <1 min", label: "per file, before → after" },
             ].map(({ value, label }) => (
               <div key={label}>
-                <p className="font-serif text-xl sm:text-2xl text-clay dark:text-dark-clay leading-tight mb-1.5">
+                <p className="font-serif text-xl sm:text-2xl text-clay-dark dark:text-dark-clay leading-tight mb-1.5">
                   {value}
                 </p>
                 <p className="text-xs text-warm-gray dark:text-dark-warm-gray leading-snug">
@@ -41,14 +51,6 @@ export default function AllStripes() {
               </div>
             ))}
           </div>
-
-          <figure className="my-10">
-            <img
-              src="/allstripes/allstripes-cover.jpg"
-              alt="AllStripes medical records workflow redesign"
-              className="w-full rounded-lg"
-            />
-          </figure>
 
           <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 text-sm mt-8 mx-auto">
             {[
@@ -134,7 +136,7 @@ export default function AllStripes() {
               "Security: sensitive patient records stopped being downloaded to personal machines altogether, closing a real PHI exposure risk.",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay-dark dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}

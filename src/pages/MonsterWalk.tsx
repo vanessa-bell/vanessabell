@@ -1,6 +1,6 @@
 import SiteHeader from "../components/SiteHeader";
 import { usePageMeta } from "../hooks/usePageMeta";
-
+import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 export default function MonsterWalk() {
   usePageMeta({
@@ -9,6 +9,8 @@ export default function MonsterWalk() {
     ogImage: "https://vanessabell.design/monster-walk/monster-walk-hero.gif",
     path: "/monster-walk",
   });
+
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
     <div className="min-h-screen bg-cream dark:bg-dark-bg text-charcoal dark:text-dark-cream">
@@ -29,7 +31,13 @@ export default function MonsterWalk() {
 
           <figure className="my-10">
             <img
-              src="/monster-walk/monster-walk-hero.gif"
+              src={
+                prefersReducedMotion
+                  ? "/monster-walk/monster-walk-static.jpg"
+                  : "/monster-walk/monster-walk-hero.gif"
+              }
+              width={prefersReducedMotion ? 278 : 1082}
+              height={prefersReducedMotion ? 462 : 1795}
               alt="Animated gif of the Monster Walk app showing the redesigned Welcome Back flow: personalized monster greeting, animated stamina meter, streak counter, and milestone celebration"
               className="max-h-96 w-auto mx-auto block rounded-lg"
             />
@@ -77,7 +85,10 @@ export default function MonsterWalk() {
 
           <figure className="my-10 w-screen max-w-none ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
             <img
-              src="/monster-walk/old-welcome-back-flow.png"
+              src="/monster-walk/old-welcome-back-flow.jpg"
+              width={2640}
+              height={1079}
+              loading="lazy"
               alt="The original Monster Walk Welcome Back screen: a static panel with minimal visual feedback, no celebration, and no streak or progress indicators"
               className="w-full max-w-[1320px] mx-auto h-auto block"
             />
@@ -155,7 +166,7 @@ export default function MonsterWalk() {
               },
             ].map(({ icon, title, body }) => (
               <div key={title} className="rounded-lg border border-warm-gray/15 dark:border-dark-warm-gray/15 bg-cream-dark/40 dark:bg-dark-surface/40 p-5">
-                <span className="inline-flex text-clay dark:text-dark-clay mb-3">
+                <span className="inline-flex text-clay-dark dark:text-dark-clay mb-3">
                   {icon}
                 </span>
                 <p className="font-medium text-charcoal dark:text-dark-cream mb-1">{title}</p>
@@ -225,7 +236,7 @@ export default function MonsterWalk() {
             ].map(({ n, heading, body }) => (
               <div key={n}>
                 <div className="flex items-baseline gap-3 mb-2">
-                  <span className="font-mono text-xs text-clay dark:text-dark-clay tracking-widest shrink-0">
+                  <span className="font-mono text-xs text-clay-dark dark:text-dark-clay tracking-widest shrink-0">
                     {n}
                   </span>
                   <h3 className="font-medium text-charcoal dark:text-dark-cream">{heading}</h3>
@@ -255,7 +266,7 @@ export default function MonsterWalk() {
               "Rotating hidden monster welcome screen to add novelty on repeat logins",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay-dark dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -264,7 +275,10 @@ export default function MonsterWalk() {
           <div className="grid grid-cols-2 gap-4 my-8">
             <figure>
               <img
-                src="/monster-walk/monster-greeting.png"
+                src="/monster-walk/monster-greeting.jpg"
+                width={398}
+                height={660}
+                loading="lazy"
                 alt="Monster Walk redesigned Welcome Back screen showing a personalized monster greeting with stamina meter and daily streak counter"
                 className="w-full rounded-lg"
               />
@@ -274,7 +288,10 @@ export default function MonsterWalk() {
             </figure>
             <figure>
               <img
-                src="/monster-walk/streak-milestone.png"
+                src="/monster-walk/streak-milestone.jpg"
+                width={398}
+                height={660}
+                loading="lazy"
                 alt="Monster Walk redesigned seven-day streak milestone screen with a celebratory moment and a teaser for the next upcoming reward"
                 className="w-full rounded-lg"
               />
@@ -301,7 +318,7 @@ export default function MonsterWalk() {
               "Design direction and annotated prototype delivered to Talofa Games",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay-dark dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
@@ -312,12 +329,18 @@ export default function MonsterWalk() {
 
           <div className="mt-8 grid sm:grid-cols-2 gap-4">
             <img
-              src="/monster-walk/Anticipation-Quote.png"
+              src="/monster-walk/Anticipation-Quote.jpg"
+              width={1200}
+              height={842}
+              loading="lazy"
               alt="I do like how you don't know what you're gonna get tomorrow. So, you know, you better come back tomorrow to see."
               className="w-full rounded-lg"
             />
             <img
-              src="/monster-walk/Monster-Connection-Quote.png"
+              src="/monster-walk/Monster-Connection-Quote.jpg"
+              width={1200}
+              height={842}
+              loading="lazy"
               alt="I love my little guys. It's nice they acknowledge I'm back on the grind to help them clear the fog, so having the monster there to greet you is really nice."
               className="w-full rounded-lg"
             />
@@ -360,7 +383,7 @@ export default function MonsterWalk() {
               "The team delivered an annotated prototype direction to Talofa Games; whether it shipped was the client's call, not mine to measure.",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
-                <span className="text-clay dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-clay-dark dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
                 <span className="text-sm leading-relaxed">{item}</span>
               </li>
             ))}
