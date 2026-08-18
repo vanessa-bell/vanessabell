@@ -118,11 +118,18 @@ export default function HealthTech() {
 
           <figure className="my-10">
             <img
+              src="/ai-research-workflow/ai-review-mobile.jpg"
+              width={390}
+              height={896}
+              alt="concept mockup of the interaction model I designed, shown as a mobile review card"
+              className="w-full max-w-xs mx-auto rounded-lg sm:hidden"
+            />
+            <img
               src="/ai-research-workflow/hero-diagram-public.png"
               width={1440}
               height={1024}
               alt="concept mockup of the interaction model I designed"
-              className="w-full rounded-lg"
+              className="hidden sm:block w-full rounded-lg"
             />
             <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
               Real interface under NDA — image above is a concept mockup of the interaction model I designed.

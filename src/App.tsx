@@ -122,9 +122,9 @@ export default function App() {
             I run the research, design the fix, and ship the code myself — no handoffs in between.
           </p>
 
-          <div className="max-w-[810px] mx-auto flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
-            {/* SpendLight + AllStripes — left column */}
-            <div className="w-full sm:flex-[1.2] flex flex-col gap-3 sm:gap-4">
+          <div className="max-w-[810px] mx-auto grid grid-cols-1 sm:grid-cols-[1.2fr_1fr] sm:grid-flow-col sm:grid-rows-[auto_auto] gap-3 sm:gap-4 items-start">
+            {/* Mobile order: SpendLight, Health Tech, AllStripes, Monster Walk. Desktop: SpendLight+AllStripes left column, Health Tech+Monster Walk right column (order-none restores this DOM order). */}
+            <div className="order-1 sm:order-none">
               <HeroFlipCard
                 to="/spendlight"
                 ariaLabel="View SpendLight case study"
@@ -148,7 +148,9 @@ export default function App() {
                   </video>
                 }
               />
+            </div>
 
+            <div className="order-3 sm:order-none">
               <HeroFlipCard
                 to="/allstripes"
                 ariaLabel="View AllStripes case study"
@@ -169,8 +171,7 @@ export default function App() {
               />
             </div>
 
-            {/* Forma + Monster Walk — stacked right column */}
-            <div className="w-full sm:flex-1 flex flex-col gap-3 sm:gap-4">
+            <div className="order-2 sm:order-none">
               <HeroFlipCard
                 to="/ai-research-workflow"
                 ariaLabel="View health tech case study"
@@ -180,16 +181,27 @@ export default function App() {
                 title="Letting AI Do the Work so Human Experts Can Focus on Review"
                 impact="9x reduction in time and steps"
                 front={
-                  <img
-                    src="/ai-research-workflow/hero-diagram-public.png"
-                    width={1440}
-                    height={1024}
-                    alt="a long manual form reduced to a compact AI-proposed card, with a 9x reduction in time"
-                    className="block w-full h-auto"
-                  />
+                  <>
+                    <img
+                      src="/ai-research-workflow/ai-review-mobile.jpg"
+                      width={390}
+                      height={896}
+                      alt="a long manual form reduced to a compact AI-proposed card, with a 9x reduction in time"
+                      className="block w-full h-auto sm:hidden"
+                    />
+                    <img
+                      src="/ai-research-workflow/hero-diagram-public.png"
+                      width={1440}
+                      height={1024}
+                      alt="a long manual form reduced to a compact AI-proposed card, with a 9x reduction in time"
+                      className="hidden sm:block w-full h-auto"
+                    />
+                  </>
                 }
               />
+            </div>
 
+            <div className="order-4 sm:order-none">
               <HeroFlipCard
                 to="/monster-walk"
                 ariaLabel="View Monster Walk case study"
