@@ -21,7 +21,7 @@ export default function Contact() {
       <main id="main-content" className="max-w-2xl mx-auto px-6 sm:px-8 pt-6 sm:pt-8 pb-12 sm:pb-16">
 
         <header className="mb-10">
-          <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-3">
+          <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight text-balance mb-3">
             Get in Touch
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">

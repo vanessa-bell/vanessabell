@@ -24,7 +24,7 @@ export default function About() {
             About
           </p>
           <div className="flex items-center gap-3 mb-1">
-            <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight text-balance">
               Vanessa Bell
             </h1>
           </div>

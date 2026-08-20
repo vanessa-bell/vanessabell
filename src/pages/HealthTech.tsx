@@ -103,7 +103,7 @@ export default function HealthTech() {
           <p className="text-sm text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
             Case Study
           </p>
-          <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-4">
+          <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight text-balance mb-4">
             Letting AI Do the Work so Human Experts Can Focus on Review
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray mb-6">
@@ -190,7 +190,7 @@ export default function HealthTech() {
             Testimonial
           </h2>
           <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6">
-            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic mb-4">
+            <p className="font-serif text-lg sm:text-xl text-charcoal dark:text-dark-cream leading-snug italic mb-4">
               "Wow. This new flow is fun now as opposed to being kind of a burden." When a lighthouse
               customer tells you that, you know your team nailed the UX. Vanessa did this within her
               first few weeks all the way from design through implementation in the Angular codebase.
@@ -199,7 +199,7 @@ export default function HealthTech() {
               delivering a 9x reduction in time and steps for a workflow that customers repeat dozens
               of times. She excels at empathy, creativity, and the ability to ship.
             </p>
-            <footer className="text-sm text-charcoal dark:text-dark-cream font-medium">
+            <footer className="text-sm text-warm-gray dark:text-dark-warm-gray font-medium">
               CEO
             </footer>
           </blockquote>

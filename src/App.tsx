@@ -78,7 +78,8 @@ function HeroFlipCard({
 export default function App() {
   usePageMeta({
     title: "Vanessa Bell | Product Designer & Builder",
-    description: "Product designer who ships production code.",
+    description: "Product designer who runs the research, designs the fix, and ships the code — case studies in health tech, healthcare ops, and gaming.",
+    ogImage: "https://vanessabell.design/ai-research-workflow/hero-diagram-public.png",
     path: "/",
   });
 
@@ -115,14 +116,14 @@ export default function App() {
       <main id="main-content" className="pb-16">
         {/* Hero: bento grid of the three case studies */}
         <section className="px-6 sm:px-4 pt-3 sm:pt-4" aria-label="Featured work">
-          <h1 className="max-w-[810px] mx-auto font-serif text-xl sm:text-2xl text-charcoal dark:text-dark-cream leading-snug mb-1.5">
+          <h1 className="max-w-[810px] mx-auto font-serif text-xl sm:text-2xl text-charcoal dark:text-dark-cream leading-snug text-balance mb-1.5">
             Product-minded designer who can code
           </h1>
           <p className="max-w-[810px] mx-auto text-sm text-warm-gray dark:text-dark-warm-gray leading-snug mb-4 sm:mb-6">
             I run the research, design the fix, and ship the code myself — no handoffs in between.
           </p>
 
-          <div className="max-w-[810px] mx-auto grid grid-cols-1 sm:grid-cols-[1.2fr_1fr] sm:grid-flow-col sm:grid-rows-[auto_auto] gap-3 sm:gap-4 items-start">
+          <div className="max-w-[810px] mx-auto grid grid-cols-1 sm:grid-cols-[1fr_1.2fr] sm:grid-flow-col sm:grid-rows-[auto_auto] gap-3 sm:gap-4 items-start">
             {/* Mobile order: SpendLight, Health Tech, AllStripes, Monster Walk. Desktop: SpendLight+AllStripes left column, Health Tech+Monster Walk right column (order-none restores this DOM order). */}
             <div className="order-1 sm:order-none">
               <HeroFlipCard
@@ -142,7 +143,7 @@ export default function App() {
                     width={1294}
                     height={1540}
                     aria-label="SpendLight core flow: mood check-in, logging a purchase reflection, adding context, and receiving the bonsai growth reward"
-                    className="block w-full h-auto scale-105"
+                    className="block w-full h-auto scale-105 sm:max-h-[340px] sm:object-cover"
                   >
                     <source src="/spendlight/spendlight-core-flow.mp4" type="video/mp4" />
                   </video>
@@ -181,22 +182,19 @@ export default function App() {
                 title="Letting AI Do the Work so Human Experts Can Focus on Review"
                 impact="9x reduction in time and steps"
                 front={
-                  <>
+                  <picture>
+                    <source
+                      media="(min-width: 640px)"
+                      srcSet="/ai-research-workflow/hero-diagram-public.png"
+                    />
                     <img
                       src="/ai-research-workflow/ai-review-mobile.jpg"
                       width={390}
                       height={896}
                       alt="a long manual form reduced to a compact AI-proposed card, with a 9x reduction in time"
-                      className="block w-full h-auto sm:hidden"
+                      className="block w-full h-auto max-h-[420px] object-cover object-top sm:max-h-none sm:aspect-[1440/1024] sm:object-contain"
                     />
-                    <img
-                      src="/ai-research-workflow/hero-diagram-public.png"
-                      width={1440}
-                      height={1024}
-                      alt="a long manual form reduced to a compact AI-proposed card, with a 9x reduction in time"
-                      className="hidden sm:block w-full h-auto"
-                    />
-                  </>
+                  </picture>
                 }
               />
             </div>

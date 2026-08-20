@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-19T00:00:00Z",
+  "title": "Design System: Vanessa Bell — Product Designer Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "clay": {
+        "role": "primary",
+        "displayName": "Burnt Sienna",
+        "canonical": "#C2714F",
+        "tonalRamp": ["#391f14", "#6a3925", "#975235", "#c06c49", "#d09177", "#ddb09d", "#eacec2", "#f6eae4"]
+      },
+      "clay-dark": {
+        "role": "primary-text-safe",
+        "displayName": "Burnt Sienna, Deepened",
+        "canonical": "#A85D3F"
+      },
+      "sage": {
+        "role": "secondary",
+        "displayName": "Olive Moss",
+        "canonical": "#5C6B50",
+        "tonalRamp": ["#262c21", "#46523d", "#647557", "#839673", "#a2b096", "#bcc6b3", "#d6dcd0", "#edf0eb"]
+      },
+      "charcoal": {
+        "role": "neutral-text",
+        "displayName": "Charcoal",
+        "canonical": "#2C2926",
+        "tonalRamp": ["#292623", "#4d4742", "#6d665f", "#8e857c", "#aaa39c", "#c2bdb8", "#d9d6d3", "#eeedec"]
+      },
+      "cream": {
+        "role": "neutral-bg",
+        "displayName": "Cream",
+        "canonical": "#FAF6F1"
+      },
+      "dark-clay": {
+        "role": "primary-dark",
+        "displayName": "Muted Sage-Green (dark-mode swap, not a lightened terracotta)",
+        "canonical": "#92A683"
+      },
+      "dark-sage": {
+        "role": "secondary-dark",
+        "displayName": "Warm Khaki-Gold (dark-mode swap, kept hue-distinct from dark-clay)",
+        "canonical": "#B4A064"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Newsreader Display", "purpose": "h1 on case study / About / Contact pages. Homepage h1 uses a much smaller size deliberately." },
+      "headline": { "displayName": "Newsreader Headline", "purpose": "h2 section headings within a case study." },
+      "body": { "displayName": "Work Sans Body", "purpose": "All narrative paragraph copy, run in warm-gray not charcoal." },
+      "label": { "displayName": "IBM Plex Mono Label", "purpose": "Eyebrows, form-adjacent labels, data captions. Never body prose." },
+      "label-badge": { "displayName": "IBM Plex Mono Label Badge", "purpose": "The 10px step reserved for flip-card pill badges sitting directly on media — smaller than the standard label so it doesn't compete with the image underneath." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "flip-card", "value": "transform 500ms ease-out; transform-style: preserve-3d; perspective: 1200px", "purpose": "Homepage case-study card front-to-back reveal on hover/focus-within, or tap-to-reveal on touch devices." },
+      { "name": "mobile-nav-panel", "value": "max-height, opacity 200ms ease-out", "purpose": "Mobile nav slide-down panel." },
+      { "name": "reduced-motion-fallback", "value": "static image swap via usePrefersReducedMotion, not an animation-duration override", "purpose": "Autoplaying hero video/gif on SpendLight, Monster Walk, and the homepage previews swap to a static image rather than just freezing frame 1." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The site's one CTA style — form submissions, requests.",
+      "html": "<button class=\"ds-btn-primary\">Send</button>",
+      "css": ".ds-btn-primary { background: var(--color-clay); color: var(--color-cream); font-size: 14px; font-weight: 500; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; transition: opacity 150ms ease; } .ds-btn-primary:hover { opacity: 0.9; } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-clay); outline-offset: 2px; } .ds-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-text",
+      "description": "Labeled text field used across contact and request-access forms.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-name\">Name</label><input class=\"ds-input\" id=\"ds-name\" type=\"text\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 6px; } .ds-label { font-size: 14px; color: var(--color-charcoal); } .ds-input { padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(107,101,96,0.25); background: var(--color-cream); color: var(--color-charcoal); font-size: 14px; } .ds-input:focus { outline: none; box-shadow: 0 0 0 2px rgba(194,113,79,0.4); }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link-active",
+      "description": "Header navigation link, active vs. inactive state.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\">Work</a><a class=\"ds-nav-link\" href=\"#\">About</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 20px; font-size: 14px; } .ds-nav-link { color: var(--color-warm-gray); text-decoration: none; transition: color 150ms ease; } .ds-nav-link:hover { color: var(--color-charcoal); } .ds-nav-link--active { color: var(--color-clay-dark); font-weight: 500; }"
+    },
+    {
+      "name": "Stat Card",
+      "kind": "card",
+      "refersTo": "card-stat",
+      "description": "Big-number metric block used in every case study hero.",
+      "html": "<div class=\"ds-stat-grid\"><div class=\"ds-stat\"><p class=\"ds-stat-value\">95%+</p><p class=\"ds-stat-label\">reduction in processing time</p></div><div class=\"ds-stat\"><p class=\"ds-stat-value\">20 min → &lt;1 min</p><p class=\"ds-stat-label\">per file, before → after</p></div></div>",
+      "css": ".ds-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; border-radius: 12px; border: 1px solid rgba(194,113,79,0.2); background: rgba(194,113,79,0.06); padding: 24px 20px; } .ds-stat-value { font-family: 'Newsreader', Georgia, serif; font-size: 20px; color: var(--color-clay-dark); margin-bottom: 6px; } .ds-stat-label { font-size: 12px; color: var(--color-warm-gray); }"
+    },
+    {
+      "name": "Notice Callout",
+      "kind": "custom",
+      "refersTo": "notice-callout",
+      "description": "Lock-icon disclosure box (e.g. NDA notices) — reused shape for any inline system message.",
+      "html": "<div class=\"ds-notice\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg><p>This project is under an NDA, so the mockup here is for illustrative purposes only.</p></div>",
+      "css": ".ds-notice { display: flex; align-items: flex-start; gap: 12px; border-radius: 8px; border: 1px solid rgba(194,113,79,0.2); background: rgba(194,113,79,0.06); padding: 12px 16px; } .ds-notice svg { color: var(--color-clay); flex-shrink: 0; margin-top: 2px; } .ds-notice p { font-size: 14px; line-height: 1.6; color: var(--color-warm-gray); margin: 0; }"
+    },
+    {
+      "name": "Testimonial",
+      "kind": "custom",
+      "refersTo": "testimonial",
+      "description": "Client quote blockquote closing every case study — the peak-end moment, set larger and in the primary text color rather than muted body copy. Consistent across all four case studies.",
+      "html": "<blockquote class=\"ds-testimonial\"><p>\"Design sense, technical chops, and product judgment rarely live in one person.\"</p><footer>Jon Oropeza</footer></blockquote>",
+      "css": ".ds-testimonial { border-left: 2px solid var(--color-clay); padding-left: 24px; } .ds-testimonial p { font-family: 'Newsreader', Georgia, serif; font-size: 20px; line-height: 1.3; font-style: italic; color: var(--color-charcoal); margin: 0 0 16px; } .ds-testimonial footer { font-size: 14px; font-weight: 500; color: var(--color-warm-gray); }"
+    },
+    {
+      "name": "Hero Flip Card",
+      "kind": "custom",
+      "refersTo": "hero-flip-card",
+      "description": "Signature homepage component — media front face flips to reveal case-study details on hover/focus.",
+      "html": "<a class=\"ds-flip\" href=\"#\"><div class=\"ds-flip-inner\"><div class=\"ds-flip-front\"><div class=\"ds-flip-media\"></div><span class=\"ds-flip-pill\">0 to 1</span></div><div class=\"ds-flip-back\"><span class=\"ds-flip-pill\">Personal finance</span><p class=\"ds-flip-company\">SpendLight</p><p class=\"ds-flip-title\">A Spending Journal Built on Reflection, Not Budgets</p></div></div></a>",
+      "css": ".ds-flip { display: block; perspective: 1200px; text-decoration: none; } .ds-flip-inner { position: relative; width: 100%; height: 180px; transition: transform 500ms ease-out; transform-style: preserve-3d; } .ds-flip:hover .ds-flip-inner, .ds-flip:focus-within .ds-flip-inner { transform: rotateY(180deg); } .ds-flip-front, .ds-flip-back { position: absolute; inset: 0; backface-visibility: hidden; background: var(--color-charcoal); border-radius: 8px; overflow: hidden; } .ds-flip-media { width: 100%; height: 100%; background: rgba(255,255,255,0.08); } .ds-flip-back { transform: rotateY(180deg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; padding: 16px; } .ds-flip-pill { position: absolute; top: 12px; left: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(92,107,80,0.9); color: var(--color-cream); padding: 4px 10px; border-radius: 9999px; } .ds-flip-back .ds-flip-pill { position: static; } .ds-flip-company { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(250,246,241,0.6); } .ds-flip-title { font-family: 'Newsreader', Georgia, serif; font-size: 16px; color: var(--color-cream); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Terracotta Ledger",
+    "overview": "Earthy minimalism with a research-notebook feel: warm paper tones, a serif voice for headlines, and a monospace hand for labels — like a field ledger where the numbers and evidence carry the page, not the decoration. Every case study reads as an entry in that ledger: eyebrow label, real metric, real testimonial, nothing dressed up beyond what's true. The system explicitly rejects cold corporate minimalism. Warmth is structural, not decorative — it comes from the cream/clay/sage palette itself, not from illustration or personality flourishes. Density stays low: one idea per section, generous vertical rhythm, and a single primary breakpoint (sm:, 640px) that's the only layout decision the system makes.",
+    "keyCharacteristics": [
+      "Warm neutral ground (cream paper, never white or gray) with two earth-tone accents in fixed roles",
+      "Serif display type paired with a geometric sans for body and a monospace for labels/data — three families, each with one job",
+      "Flat by default — depth comes from borders and tonal tinting, never box-shadow",
+      "Generous whitespace and a strict single-breakpoint responsive model",
+      "Every accent color is load-bearing (state, role, or data), never applied for variety alone"
+    ],
+    "rules": [
+      { "name": "The Text-Weight Clay Rule", "body": "clay (#C2714F) measures 3.39:1 against cream — it fails WCAG AA (4.5:1) as regular-weight body-sized text, even though it reads fine as a border, icon stroke, or background tint (3:1 threshold). Any readable text use of the accent in light mode — nav links, logo, stat numbers below the sm: breakpoint — must use clay-dark (#A85D3F, 4.54:1 against cream) instead. dark-clay needs no such substitution; at 6.66:1 against dark-bg it already passes comfortably.", "section": "colors" },
+      { "name": "The One Accent Rule", "body": "Only one of clay/sage appears as a foreground accent per component. Never mix both as co-equal colors in the same card or button — sage marks synthesis, clay marks everything else.", "section": "colors" },
+      { "name": "The Distinct Dark-Swap Rule", "body": "dark-clay and dark-sage were once both #92A683 — an identical-hex bug that silently collapsed the One Accent Rule for any dark-mode reader (found on SpendLight's InsightBlock, where the two accents sit directly beside each other). Whenever an accent's dark-mode counterpart is chosen by hue-swapping rather than lightening, verify the resulting hex against every other token's dark-mode value, not just against its own light-mode source — a swap that lands on another token's color is the same bug as never swapping at all.", "section": "colors" },
+      { "name": "The One-Weight-Family Rule", "body": "Never introduce a fourth font family or a bold (700+) weight. The system's entire hierarchy is built from three families at their loaded weights (Newsreader 500/600, Work Sans 400/500/600, IBM Plex Mono 400/500) — weight jumps come from family switches (serif → sans → mono), not from bolding within a family.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "Never add box-shadow for resting-state depth. If a component needs to read as 'raised' or 'grouped,' reach for a border and/or a tonal background tint at 4–8% opacity of the nearest accent — not a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use clay-dark (#A85D3F), not clay, for any light-mode text below 24px/regular-weight — the Text-Weight Clay Rule.",
+      "Do convey depth with a border and/or a 4–8% accent-tint background, never a box-shadow.",
+      "Do keep the monospace face (IBM Plex Mono) exclusive to labels/eyebrows/data — never body prose.",
+      "Do set explicit width/height (or an equivalent aspect-ratio reservation) on every image, and loading=\"lazy\" below the first viewport.",
+      "Do wire usePrefersReducedMotion into any new autoplaying video or GIF, matching the static-fallback pattern already used across the site.",
+      "Do add text-balance to every h1 — real page titles wrap unpredictably across viewports, and an orphaned single word on its own line is a genuine typographic defect. Applied sitewide."
+    ],
+    "donts": [
+      "Don't add a fourth font family or a bold (700+) weight — the hierarchy is built from family switches, not weight jumps.",
+      "Don't use md:/lg: breakpoints; the system's one responsive decision is sm:. Wide viewports get width caps, not new layout logic.",
+      "Don't generalize the 2px colored left-border device beyond blockquotes and 'design implication' callouts — it marks a quoted voice or a drawn conclusion, not a generic card accent.",
+      "Don't mix clay and sage as co-equal accents in one component. Sage marks synthesis; clay marks everything else.",
+      "Don't hand-copy a notice/callout block twice in the same file — extract it locally the moment it repeats."
+    ]
+  }
+}

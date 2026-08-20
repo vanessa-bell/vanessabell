@@ -18,7 +18,7 @@ export default function AllStripes() {
           <p className="text-sm text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
             Case Study
           </p>
-          <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-4">
+          <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight text-balance mb-4">
             Helping Patients Get Their Records Faster
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray mb-8">
@@ -115,10 +115,10 @@ export default function AllStripes() {
             Patients got faster access to their records. The ops team recovered hours per week. And sensitive patient data was no longer being downloaded to local machines.
           </p>
           <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6">
-            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic mb-4">
+            <p className="font-serif text-lg sm:text-xl text-charcoal dark:text-dark-cream leading-snug italic mb-4">
               "Vanessa's technical and design work speaks for itself in the outcome. I was Senior Director of Engineering at the time; this was her project to drive. The hardest parts she navigated were the tradeoffs, the organizational friction, and earning trust for a change in how patient data was handled. Design sense, technical chops and product judgment rarely live in one person, and this project shows what happens when they do."
             </p>
-            <footer className="text-sm text-charcoal dark:text-dark-cream font-medium">
+            <footer className="text-sm text-warm-gray dark:text-dark-warm-gray font-medium">
               Jon Oropeza
             </footer>
           </blockquote>
@@ -141,28 +141,6 @@ export default function AllStripes() {
               </li>
             ))}
           </ul>
-        </section>
-
-        {/* What This Says About How I Work */}
-        <section className="mb-16">
-          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            What this says about how I work
-          </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            The technical build here was the easier half. The harder part was organizational:
-            automating how patient records got processed touched a process people had built trust
-            around, even though it was slow. I could have shipped the change quietly and let the
-            results speak for themselves, but that risked the ops team feeling like a system had been
-            imposed on them rather than built with them.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            So I treated their trust as part of the deliverable, not a side effect of it. I kept
-            stakeholders informed throughout, communicated the tradeoffs honestly instead of
-            overselling the win, and designed the interface itself in collaboration with the team
-            that would use it, asking for feedback during development instead of just presenting a
-            finished tool at the end. Demoing results to the full company once it shipped was the
-            last step in that same approach, not a victory lap tacked onto it.
-          </p>
         </section>
 
       </main>

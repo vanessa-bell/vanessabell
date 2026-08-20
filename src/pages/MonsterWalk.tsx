@@ -22,7 +22,7 @@ export default function MonsterWalk() {
           <p className="text-sm text-warm-gray dark:text-dark-warm-gray font-mono uppercase tracking-widest mb-3">
             Case Study
           </p>
-          <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight mb-4">
+          <h1 className="font-serif text-4xl sm:text-5xl text-charcoal dark:text-dark-cream leading-tight text-balance mb-4">
             Turning Daily Walks into Daily Wins
           </h1>
           <p className="text-warm-gray dark:text-dark-warm-gray mb-8">
@@ -353,7 +353,7 @@ export default function MonsterWalk() {
             Testimonial
           </h2>
           <blockquote className="border-l-2 border-clay dark:border-dark-clay pl-6">
-            <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed italic mb-4">
+            <p className="font-serif text-lg sm:text-xl text-charcoal dark:text-dark-cream leading-snug italic mb-4">
               "Vanessa confidently led both unmoderated and moderated user studies, turned insights into
               actionable next steps, and iterated effectively based on client and user feedback. She's
               flexible and adaptable, revisiting ideas when new insights emerge while keeping the team
@@ -361,7 +361,7 @@ export default function MonsterWalk() {
               makes her someone the team can always depend on, both as a collaborator and a leader. Anyone
               would benefit from Vanessa's combination of skill, work ethic, and user-focused mindset."
             </p>
-            <footer className="text-sm text-charcoal dark:text-dark-cream font-medium">
+            <footer className="text-sm text-warm-gray dark:text-dark-warm-gray font-medium">
               Jenny Park, Coach
             </footer>
           </blockquote>
@@ -388,25 +388,6 @@ export default function MonsterWalk() {
               </li>
             ))}
           </ul>
-        </section>
-
-        {/* What This Says About How I Work */}
-        <section className="mb-16">
-          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            What this says about how I work
-          </h2>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-4">
-            Partway through this engagement I pushed the team to change direction: instead of
-            continuing to catalog what confused players, I wanted to understand what actually made
-            them want to come back. That meant setting aside the unmoderated-testing findings we
-            already had and running moderated 1:1 interviews instead, even with the clock already
-            running on a fixed externship timeline.
-          </p>
-          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed">
-            It was the right call. The streak-milestone concept that tested at 100% clarity came
-            directly from those conversations, not from the original audit. I'd rather spend time
-            re-scoping toward the right question than efficiently answer the wrong one.
-          </p>
         </section>
 
       </main>
