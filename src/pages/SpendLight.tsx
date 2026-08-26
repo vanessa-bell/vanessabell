@@ -631,7 +631,7 @@ export default function SpendLight() {
         {/* IA & Screens */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-4">
-            Information architecture & core experience
+            Core experience
           </h2>
           <div className="grid sm:grid-cols-2 gap-8 items-start mb-10">
             <div>
