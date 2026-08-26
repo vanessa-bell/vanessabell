@@ -26,6 +26,16 @@ function setMeta(attrKey: string, attrVal: string, content: string) {
   el.content = content;
 }
 
+function setCanonical(href: string) {
+  let el = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (!el) {
+    el = document.createElement("link");
+    el.rel = "canonical";
+    document.head.appendChild(el);
+  }
+  el.href = href;
+}
+
 export function usePageMeta({
   title,
   description,
@@ -47,6 +57,7 @@ export function usePageMeta({
       : `${BASE_URL}${window.location.pathname}`;
 
     setMeta("name", "description", description);
+    setCanonical(resolvedUrl);
 
     setMeta("property", "og:type", "website");
     setMeta("property", "og:site_name", "Vanessa Bell");

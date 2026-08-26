@@ -42,7 +42,7 @@ All current case study metrics, claims, and company names are confirmed accurate
 - SpendLight: concept validated, MVP spec ready for engineering (0-to-1 personal project).
 - AllStripes: medical records processing workflow redesign, 20 min → under 1 min per file (95% reduction).
 - Health tech AI research workflow: 9x reduction in time and steps (company is an early-stage health tech startup, not named).
-- Monster Walk (Talofa Games): user research on a Welcome Back / streak-milestone flow, 100% participant clarity in testing.
+- Monster Walk (Talofa Games): user research on a Welcome Back / streak-milestone flow. Concept validation testing (n=4): 4.8/5 average likelihood to return tomorrow, 4.3/5 average rewarding/motivating rating, both 100% rated 4 or 5 against a 75% target. Sample skewed toward existing, engaged players.
 
 Resume PDF at `public/vanessa-bell-designer-resume-2026.pdf` is current.
 
