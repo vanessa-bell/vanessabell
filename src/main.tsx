@@ -10,11 +10,13 @@ import AllStripes from './pages/AllStripes.tsx'
 import About from './pages/About.tsx'
 import Contact from './pages/Contact.tsx'
 import ScrollToTop from './components/ScrollToTop.tsx'
+import AnalyticsEvents from './AnalyticsEvents';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <ScrollToTop />
+      <AnalyticsEvents />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
