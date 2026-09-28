@@ -168,6 +168,7 @@ function JumpNav() {
     { href: "#approach", label: "Approach" },
     { href: "#constraints", label: "Constraints" },
     { href: "#research", label: "Research" },
+    { href: "#metrics", label: "Metrics" },
     { href: "#testimonial", label: "Testimonial" },
     { href: "#outcome", label: "Outcome" },
   ];
@@ -329,10 +330,11 @@ export default function SpendLight() {
             )}
           </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-10 rounded-xl border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-6 sm:px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 mb-10 rounded-xl border border-clay/20 dark:border-dark-clay/25 bg-clay/[0.06] dark:bg-dark-clay/[0.08] px-5 py-6 sm:px-6">
             {[
               { value: "6 weeks", label: "concept → build-ready spec" },
               { value: "5 insights", label: "research insights → design decisions" },
+              { value: "2 rounds", label: "usability testing" },
             ].map(({ value, label }) => (
               <div key={label}>
                 <p className="font-serif text-xl sm:text-2xl text-clay-dark dark:text-dark-clay leading-tight mb-1.5">
@@ -489,9 +491,7 @@ export default function SpendLight() {
               </div>
               <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed pl-8 mb-6">
                 I explored journal prompting approaches, settled on the information architecture, and defined
-                the core habit loop. To pressure-test positioning I ran an A/B test on two value propositions:
-                "Find Your Calm" versus "Your Spending Is a Story," gathering signal on which framing resonated
-                before committing to a direction.
+                the core habit loop.
               </p>
               <figure>
                 <img
@@ -805,6 +805,35 @@ export default function SpendLight() {
           </div>
         </section>
 
+        {/* Metrics */}
+        <section id="metrics" className="mb-12 scroll-mt-[140px] sm:scroll-mt-[130px]">
+          <h2 className="font-serif text-2xl text-charcoal dark:text-dark-cream mb-6">
+            Metrics
+          </h2>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
+            I defined how the MVP should be judged before handing it off. These were defined, not instrumented: the product wasn't built during the engagement, so nothing has been measured against them.
+          </p>
+          <ul className="space-y-2 mb-6">
+            {[
+              { name: "Reflection completion rate.", body: "The share of days a user logs a reflection, either a purchase or a no-spend day. Is it becoming daily, or less often?" },
+              { name: "Time to first insight.", body: "How quickly users start seeing meaningful insight cards. Are users motivated to add entries in order to uncover insights?" },
+              { name: "Tag and mood usage.", body: "Whether users voluntarily add emotional context. Determines whether the feature earns its place." },
+              { name: "Retention.", body: "7-day and 30-day return rates for \"Add Reflection.\" Is journaling sticky?" },
+            ].map(({ name, body }) => (
+              <li key={name} className="flex gap-3 text-warm-gray dark:text-dark-warm-gray">
+                <span className="text-clay-dark dark:text-dark-clay text-sm leading-relaxed shrink-0">–</span>
+                <span className="text-sm leading-relaxed">
+                  <span className="font-medium text-charcoal dark:text-dark-cream">{name}</span> {body}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed">
+            Event schema:{" "}
+            <span className="font-mono text-xs text-charcoal dark:text-dark-cream">reflection_created · mood_logged · insight_viewed</span>
+          </p>
+        </section>
+
         {/* Testimonial — the transition beat: proof it worked, from a real person, right
             before the visual finale. */}
         <section id="testimonial" className="mb-12 scroll-mt-[140px] sm:scroll-mt-[130px]">
@@ -833,7 +862,13 @@ export default function SpendLight() {
           </h2>
 
           <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
+            SpendLight started with a lot of possible directions and ended with one: a daily reflection journal for discretionary spending. Getting there meant cutting feature ideas like social sharing from the MVP, so the first build could prove the core loop before anything else was added on top.
+          </p>
+          <p className="text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-6">
             What the research confirmed: people wanted emotional clarity, not budgeting mechanics. Scoping to discretionary spending and rewarding journaling consistency over judging purchases as "good" vs "bad" is what made the concept land.
+          </p>
+          <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed mb-3">
+            What I handed off:
           </p>
           <ul className="space-y-2 mb-8">
             {[

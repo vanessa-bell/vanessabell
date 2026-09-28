@@ -161,7 +161,7 @@ export default function HealthTech() {
               { label: "Year", value: "2026" },
               { label: "Team", value: "Me, one software engineer, and the CEO" },
               { label: "Scope", value: "Research, design, and shipped Angular/TypeScript implementation with Claude Code" },
-              { label: "Impact", value: "A workflow the lighthouse customer called \"kind of a burden\" became one she called \"fun\"" },
+              { label: "Impact", value: "The review-first principle I introduced is now being built into the patient-facing mobile app" },
             ].map(({ label, value }) => (
               <div key={label}>
                 <dt className="text-warm-gray dark:text-dark-warm-gray mb-1">{label}</dt>
