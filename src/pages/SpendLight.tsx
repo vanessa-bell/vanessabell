@@ -363,7 +363,7 @@ export default function SpendLight() {
               { label: "Year", value: "2025" },
               { label: "Team", value: "Solo designer" },
               { label: "Scope", value: "Discovery through MVP specification (Figma, Figma Make)" },
-              { label: "Impact", value: "Validated product direction: MVP spec ready for engineering" },
+              { label: "Impact", value: "A founder with many directions committed to one and cut MVP scope" },
             ].map(({ label, value }) => (
               <div key={label}>
                 <dt className="text-warm-gray dark:text-dark-warm-gray mb-1">{label}</dt>
@@ -463,8 +463,8 @@ export default function SpendLight() {
               </div>
               <p className="text-sm text-warm-gray dark:text-dark-warm-gray leading-relaxed pl-8 mb-6">
                 A screener survey helped recruit the right participants, and four 1:1 interviews gave a direct
-                window into real spending habits and emotional patterns. In parallel, I set up a landing page
-                messaging test for SpendLight and built an early AI prototype in Figma Make to explore what a
+                window into real spending habits and emotional patterns. In parallel, I built a landing page
+                for SpendLight and an early AI prototype in Figma Make to explore what a
                 fast, frictionless reflection flow could feel like, before we had validated the core concept.
               </p>
               <figure className="max-w-xs mx-auto pl-8">
@@ -503,7 +503,7 @@ export default function SpendLight() {
                   className="w-full rounded-lg border border-warm-gray/15 dark:border-dark-warm-gray/15"
                 />
                 <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic">
-                  The landing page's desktop hero — built to test messaging before committing to a design direction.
+                  The landing page's desktop hero — framing SpendLight around spending awareness.
                 </figcaption>
               </figure>
             </div>
@@ -576,7 +576,7 @@ export default function SpendLight() {
                   </svg>
                 ),
                 title: "Six-week timeline",
-                body: "Opted for parallel validation of messaging and prototype, requiring iterative decisions with incomplete data.",
+                body: "Opted for parallel exploration of messaging and prototype, requiring iterative decisions with incomplete data.",
               },
               {
                 icon: (
@@ -893,7 +893,7 @@ export default function SpendLight() {
                   src: "/spendlight/key-screens.jpg",
                   width: 1600,
                   height: 840,
-                  alt: "Four key SpendLight screens: Today's home feed with the bonsai and mood check-in, the Purchase Reflection prompt, History with monthly insights, and the Insights screen connecting mood to spending",
+                  alt: "Four key SpendLight screens: the Dashboard home feed with the bonsai and mood check-in, the Purchase Reflection prompt, History with monthly insights, and the Insights screen connecting mood to spending",
                   hint: "Swipe to see all four screens",
                 });
               }}
@@ -905,12 +905,12 @@ export default function SpendLight() {
                 width={1600}
                 height={840}
                 loading="lazy"
-                alt="Four key SpendLight screens: Today's home feed with the bonsai and mood check-in, the Purchase Reflection prompt, History with monthly insights, and the Insights screen connecting mood to spending"
+                alt="Four key SpendLight screens: the Dashboard home feed with the bonsai and mood check-in, the Purchase Reflection prompt, History with monthly insights, and the Insights screen connecting mood to spending"
                 className="w-full max-w-[1600px] mx-auto h-auto block rounded-lg"
               />
             </button>
             <figcaption className="mt-3 text-sm text-warm-gray dark:text-dark-warm-gray text-center italic px-6">
-              Today, Purchase Reflection, History, and Insights — the four screens the spec was built around. Tap to zoom in.
+              Dashboard, Purchase Reflection, History, and Insights — the four screens the spec was built around. Tap to zoom in.
             </figcaption>
           </figure>
 
